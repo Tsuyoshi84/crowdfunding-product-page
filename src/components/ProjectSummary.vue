@@ -2,6 +2,7 @@
   <section>
     <h1>{{ project.name }}</h1>
     <p>{{ project.description }}</p>
+    <div>Bookmarkded: {{ project.bookmarked }}</div>
   </section>
 </template>
 
