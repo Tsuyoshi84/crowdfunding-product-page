@@ -1,15 +1,17 @@
 <template>
   <project-summary :project="project" />
+  <project-status :project="project" />
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import ProjectSummary from './ProjectSummary.vue';
+import ProjectStatus from './ProjectStatus.vue';
 import { Project } from '../models/project';
 
 export default defineComponent({
   name: 'Project',
-  components: { ProjectSummary },
+  components: { ProjectSummary, ProjectStatus },
   setup() {
     let project: Project = {
       name: 'Mastercraft Bamboo Monitor Riser',
