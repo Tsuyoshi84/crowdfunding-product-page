@@ -1,32 +1,17 @@
 <template>
-  <project-summary :project="project" />
+  <project />
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import ProjectSummary from './components/ProjectSummary.vue';
-import { Project } from './models/project';
+import Project from './components/Project.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
-    ProjectSummary,
+    Project,
   },
-  setup() {
-    let project: Project = {
-      name: 'Mastercraft Bamboo Monitor Riser',
-      description: 'A beautiful & handcrafted monitor stand to reduce neck and eye strain.',
-      bookmarked: true,
-      currentAmount: 89914,
-      targetAmount: 100000,
-      numOfBuckers: 5007,
-      daysLeft: 56,
-    };
-
-    return {
-      project,
-    };
-  },
+  setup() {},
 });
 </script>
 
