@@ -1,6 +1,7 @@
 export interface Project {
   name: string;
   description: string;
+  detail: string;
   bookmarked: boolean;
   targetAmount: number;
   currentAmount: number;
