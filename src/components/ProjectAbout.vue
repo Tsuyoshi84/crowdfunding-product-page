@@ -4,7 +4,7 @@
     <p>{{ project.detail }}</p>
     <ProjectReward
       v-for="reward in project.rewards"
-      :key="project.id"
+      :key="reward.id"
       :reward="reward"
     />
   </section>
