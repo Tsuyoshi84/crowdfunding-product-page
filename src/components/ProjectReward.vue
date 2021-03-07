@@ -7,8 +7,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue';
-import { ProjectReward } from '../models/project';
+import { defineComponent, PropType } from 'vue'
+import { ProjectReward } from '../models/project'
 
 export default defineComponent({
   name: 'ProjectReward',
@@ -19,5 +19,5 @@ export default defineComponent({
     },
   },
   setup() {},
-});
+})
 </script>

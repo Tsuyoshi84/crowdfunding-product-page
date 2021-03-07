@@ -3,8 +3,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import Project from './components/Project.vue';
+import { defineComponent } from 'vue'
+import Project from './components/Project.vue'
 
 export default defineComponent({
   name: 'App',
@@ -12,7 +12,7 @@ export default defineComponent({
     Project,
   },
   setup() {},
-});
+})
 </script>
 
 <style>

@@ -1,20 +1,20 @@
 export interface Project {
-  id: number;
-  name: string;
-  description: string;
-  detail: string;
-  bookmarked: boolean;
-  targetAmount: number;
-  currentAmount: number;
-  numOfBuckers: number;
-  daysLeft: number;
-  rewards: ProjectReward[];
+  id: number
+  name: string
+  description: string
+  detail: string
+  bookmarked: boolean
+  targetAmount: number
+  currentAmount: number
+  numOfBuckers: number
+  daysLeft: number
+  rewards: ProjectReward[]
 }
 
 export interface ProjectReward {
-  id: number;
-  name: string;
-  detail: string;
-  left: number;
-  pledge: number;
+  id: number
+  name: string
+  detail: string
+  left: number
+  pledge: number
 }

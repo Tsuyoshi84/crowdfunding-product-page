@@ -18,8 +18,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue';
-import { Project } from '../models/project';
+import { defineComponent, PropType } from 'vue'
+import { Project } from '../models/project'
 
 export default defineComponent({
   name: 'ProjectStatus',
@@ -30,5 +30,5 @@ export default defineComponent({
     },
   },
   setup() {},
-});
+})
 </script>
