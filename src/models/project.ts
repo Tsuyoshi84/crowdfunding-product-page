@@ -1,4 +1,5 @@
 export interface Project {
+  id: number;
   name: string;
   description: string;
   detail: string;
@@ -7,4 +8,13 @@ export interface Project {
   currentAmount: number;
   numOfBuckers: number;
   daysLeft: number;
+  rewards: ProjectReward[];
+}
+
+export interface ProjectReward {
+  id: number;
+  name: string;
+  detail: string;
+  left: number;
+  pledge: number;
 }

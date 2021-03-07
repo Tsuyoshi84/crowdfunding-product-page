@@ -16,6 +16,7 @@ export default defineComponent({
   components: { ProjectSummary, ProjectStatus, ProjectAbout },
   setup() {
     let project: Project = {
+      id: 1,
       name: 'Mastercraft Bamboo Monitor Riser',
       description: 'A beautiful & handcrafted monitor stand to reduce neck and eye strain.',
       detail:
@@ -25,6 +26,32 @@ export default defineComponent({
       targetAmount: 100000,
       numOfBuckers: 5007,
       daysLeft: 56,
+      rewards: [
+        {
+          id: 1,
+          name: 'Bamboo Stand',
+          detail:
+            "You get an argonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you'll be added to a special Backer member list.",
+          left: 101,
+          pledge: 25,
+        },
+        {
+          id: 2,
+          name: 'Black Edition Stand',
+          detail:
+            "You get a Black Special Edition computer stand and personal thank you. You'll be added to our Backer member list. Shipping is included.",
+          left: 64,
+          pledge: 75,
+        },
+        {
+          id: 3,
+          name: 'Mahogany Special Edition',
+          detail:
+            "You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You'll be added to our Backer member list. Shipping is included",
+          left: 0,
+          pledge: 200,
+        },
+      ],
     };
 
     return {
