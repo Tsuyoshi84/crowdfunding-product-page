@@ -20,7 +20,7 @@ export default defineComponent({
   components: { ProjectReward },
   props: {
     project: {
-      type: Object as PropType<Project>,
+      type: Object as PropType<Readonly<Project>>,
       required: true,
     },
   },
