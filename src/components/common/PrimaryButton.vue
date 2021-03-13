@@ -19,9 +19,11 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@import '../../styles/_variables.scss';
+
 button {
   color: #ffffff;
-  background-color: #3cb4ab;
+  background-color: $color-primary;
   border: none;
   height: 32px;
   border-radius: 16px;
@@ -29,7 +31,7 @@ button {
   &:hover,
   :focus,
   :active {
-    background-color: #157a74;
+    background-color: $color-emphasis;
   }
 }
 </style>
