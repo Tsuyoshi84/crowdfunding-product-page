@@ -16,7 +16,17 @@ export default defineComponent({
 })
 </script>
 
-<style>
+<style lang="scss">
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Commissioner', sans-serif;
+}
+
 ProjectSummary#app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
