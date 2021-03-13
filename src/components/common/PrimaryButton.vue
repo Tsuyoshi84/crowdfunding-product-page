@@ -17,3 +17,19 @@ export default defineComponent({
   setup() {},
 })
 </script>
+
+<style lang="scss" scoped>
+button {
+  color: #ffffff;
+  background-color: #3cb4ab;
+  border: none;
+  height: 32px;
+  border-radius: 16px;
+
+  &:hover,
+  :focus,
+  :active {
+    background-color: #157a74;
+  }
+}
+</style>

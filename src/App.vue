@@ -1,5 +1,6 @@
 <template>
   <project />
+  <img src="./assets/active-states-bookmarked.jpg" alt="" />
 </template>
 
 <script lang="ts">
