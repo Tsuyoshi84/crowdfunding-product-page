@@ -20,6 +20,12 @@ export default defineComponent({
 :root {
   --color-primary: #3cb4ab;
   --color-primary-dark: #157a74;
+
+  --spacing-2: 0.5rem;
+  --spacing-4: 1rem;
+  --spacing-8: 2rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
 }
 
 *,
@@ -29,6 +35,7 @@ export default defineComponent({
 }
 
 body {
+  font-size: 16px;
   font-family: 'Commissioner', sans-serif;
 }
 
