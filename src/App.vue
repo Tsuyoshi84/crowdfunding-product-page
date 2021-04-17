@@ -16,7 +16,12 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss">
+<style lang="postcss">
+:root {
+  --color-primary: #3cb4ab;
+  --color-primary-dark: #157a74;
+}
+
 *,
 *::before,
 *::after {

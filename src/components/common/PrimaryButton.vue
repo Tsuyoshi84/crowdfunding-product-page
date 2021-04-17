@@ -18,20 +18,19 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped>
-@import '../../styles/_variables.scss';
-
+<style lang="postcss" scoped>
 button {
   color: #ffffff;
-  background-color: $color-primary;
+  background-color: var(--color-primary);
   border: none;
   height: 32px;
   border-radius: 16px;
+  cursor: pointer;
 
   &:hover,
   :focus,
   :active {
-    background-color: $color-emphasis;
+    background-color: var(--color-primary-dark);
   }
 }
 </style>

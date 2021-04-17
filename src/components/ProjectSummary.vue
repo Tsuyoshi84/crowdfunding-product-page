@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h1>{{ project.name }}</h1>
+    <h1 class="title">{{ project.name }}</h1>
     <p>{{ project.description }}</p>
     <primary-button>Back this project</primary-button>
     <div>Bookmarkded: {{ project.bookmarked }}</div>
@@ -24,3 +24,9 @@ export default defineComponent({
   setup() {},
 })
 </script>
+
+<style scoped lang="postcss">
+.title {
+  font-size: 1.2rem;
+}
+</style>
