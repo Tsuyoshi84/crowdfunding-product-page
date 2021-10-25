@@ -6,18 +6,14 @@
   <button>Select Reward</button>
 </template>
 
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
+<script lang="ts" setup>
+import { PropType, defineProps } from 'vue'
 import { ProjectReward } from '../models/project'
 
-export default defineComponent({
-  name: 'ProjectReward',
-  props: {
-    reward: {
-      type: Object as PropType<ProjectReward>,
-      required: true,
-    },
+defineProps({
+  reward: {
+    type: Object as PropType<ProjectReward>,
+    required: true,
   },
-  setup() {},
 })
 </script>
