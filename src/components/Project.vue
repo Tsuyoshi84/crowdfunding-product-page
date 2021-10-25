@@ -1,5 +1,5 @@
 <template>
-  <project-summary :project="project" />
+  <project-summary :project="project" @toggle-bookmark="bookmarkToggled" />
   <project-status :project="project" />
   <project-about :project="project" />
 </template>
@@ -48,5 +48,10 @@ let project: Project = {
       pledge: 200,
     },
   ],
+}
+
+function bookmarkToggled() {
+  console.log('Toggle!!')
+  project.bookmarked = !project.bookmarked
 }
 </script>

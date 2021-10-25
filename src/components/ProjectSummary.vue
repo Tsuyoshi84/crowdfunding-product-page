@@ -2,13 +2,13 @@
   <section>
     <h1 class="title">{{ project.name }}</h1>
     <p>{{ project.description }}</p>
-    <primary-button>Back this project</primary-button>
+    <primary-button @click="bookmarkClicked">Back this project</primary-button>
     <div>Bookmarkded: {{ project.bookmarked }}</div>
   </section>
 </template>
 
 <script lang="ts" setup>
-import { PropType, defineProps } from 'vue'
+import { PropType } from 'vue'
 import { Project } from '../models/project'
 import PrimaryButton from './common/PrimaryButton.vue'
 
@@ -18,6 +18,14 @@ defineProps({
     required: true,
   },
 })
+
+const emits = defineEmits<{
+  (e: 'toggleBookmark'): void
+}>()
+
+function bookmarkClicked() {
+  emits('toggleBookmark')
+}
 </script>
 
 <style scoped lang="postcss">

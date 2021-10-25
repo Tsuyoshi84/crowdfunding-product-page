@@ -1,10 +1,10 @@
 <template>
-  <button type="button" :disabled="disabled"><slot></slot></button>
+  <button type="button" :disabled="disabled" v-bind="$attrs">
+    <slot></slot>
+  </button>
 </template>
 
 <script lang="ts" setup>
-import { defineProps } from 'vue'
-
 defineProps({
   disabled: {
     type: Boolean,
