@@ -2,19 +2,14 @@
   <button type="button" :disabled="disabled"><slot></slot></button>
 </template>
 
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
+<script lang="ts" setup>
+import { defineProps } from 'vue'
 
-export default defineComponent({
-  name: 'ProjectAbout',
-  components: {},
-  props: {
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
+defineProps({
+  disabled: {
+    type: Boolean,
+    default: false,
   },
-  setup() {},
 })
 </script>
 

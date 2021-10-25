@@ -3,17 +3,8 @@
   <img src="./assets/active-states-bookmarked.jpg" alt="" />
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import Project from './components/Project.vue'
-
-export default defineComponent({
-  name: 'App',
-  components: {
-    Project,
-  },
-  setup() {},
-})
 </script>
 
 <style lang="postcss">
