@@ -1,20 +1,15 @@
 <template>
-  <button type="button" :disabled="disabled"><slot></slot></button>
+  <button type="button" :disabled="disabled" v-bind="$attrs">
+    <slot></slot>
+  </button>
 </template>
 
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
-
-export default defineComponent({
-  name: 'ProjectAbout',
-  components: {},
-  props: {
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
+<script lang="ts" setup>
+defineProps({
+  disabled: {
+    type: Boolean,
+    default: false,
   },
-  setup() {},
 })
 </script>
 

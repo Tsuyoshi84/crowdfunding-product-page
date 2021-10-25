@@ -11,7 +11,7 @@
 </template>
 
 <script lang="ts" setup>
-import { PropType, defineProps } from 'vue'
+import { PropType } from 'vue'
 import { Project } from '../models/project'
 import ProjectReward from './ProjectReward.vue'
 
