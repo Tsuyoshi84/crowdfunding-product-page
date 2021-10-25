@@ -10,20 +10,15 @@
   </section>
 </template>
 
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
+<script lang="ts" setup>
+import { PropType, defineProps } from 'vue'
 import { Project } from '../models/project'
 import ProjectReward from './ProjectReward.vue'
 
-export default defineComponent({
-  name: 'ProjectAbout',
-  components: { ProjectReward },
-  props: {
-    project: {
-      type: Object as PropType<Readonly<Project>>,
-      required: true,
-    },
+const props = defineProps({
+  project: {
+    type: Object as PropType<Readonly<Project>>,
+    required: true,
   },
-  setup() {},
 })
 </script>
