@@ -7,21 +7,16 @@
   </section>
 </template>
 
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
+<script lang="ts" setup>
+import { PropType, defineProps } from 'vue'
 import { Project } from '../models/project'
 import PrimaryButton from './common/PrimaryButton.vue'
 
-export default defineComponent({
-  name: 'ProjectSummary',
-  components: { PrimaryButton },
-  props: {
-    project: {
-      type: Object as PropType<Project>,
-      required: true,
-    },
+defineProps({
+  project: {
+    type: Object as PropType<Project>,
+    required: true,
   },
-  setup() {},
 })
 </script>
 
