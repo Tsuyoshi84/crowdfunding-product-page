@@ -14,7 +14,7 @@
     "vue": "3.2.20"
   },
   "devDependencies": {
-    "@typescript-eslint/parser": "5.1.0",
+    "@typescript-eslint/parser": "5.2.0",
     "@vitejs/plugin-vue": "1.9.3",
     "@vue/compiler-sfc": "3.2.20",
     "cssnano": "5.0.8",
