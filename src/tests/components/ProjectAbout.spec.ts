@@ -1,4 +1,4 @@
-import { render, fireEvent } from '@testing-library/vue'
+import { render } from '@testing-library/vue'
 import ProjectAbout from '@/components/ProjectAbout.vue'
 import { Project } from '@/models/project'
 
