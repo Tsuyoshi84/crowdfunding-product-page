@@ -12,8 +12,8 @@
 
 <script lang="ts" setup>
 import { PropType } from 'vue'
-import { Project } from '../models/project'
-import ProjectReward from './ProjectReward.vue'
+import { Project } from '@/models/project'
+import ProjectReward from '@/components/ProjectReward.vue'
 
 const props = defineProps({
   project: {

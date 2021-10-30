@@ -1,6 +1,6 @@
 import { render, fireEvent } from '@testing-library/vue'
-import ProjectAbout from '~/components/ProjectAbout.vue'
-import { Project } from '../../models/project'
+import ProjectAbout from '@/components/ProjectAbout.vue'
+import { Project } from '@/models/project'
 
 const project: Project = {
   id: 1,
