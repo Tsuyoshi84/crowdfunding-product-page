@@ -3,7 +3,7 @@
     <h1 class="title">{{ project.name }}</h1>
     <p>{{ project.description }}</p>
     <primary-button @click="bookmarkClicked">Back this project</primary-button>
-    <div>Bookmarkded: {{ project.bookmarked }}</div>
+    <div>Bookmarked: {{ project.bookmarked }}</div>
   </section>
 </template>
 
