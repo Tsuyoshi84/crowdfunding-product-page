@@ -1,6 +1,6 @@
 <template>
   <project />
-  <img src="./assets/active-states-bookmarked.jpg" alt="" />
+  <img src="./assets/active-states-default.jpg" alt="" />
 </template>
 
 <script lang="ts" setup>
@@ -9,14 +9,30 @@ import Project from './components/Project.vue'
 
 <style lang="postcss">
 :root {
-  --color-primary: #3cb4ab;
-  --color-primary-dark: #157a74;
+  --color-primary: hsl(175deg 39% 52%);
+  --color-primary-dark: hsl(175deg 39% 35%);
+  --color-disabled: hsl(0deg 0% 44%);
+  --color-disabled-active: hsl(0deg 0% 54%);
 
   --spacing-2: 0.5rem;
   --spacing-4: 1rem;
   --spacing-8: 2rem;
   --spacing-12: 3rem;
   --spacing-16: 4rem;
+
+  --font-size-small: 0.75rem;
+  --font-size-medium: 1rem;
+  --font-size-large: 1.25rem;
+  --font-size-xlarge: 1.5rem;
+  --font-size-xxlarge: 1.75rem;
+  --font-size-xxxlarge: 2rem;
+
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  --font-color-inversed: #fff;
 }
 
 *,
