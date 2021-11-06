@@ -12,6 +12,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "pinia": "^2.0.2",
     "vue": "3.2.20"
   },
   "devDependencies": {
