@@ -1,9 +1,3 @@
-<template>
-  <button type="button" :disabled="disabled" v-bind="$attrs">
-    <slot></slot>
-  </button>
-</template>
-
 <script lang="ts" setup>
 defineProps({
   disabled: {
@@ -12,6 +6,12 @@ defineProps({
   },
 })
 </script>
+
+<template>
+  <button type="button" :disabled="disabled" v-bind="$attrs">
+    <slot></slot>
+  </button>
+</template>
 
 <style lang="postcss" scoped>
 button {

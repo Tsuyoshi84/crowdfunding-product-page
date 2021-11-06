@@ -1,3 +1,15 @@
+<script lang="ts" setup>
+import { PropType } from 'vue'
+import { Project } from '../models/project'
+
+defineProps({
+  project: {
+    type: Object as PropType<Project>,
+    required: true,
+  },
+})
+</script>
+
 <template>
   <section>
     <div>
@@ -16,15 +28,3 @@
     </div>
   </section>
 </template>
-
-<script lang="ts" setup>
-import { PropType } from 'vue'
-import { Project } from '../models/project'
-
-defineProps({
-  project: {
-    type: Object as PropType<Project>,
-    required: true,
-  },
-})
-</script>

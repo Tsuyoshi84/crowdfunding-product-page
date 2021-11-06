@@ -1,12 +1,3 @@
-<template>
-  <section>
-    <h1 class="title">{{ project.name }}</h1>
-    <p>{{ project.description }}</p>
-    <primary-button @click="bookmarkClicked">Back this project</primary-button>
-    <div>Bookmarked: {{ project.bookmarked }}</div>
-  </section>
-</template>
-
 <script lang="ts" setup>
 import { PropType } from 'vue'
 import { Project } from '../models/project'
@@ -27,6 +18,15 @@ function bookmarkClicked() {
   emits('toggleBookmark')
 }
 </script>
+
+<template>
+  <section>
+    <h1 class="title">{{ project.name }}</h1>
+    <p>{{ project.description }}</p>
+    <primary-button @click="bookmarkClicked">Back this project</primary-button>
+    <div>Bookmarked: {{ project.bookmarked }}</div>
+  </section>
+</template>
 
 <style scoped lang="postcss">
 .title {

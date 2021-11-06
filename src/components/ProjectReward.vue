@@ -1,11 +1,3 @@
-<template>
-  <div>{{ reward.name }}</div>
-  <div>Pledge ${{ reward.pledge }} or more</div>
-  <div>{{ reward.detail }}</div>
-  <div>{{ reward.left }} left</div>
-  <button>Select Reward</button>
-</template>
-
 <script lang="ts" setup>
 import { PropType } from 'vue'
 import { ProjectReward } from '../models/project'
@@ -17,3 +9,11 @@ defineProps({
   },
 })
 </script>
+
+<template>
+  <div>{{ reward.name }}</div>
+  <div>Pledge ${{ reward.pledge }} or more</div>
+  <div>{{ reward.detail }}</div>
+  <div>{{ reward.left }} left</div>
+  <button>Select Reward</button>
+</template>
