@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import IconBookmark from '@/assets/images/icon-bookmark.svg'
 
 const props = defineProps({
   bookmarked: {
@@ -19,14 +20,7 @@ const label = computed<string>(() => {
     :class="{ bookmarked: props.bookmarked }"
     v-bind="$attrs"
   >
-    <div class="icon">
-      <img
-        src="@/assets/images/icon-bookmark.svg"
-        alt=""
-        width="20"
-        height="20"
-      />
-    </div>
+    <icon-bookmark class="icon" />
     <span class="label">{{ label }}</span>
   </button>
 </template>
@@ -40,11 +34,18 @@ const label = computed<string>(() => {
   gap: 1rem;
 
   & .icon {
-    border-radius: 50%;
     width: 3rem;
     height: 3rem;
-    background-color: var(--color-disabled);
-    transition: background-color 0.2s ease-in-out;
+
+    & >>> circle {
+      transition: fill 0.2s ease-in-out;
+      fill: var(--color-disabled);
+    }
+
+    & >>> path {
+      transition: fill 0.2s ease-in-out;
+      fill: var(--color-disabled-light-2);
+    }
   }
 
   & .label {
@@ -56,30 +57,40 @@ const label = computed<string>(() => {
 
   &:is(:hover, :focus, :active) {
     & .icon {
-      background-color: var(--color-disabled-active);
+      & >>> circle {
+        fill: var(--color-disabled-light-1);
+      }
     }
 
     & .label {
-      color: var(--color-disabled-active);
+      color: var(--color-disabled-light-1);
     }
   }
 
   &.bookmarked {
     & .icon {
-      background-color: var(--color-primary-dark);
+      & >>> circle {
+        fill: var(--color-primary);
+      }
+
+      & >>> path {
+        fill: hsl(0, 0%, 100%);
+      }
     }
 
     & .label {
-      color: var(--color-primary-dark);
+      color: var(--color-primary);
     }
 
     &:is(:hover, :focus, :active) {
       & .icon {
-        background-color: var(--color-primary);
+        & >>> circle {
+          fill: var(--color-primary-dark);
+        }
       }
 
       & .label {
-        color: var(--color-primary);
+        color: var(--color-primary-dark);
       }
     }
   }

@@ -12,7 +12,8 @@ import Project from './components/Project.vue'
   --color-primary: hsl(175deg 39% 52%);
   --color-primary-dark: hsl(175deg 39% 35%);
   --color-disabled: hsl(0deg 0% 44%);
-  --color-disabled-active: hsl(0deg 0% 54%);
+  --color-disabled-light-1: hsl(0deg 0% 54%);
+  --color-disabled-light-2: hsl(0deg 0% 69%);
 
   --spacing-2: 0.5rem;
   --spacing-4: 1rem;
