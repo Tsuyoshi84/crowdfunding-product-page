@@ -2,6 +2,7 @@
 import { PropType } from 'vue'
 import { Project } from '../models/project'
 import PrimaryButton from './common/PrimaryButton.vue'
+import BookmarkButton from './common/BookmarkButton.vue'
 
 defineProps({
   project: {
@@ -24,7 +25,10 @@ function bookmarkClicked() {
     <h1 class="title">{{ project.name }}</h1>
     <p>{{ project.description }}</p>
     <primary-button @click="bookmarkClicked">Back this project</primary-button>
-    <div>Bookmarked: {{ project.bookmarked }}</div>
+    <bookmark-button
+      :bookmarked="project.bookmarked"
+      @click="bookmarkClicked"
+    />
   </section>
 </template>
 

@@ -7,6 +7,7 @@ module.exports = {
   transform: {
     '^.+\\.(ts|tsx)$': 'ts-jest',
     '^.+\\.vue$': 'vue-jest',
+    '^.+\\.svg$': '<rootDir>/svgTransform.js',
   },
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',

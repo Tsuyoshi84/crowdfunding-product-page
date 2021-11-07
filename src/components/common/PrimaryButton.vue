@@ -8,15 +8,21 @@ defineProps({
 </script>
 
 <template>
-  <button type="button" :disabled="disabled" v-bind="$attrs">
+  <button
+    type="button"
+    class="primary-button"
+    :disabled="disabled"
+    v-bind="$attrs"
+  >
     <slot></slot>
   </button>
 </template>
 
 <style lang="postcss" scoped>
-button {
-  color: #ffffff;
-  font-weight: bold;
+.primary-button {
+  color: var(--font-color-inversed);
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-bold);
   background-color: var(--color-primary);
   border: none;
   padding: var(--spacing-4) var(--spacing-8);
