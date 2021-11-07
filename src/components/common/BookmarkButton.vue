@@ -19,7 +19,14 @@ const label = computed<string>(() => {
     :class="{ bookmarked: props.bookmarked }"
     v-bind="$attrs"
   >
-    <div class="icon"></div>
+    <div class="icon">
+      <img
+        src="@/assets/images/icon-bookmark.svg"
+        alt=""
+        width="20"
+        height="20"
+      />
+    </div>
     <span class="label">{{ label }}</span>
   </button>
 </template>
