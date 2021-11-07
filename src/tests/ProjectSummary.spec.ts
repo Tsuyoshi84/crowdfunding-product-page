@@ -32,7 +32,6 @@ test('increments value on click', async () => {
 
   getByText('An awesome project')
   getByText('This is an awesome project')
-  getByText('Bookmarked: false')
 
   const button = getByText('Back this project')
 
