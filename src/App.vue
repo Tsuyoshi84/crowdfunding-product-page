@@ -19,9 +19,12 @@ import Project from './components/Project.vue'
 
   --spacing-2: 0.5rem;
   --spacing-4: 1rem;
+  --spacing-3: 1.5rem;
   --spacing-8: 2rem;
   --spacing-12: 3rem;
   --spacing-16: 4rem;
+  --spacing-20: 5rem;
+  --spacing-24: 6rem;
 
   --font-size-small: 0.8rem;
   --font-size-medium: 1rem;
