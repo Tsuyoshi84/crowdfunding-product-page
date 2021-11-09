@@ -34,7 +34,8 @@ import Project from './components/Project.vue'
   --font-weight-medium: 500;
   --font-weight-bold: 700;
 
-  --font-color-inversed: #fff;
+  --font-color-inversed: hsl(0deg 0% 100%);
+  --font-color-sub: hsl(0deg 0% 50%);
 }
 
 *,

@@ -14,18 +14,28 @@ defineProps({
 <template>
   <section>
     <div>
-      <div>${{ formatNumber(project.currentAmount) }}</div>
-      <div>of ${{ formatNumber(project.targetAmount) }} backed</div>
+      <div class="main">${{ formatNumber(project.currentAmount) }}</div>
+      <div class="sub">of ${{ formatNumber(project.targetAmount) }} backed</div>
     </div>
     <div>
-      <div>
-        {{ formatNumber(project.numOfBuckers) }}
-      </div>
-      <div>total backers</div>
+      <div class="main">{{ formatNumber(project.numOfBuckers) }}</div>
+      <div class="sub">total backers</div>
     </div>
     <div>
-      <div>{{ project.daysLeft }}</div>
-      <div>days left</div>
+      <div class="main">{{ project.daysLeft }}</div>
+      <div class="sub">days left</div>
     </div>
   </section>
 </template>
+
+<style scoped lang="postcss">
+.main {
+  font-size: var(--font-size-xxlarge);
+  font-weight: var(--font-weight-bold);
+}
+.sub {
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-light);
+  color: var(--font-color-sub);
+}
+</style>
