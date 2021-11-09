@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { PropType } from 'vue'
-import { Project } from '../models/project'
-import PrimaryButton from './common/PrimaryButton.vue'
-import BookmarkButton from './common/BookmarkButton.vue'
+import { Project } from '@/models/project'
+import PrimaryButton from '@/components/common/PrimaryButton.vue'
+import BookmarkButton from '@/components/common/BookmarkButton.vue'
 
 defineProps({
   project: {

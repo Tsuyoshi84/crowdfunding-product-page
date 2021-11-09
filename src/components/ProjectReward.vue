@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { PropType } from 'vue'
-import { ProjectReward } from '../models/project'
+import { ProjectReward } from '@/models/project'
 
 defineProps({
   reward: {
