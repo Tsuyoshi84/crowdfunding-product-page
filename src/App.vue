@@ -1,6 +1,7 @@
 <template>
   <project />
   <img src="@/assets/design/active-states-default.jpg" alt="" />
+  <img src="@/assets/design/mobile-design.jpg" alt="" />
 </template>
 
 <script lang="ts" setup>

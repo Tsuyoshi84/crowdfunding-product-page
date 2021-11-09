@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { PropType } from 'vue'
-import { Project } from '../models/project'
+import { Project } from '@/models/project'
+import { formatNumber } from '@/ui/format'
 
 defineProps({
   project: {
@@ -13,12 +14,12 @@ defineProps({
 <template>
   <section>
     <div>
-      <div>${{ project.currentAmount }}</div>
-      <div>of ${{ project.targetAmount }} backed</div>
+      <div>${{ formatNumber(project.currentAmount) }}</div>
+      <div>of ${{ formatNumber(project.targetAmount) }} backed</div>
     </div>
     <div>
       <div>
-        {{ project.numOfBuckers }}
+        {{ formatNumber(project.numOfBuckers) }}
       </div>
       <div>total backers</div>
     </div>
