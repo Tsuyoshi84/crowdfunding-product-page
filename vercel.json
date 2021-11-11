@@ -5,7 +5,7 @@
       "headers": [
         {
           "key": "content-security-policy",
-          "value": "default-src 'none'; img-src 'self'; script-src 'self' 'unsafe-eval'; font-src fonts.gstatic.com; style-src 'self' fonts.googleapis.com"
+          "value": "default-src 'none'; img-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; font-src fonts.gstatic.com; style-src 'self' fonts.googleapis.com"
         },
         {
           "key": "X-Content-Type-Options",
