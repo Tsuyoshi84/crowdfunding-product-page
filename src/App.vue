@@ -1,7 +1,8 @@
 <template>
-  <project />
-  <!-- <img src="@/assets/design/active-states-default.jpg" alt="" />
-  <img src="@/assets/design/mobile-design.jpg" alt="" /> -->
+  <main>
+    <header></header>
+    <project />
+  </main>
 </template>
 
 <script lang="ts" setup>
@@ -9,12 +10,17 @@ import Project from './components/Project.vue'
 </script>
 
 <style lang="postcss">
-ProjectSummary#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+header {
+  background: #ff0000;
+  background-image: url('@/assets/images/image-hero-mobile.jpg');
+  background-size: cover;
+  height: 19rem;
+  border-bottom: 1px solid #eaeaea;
+}
+
+@media (min-width: 62em) {
+  header {
+    background-image: url('@/assets/images/image-hero-desktop.jpg');
+  }
 }
 </style>
