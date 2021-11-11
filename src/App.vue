@@ -15,7 +15,7 @@ header {
   background-image: url('@/assets/images/image-hero-mobile.jpg');
   background-size: cover;
   height: 19rem;
-  border-bottom: 1px solid #eaeaea;
+  border-block-end: 1px solid #eaeaea;
 }
 
 @media (min-width: 62em) {

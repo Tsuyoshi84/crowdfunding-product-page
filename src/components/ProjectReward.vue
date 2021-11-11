@@ -42,29 +42,29 @@ const buttonLabel = computed(() => {
   & .name {
     font-size: var(--font-size-small);
     font-weight: var(--font-weight-bold);
-    margin-bottom: var(--spacing-2);
+    margin-block-end: var(--spacing-2);
   }
   & .pledge {
     font-size: var(--font-size-small);
     font-weight: var(--font-weight-bold);
     color: var(--color-text-primary);
-    margin-bottom: var(--spacing-8);
+    margin-block-end: var(--spacing-8);
   }
   & .detail {
     font-size: var(--font-size-small);
     color: var(--color-text-subtle);
     line-height: 1.5rem;
-    margin-bottom: var(--spacing-8);
+    margin-block-end: var(--spacing-8);
   }
   & .left {
     color: var(--color-text-subtle);
-    margin-bottom: var(--spacing-8);
+    margin-block-end: var(--spacing-8);
 
     & > .number {
       font-size: var(--font-size-xxxlarge);
       font-weight: var(--font-weight-bold);
       color: var(--color-text-main);
-      margin-right: var(--spacing-2);
+      margin-inline-end: var(--spacing-2);
     }
   }
   & .button-label {
