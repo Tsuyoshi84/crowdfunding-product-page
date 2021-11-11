@@ -6,7 +6,7 @@ const reward: Reward = {
   id: 1,
   name: 'Pen',
   detail: 'An awesome pen',
-  stock: 2,
+  stock: 101,
   pledge: 3,
 }
 
@@ -20,5 +20,5 @@ test('increments value on click', async () => {
   getByText('Pen')
   getByText('Pledge $3 or more')
   getByText('An awesome pen')
-  getByText('2 left')
+  getByText('101')
 })
