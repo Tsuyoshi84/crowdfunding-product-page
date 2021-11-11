@@ -6,6 +6,7 @@
   --color-disabled-light-1: hsl(0deg 0% 54%);
   --color-disabled-light-2: hsl(0deg 0% 69%);
   --color-border: hsl(0deg 0% 80%);
+  --color-background: hsl(0deg 0% 100%);
 
   --color-text-main: hsl(0deg 0% 0%);
   --color-text-inversed: hsl(0deg 0% 100%);
@@ -48,4 +49,6 @@
 body {
   font-size: 16px;
   font-family: 'Commissioner', sans-serif;
+  margin: 0;
+  padding: 0;
 }

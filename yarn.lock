@@ -1394,7 +1394,7 @@
     "@vue/compiler-core" "3.2.21"
     "@vue/shared" "3.2.21"
 
-"@vue/compiler-sfc@3.2.21", "@vue/compiler-sfc@^3.2.20":
+"@vue/compiler-sfc@3.2.21":
   version "3.2.21"
   resolved "https://registry.yarnpkg.com/@vue/compiler-sfc/-/compiler-sfc-3.2.21.tgz#42639ee49e725afb7d8f1d1940e75dc17a56002c"
   integrity sha512-+yDlUSebKpz/ovxM2vLRRx7w/gVfY767pOfYTgbIhAs+ogvIV2BsIt4fpxlThnlCNChJ+yE0ERUNoROv2kEGEQ==
@@ -5555,14 +5555,6 @@ vendors@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/vendors/-/vendors-1.0.4.tgz#e2b800a53e7a29b93506c3cf41100d16c4c4ad8e"
   integrity sha512-/juG65kTL4Cy2su4P8HjtkTxk6VmJDiOPBufWniqQ6wknac6jNiXS9vU+hO3wgusiyqWlzTbVHi0dyJqRONg3w==
-
-vite-svg-loader@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/vite-svg-loader/-/vite-svg-loader-3.1.0.tgz#58d4ed5785583afce10059125467f8bf803e3183"
-  integrity sha512-dcxLJPQXC3e2/HYrKjOi0fEIzP+Wcny1PhOTsYhnZcqLIhyjAHkMeZwWl9jXC3u+QpUZy4TyLgVnBPuiok3BUA==
-  dependencies:
-    "@vue/compiler-sfc" "^3.2.20"
-    svgo "^2.7.0"
 
 vite@2.6.13:
   version "2.6.13"

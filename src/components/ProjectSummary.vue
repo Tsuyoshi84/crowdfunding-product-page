@@ -38,7 +38,7 @@ function bookmarkClicked() {
 
 <style scoped lang="postcss">
 .container {
-  margin-bottom: var(--spacing-24);
+  margin-block-end: var(--spacing-24);
 }
 .name {
   font-size: var(--font-size-large);
@@ -48,10 +48,10 @@ function bookmarkClicked() {
 .description {
   color: var(--color-text-subtle);
   font-size: var(--font-size-small);
-  padding: 0 var(--spacing-12);
+  padding: 0 var(--spacing-8);
   text-align: center;
-  line-height: var(--spacing-3);
-  margin-bottom: var(--spacing-3);
+  line-height: var(--spacing-6);
+  margin-block-end: var(--spacing-3);
 }
 .button-container {
   display: flex;

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import IconBookmark from '@/assets/images/icon-bookmark.svg'
 
 const props = defineProps({
   bookmarked: {
@@ -21,7 +20,13 @@ const label = computed<string>(() => {
     :class="{ bookmarked: props.bookmarked }"
     v-bind="$attrs"
   >
-    <icon-bookmark class="icon" />
+    <!-- icon-bookmark.svg -->
+    <svg class="icon" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" fill-rule="evenodd">
+        <circle fill="#2F2F2F" cx="28" cy="28" r="28" />
+        <path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z" />
+      </g>
+    </svg>
     <span class="label">{{ label }}</span>
   </button>
 </template>
