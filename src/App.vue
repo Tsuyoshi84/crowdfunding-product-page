@@ -1,3 +1,7 @@
+<script lang="ts" setup>
+import Project from './components/Project.vue'
+</script>
+
 <template>
   <header>
     <img class="logo" src="@/assets/images/logo.svg" alt="crowdfund" />
@@ -6,10 +10,6 @@
     <project />
   </main>
 </template>
-
-<script lang="ts" setup>
-import Project from './components/Project.vue'
-</script>
 
 <style lang="postcss">
 header {
