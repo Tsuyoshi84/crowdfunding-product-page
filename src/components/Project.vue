@@ -2,7 +2,7 @@
 import ProjectSummary from './ProjectSummary.vue'
 import ProjectStatus from './ProjectStatus.vue'
 import ProjectAbout from './ProjectAbout.vue'
-import { useProjectStore } from '../stores/project'
+import { useProjectStore } from '@/stores/project'
 import { onMounted } from 'vue-demi'
 import { storeToRefs } from 'pinia'
 

@@ -53,6 +53,11 @@ const label = computed<string>(() => {
     font-size: var(--font-size-medium);
     font-weight: var(--font-weight-bold);
     transition: color 0.2s ease-in-out;
+    display: none;
+
+    @media (min-width: 62em) {
+      display: initial;
+    }
   }
 
   &:is(:hover, :focus, :active) {

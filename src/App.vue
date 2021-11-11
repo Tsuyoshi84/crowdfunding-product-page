@@ -1,6 +1,7 @@
 <template>
   <project />
-  <img src="@/assets/design/active-states-default.jpg" alt="" />
+  <!-- <img src="@/assets/design/active-states-default.jpg" alt="" />
+  <img src="@/assets/design/mobile-design.jpg" alt="" /> -->
 </template>
 
 <script lang="ts" setup>
@@ -11,29 +12,42 @@ import Project from './components/Project.vue'
 :root {
   --color-primary: hsl(175deg 39% 52%);
   --color-primary-dark: hsl(175deg 39% 35%);
+  --color-primary-light: hsl(175deg 39% 72%);
   --color-disabled: hsl(0deg 0% 44%);
   --color-disabled-light-1: hsl(0deg 0% 54%);
   --color-disabled-light-2: hsl(0deg 0% 69%);
+  --color-border: hsl(0deg 0% 80%);
+
+  --color-text-main: hsl(0deg 0% 0%);
+  --color-text-inversed: hsl(0deg 0% 100%);
+  --color-text-subtle: hsl(0deg 0% 50%);
+  --color-text-xsubtle: hsl(0deg 0% 70%);
+  --color-text-primary: var(--color-primary);
+  --color-text-primary-dark: var(--color-primary-dark);
+  --color-text-primary-light: var(--color-primary-light);
 
   --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
   --spacing-4: 1rem;
+  --spacing-6: 1.5rem;
   --spacing-8: 2rem;
   --spacing-12: 3rem;
   --spacing-16: 4rem;
+  --spacing-20: 5rem;
+  --spacing-24: 6rem;
 
-  --font-size-small: 0.75rem;
+  --font-size-small: 0.8rem;
   --font-size-medium: 1rem;
-  --font-size-large: 1.25rem;
-  --font-size-xlarge: 1.5rem;
-  --font-size-xxlarge: 1.75rem;
-  --font-size-xxxlarge: 2rem;
+  --font-size-large: 1.2rem;
+  --font-size-xlarge: 1.4rem;
+  --font-size-xxlarge: 1.6rem;
+  --font-size-xxxlarge: 1.8rem;
+  --font-size-xxxxlarge: 2rem;
 
   --font-weight-light: 300;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
-
-  --font-color-inversed: #fff;
 }
 
 *,

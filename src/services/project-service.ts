@@ -19,7 +19,7 @@ export async function getProject(): Promise<Project> {
         name: 'Bamboo Stand',
         detail:
           "You get an argonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you'll be added to a special Backer member list.",
-        left: 101,
+        stock: 101,
         pledge: 25,
       },
       {
@@ -27,7 +27,7 @@ export async function getProject(): Promise<Project> {
         name: 'Black Edition Stand',
         detail:
           "You get a Black Special Edition computer stand and personal thank you. You'll be added to our Backer member list. Shipping is included.",
-        left: 64,
+        stock: 64,
         pledge: 75,
       },
       {
@@ -35,7 +35,7 @@ export async function getProject(): Promise<Project> {
         name: 'Mahogany Special Edition',
         detail:
           "You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You'll be added to our Backer member list. Shipping is included",
-        left: 0,
+        stock: 0,
         pledge: 200,
       },
     ],

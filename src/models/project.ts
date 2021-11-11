@@ -15,6 +15,6 @@ export interface ProjectReward {
   id: number
   name: string
   detail: string
-  left: number
+  stock: number
   pledge: number
 }

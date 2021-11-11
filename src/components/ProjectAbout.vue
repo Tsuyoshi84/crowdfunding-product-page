@@ -13,8 +13,8 @@ const props = defineProps({
 
 <template>
   <section>
-    <h2>About this project</h2>
-    <p>{{ project.detail }}</p>
+    <h2 class="about">About this project</h2>
+    <p class="detail">{{ project.detail }}</p>
     <ProjectReward
       v-for="reward in project.rewards"
       :key="reward.id"
@@ -22,3 +22,14 @@ const props = defineProps({
     />
   </section>
 </template>
+
+<style lang="postcss" scoped>
+.about {
+  font-size: var(--font-size-large);
+}
+.detail {
+  font-size: var(--font-size-small);
+  color: var(--color-text-subtle);
+  line-height: 1.5rem;
+}
+</style>
