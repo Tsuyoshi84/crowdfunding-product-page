@@ -42,13 +42,12 @@ function bookmarkClicked() {
 }
 .name {
   font-size: var(--font-size-large);
-  padding: 0 var(--spacing-16);
+  padding: 0 var(--spacing-8);
   text-align: center;
 }
 .description {
   color: var(--color-text-subtle);
   font-size: var(--font-size-small);
-  padding: 0 var(--spacing-8);
   text-align: center;
   line-height: var(--spacing-6);
   margin-block-end: var(--spacing-3);
