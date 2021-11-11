@@ -18,8 +18,9 @@ import Project from './components/Project.vue'
   --color-border: hsl(0deg 0% 80%);
 
   --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
   --spacing-4: 1rem;
-  --spacing-3: 1.5rem;
+  --spacing-6: 1.5rem;
   --spacing-8: 2rem;
   --spacing-12: 3rem;
   --spacing-16: 4rem;
@@ -39,8 +40,11 @@ import Project from './components/Project.vue'
   --font-weight-medium: 500;
   --font-weight-bold: 700;
 
+  --font-color-main: hsl(0deg 0% 0%);
   --font-color-inversed: hsl(0deg 0% 100%);
   --font-color-sub: hsl(0deg 0% 50%);
+  --font-color-primary: var(--color-primary);
+  --font-color-primary-dark: var(--color-primary-dark);
 }
 
 *,
