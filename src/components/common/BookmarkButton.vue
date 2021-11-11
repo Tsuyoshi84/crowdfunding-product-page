@@ -17,6 +17,7 @@ const label = computed<string>(() => {
 <template>
   <button
     class="bookmark-button"
+    aria-label="Toggle bookmark"
     :class="{ bookmarked: props.bookmarked }"
     v-bind="$attrs"
   >
