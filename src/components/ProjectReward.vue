@@ -20,16 +20,20 @@ const buttonLabel = computed(() => {
 
 <template>
   <section class="container" :class="{ 'out-of-stock': isOutOfStock }">
-    <div class="name">{{ reward.name }}</div>
-    <div class="pledge">Pledge ${{ reward.pledge }} or more</div>
-    <div class="detail">{{ reward.detail }}</div>
-    <div class="left">
-      <span class="number">{{ reward.stock }}</span
-      >left
+    <div class="basic-info">
+      <div class="name">{{ reward.name }}</div>
+      <div class="pledge">Pledge ${{ reward.pledge }} or more</div>
     </div>
-    <primary-button :disabled="isOutOfStock"
-      ><span class="button-label">{{ buttonLabel }}</span></primary-button
-    >
+    <div class="detail">{{ reward.detail }}</div>
+    <div class="stock-info">
+      <div class="left">
+        <span class="number">{{ reward.stock }}</span
+        >left
+      </div>
+      <primary-button :disabled="isOutOfStock"
+        ><span class="button-label">{{ buttonLabel }}</span></primary-button
+      >
+    </div>
   </section>
 </template>
 
@@ -39,32 +43,46 @@ const buttonLabel = computed(() => {
   border: 1px solid var(--color-border);
   border-radius: var(--spacing-2);
 
-  & .name {
-    font-size: var(--font-size-small);
-    font-weight: var(--font-weight-bold);
-    margin-block-end: var(--spacing-2);
+  & .basic-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    & .name {
+      font-size: var(--font-size-small);
+      font-weight: var(--font-weight-bold);
+      margin-block-end: var(--spacing-2);
+    }
+    & .pledge {
+      font-size: var(--font-size-small);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text-primary);
+      margin-block-end: var(--spacing-8);
+    }
   }
-  & .pledge {
-    font-size: var(--font-size-small);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-text-primary);
-    margin-block-end: var(--spacing-8);
-  }
+
   & .detail {
     font-size: var(--font-size-small);
     color: var(--color-text-subtle);
     line-height: 1.5rem;
     margin-block-end: var(--spacing-8);
   }
-  & .left {
-    color: var(--color-text-subtle);
+  & .stock-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--spacing-6);
     margin-block-end: var(--spacing-8);
+    & .left {
+      color: var(--color-text-subtle);
 
-    & > .number {
-      font-size: var(--font-size-xxxlarge);
-      font-weight: var(--font-weight-bold);
-      color: var(--color-text-main);
-      margin-inline-end: var(--spacing-2);
+      & > .number {
+        font-size: var(--font-size-xxxlarge);
+        font-weight: var(--font-weight-bold);
+        color: var(--color-text-main);
+        margin-inline-end: var(--spacing-2);
+      }
     }
   }
   & .button-label {
@@ -85,6 +103,17 @@ const buttonLabel = computed(() => {
       & > .number {
         color: var(--color-text-subtle);
       }
+    }
+  }
+}
+
+@media (min-width: 62em) {
+  .container {
+    & .basic-info {
+      flex-direction: row;
+    }
+    & .stock-info {
+      flex-direction: row;
     }
   }
 }

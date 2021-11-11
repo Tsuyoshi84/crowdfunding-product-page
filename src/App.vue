@@ -1,3 +1,7 @@
+<script lang="ts" setup>
+import Project from './components/Project.vue'
+</script>
+
 <template>
   <header>
     <img class="logo" src="@/assets/images/logo.svg" alt="crowdfund" />
@@ -7,17 +11,14 @@
   </main>
 </template>
 
-<script lang="ts" setup>
-import Project from './components/Project.vue'
-</script>
-
 <style lang="postcss">
 header {
-  background-image: linear-gradient(
-      to bottom,
-      hsla(0deg, 0%, 0%, 0.52),
-      hsla(0deg, 0%, 100%, 0)
-    ),
+  --gradient: linear-gradient(
+    to bottom,
+    hsla(0deg, 0%, 0%, 0.52),
+    hsla(0deg, 0%, 100%, 0)
+  );
+  background-image: var(--gradient),
     url('@/assets/images/image-hero-mobile.jpg');
   background-size: cover;
   height: 19rem;
@@ -31,7 +32,8 @@ header {
 
 @media (min-width: 62em) {
   header {
-    background-image: url('@/assets/images/image-hero-desktop.jpg');
+    background-image: var(--gradient),
+      url('@/assets/images/image-hero-desktop.jpg');
   }
 }
 </style>
