@@ -64,4 +64,18 @@ defineProps({
   height: 1px;
   background-color: var(--color-border);
 }
+
+@media (min-width: 62em) {
+  .info-container {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .sub-info-container {
+    align-items: flex-start;
+  }
+  .border {
+    display: none;
+  }
+}
 </style>

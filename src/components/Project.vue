@@ -45,11 +45,10 @@ async function bookmarkToggled() {
   background-color: var(--color-background);
   border-radius: var(--spacing-2);
   margin: calc(var(--spacing-12) * -1) var(--spacing-6);
-  padding: var(--spacing-8);
+  padding: 0 var(--spacing-8);
 }
 .logo {
   --size: 3.5rem;
-  margin-inline-end: 1rem;
   width: var(--size);
   height: var(--size);
   margin-block-start: calc(var(--size) * -0.5);

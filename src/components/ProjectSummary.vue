@@ -38,6 +38,7 @@ function bookmarkClicked() {
 
 <style scoped lang="postcss">
 .container {
+  width: 100%;
   margin-block-end: var(--spacing-24);
 }
 .name {
@@ -55,5 +56,15 @@ function bookmarkClicked() {
 .button-container {
   display: flex;
   justify-content: center;
+}
+
+@media (min-width: 62em) {
+  .description {
+    margin-block-end: var(--spacing-8);
+  }
+  .button-container {
+    width: 100%;
+    justify-content: space-between;
+  }
 }
 </style>
