@@ -4,6 +4,10 @@
       "source": "/(.*)",
       "headers": [
         {
+          "key": "content-security-policy",
+          "value": "default-src 'none'; img-src 'self'; script-src 'self'; style-src 'self'"
+        },
+        {
           "key": "X-Content-Type-Options",
           "value": "nosniff"
         },
