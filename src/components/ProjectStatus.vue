@@ -55,7 +55,7 @@ defineProps({
   font-size: var(--font-size-small);
   font-weight: var(--font-weight-light);
   letter-spacing: 0.05rem;
-  color: var(--font-color-sub);
+  color: var(--color-text-subtle);
   display: flex;
   justify-content: center;
 }

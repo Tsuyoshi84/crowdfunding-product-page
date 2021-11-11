@@ -12,10 +12,19 @@ import Project from './components/Project.vue'
 :root {
   --color-primary: hsl(175deg 39% 52%);
   --color-primary-dark: hsl(175deg 39% 35%);
+  --color-primary-light: hsl(175deg 39% 72%);
   --color-disabled: hsl(0deg 0% 44%);
   --color-disabled-light-1: hsl(0deg 0% 54%);
   --color-disabled-light-2: hsl(0deg 0% 69%);
   --color-border: hsl(0deg 0% 80%);
+
+  --color-text-main: hsl(0deg 0% 0%);
+  --color-text-inversed: hsl(0deg 0% 100%);
+  --color-text-subtle: hsl(0deg 0% 50%);
+  --color-text-xsubtle: hsl(0deg 0% 70%);
+  --color-text-primary: var(--color-primary);
+  --color-text-primary-dark: var(--color-primary-dark);
+  --color-text-primary-light: var(--color-primary-light);
 
   --spacing-2: 0.5rem;
   --spacing-3: 0.75rem;
@@ -39,12 +48,6 @@ import Project from './components/Project.vue'
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
-
-  --font-color-main: hsl(0deg 0% 0%);
-  --font-color-inversed: hsl(0deg 0% 100%);
-  --font-color-sub: hsl(0deg 0% 50%);
-  --font-color-primary: var(--color-primary);
-  --font-color-primary-dark: var(--color-primary-dark);
 }
 
 *,

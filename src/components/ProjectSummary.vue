@@ -46,7 +46,7 @@ function bookmarkClicked() {
   text-align: center;
 }
 .description {
-  color: var(--font-color-sub);
+  color: var(--color-text-subtle);
   font-size: var(--font-size-small);
   padding: 0 var(--spacing-12);
   text-align: center;

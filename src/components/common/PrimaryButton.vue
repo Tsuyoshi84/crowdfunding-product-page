@@ -20,7 +20,7 @@ defineProps({
 
 <style lang="postcss" scoped>
 .primary-button {
-  color: var(--font-color-inversed);
+  color: var(--color-text-inversed);
   font-size: var(--font-size-medium);
   font-weight: var(--font-weight-bold);
   background-color: var(--color-primary);
@@ -32,6 +32,10 @@ defineProps({
 
   &:is(:hover, :focus, :active) {
     background-color: var(--color-primary-dark);
+  }
+  &:disabled {
+    background-color: var(--color-disabled-light-2);
+    cursor: not-allowed;
   }
 }
 </style>

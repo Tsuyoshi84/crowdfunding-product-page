@@ -6,7 +6,7 @@ const reward: Reward = {
   id: 1,
   name: 'Pen',
   detail: 'An awesome pen',
-  left: 2,
+  stock: 2,
   pledge: 3,
 }
 

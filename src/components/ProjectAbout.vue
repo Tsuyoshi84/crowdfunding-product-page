@@ -29,7 +29,7 @@ const props = defineProps({
 }
 .detail {
   font-size: var(--font-size-small);
-  color: var(--font-color-sub);
+  color: var(--color-text-subtle);
   line-height: 1.5rem;
 }
 </style>
