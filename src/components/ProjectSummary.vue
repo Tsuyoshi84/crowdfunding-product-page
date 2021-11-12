@@ -13,7 +13,12 @@ defineProps({
 
 const emits = defineEmits<{
   (e: 'toggleBookmark'): void
+  (e: 'clickBackProject'): void
 }>()
+
+function backProjectClicked() {
+  emits('clickBackProject')
+}
 
 function bookmarkClicked() {
   emits('toggleBookmark')
@@ -25,7 +30,7 @@ function bookmarkClicked() {
     <h1 class="name">{{ project.name }}</h1>
     <p class="description">{{ project.description }}</p>
     <div class="button-container">
-      <primary-button @click="bookmarkClicked"
+      <primary-button @click="backProjectClicked"
         >Back this project</primary-button
       >
       <bookmark-button
