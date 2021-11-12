@@ -2,6 +2,7 @@
 import { PropType } from 'vue'
 import { Project } from '@/models/project'
 import { formatNumber } from '@/ui/format'
+import ProjectProgress from '@/components/ProjectProgress.vue'
 
 defineProps({
   project: {
@@ -28,6 +29,9 @@ defineProps({
       <div class="sub">days left</div>
     </div>
   </section>
+  <div class="progress-container">
+    <ProjectProgress :project="project" />
+  </div>
 </template>
 
 <style scoped lang="postcss">
@@ -63,6 +67,12 @@ defineProps({
   width: 5rem;
   height: 1px;
   background-color: var(--color-border);
+}
+
+.progress-container {
+  width: 100%;
+  height: var(--spacing-4);
+  margin: var(--spacing-8) 0 var(--spacing-24);
 }
 
 @media (min-width: 62em) {
