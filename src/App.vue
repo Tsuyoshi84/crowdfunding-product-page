@@ -4,7 +4,13 @@ import Project from './components/Project.vue'
 
 <template>
   <header>
-    <img class="logo" src="@/assets/images/logo.svg" alt="crowdfund" />
+    <img
+      class="logo"
+      src="@/assets/images/logo.svg"
+      alt="crowdfund"
+      width="128"
+      height="20"
+    />
   </header>
   <main>
     <project />
