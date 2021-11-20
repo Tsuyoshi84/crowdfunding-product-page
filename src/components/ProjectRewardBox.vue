@@ -1,32 +1,34 @@
 <script lang="ts" setup>
-import { computed, PropType } from 'vue'
+import { computed, PropType, ref } from 'vue'
 import { ProjectReward } from '@/models/project'
+import ToggleMark from '@/components/common/ToggleMark.vue'
+import ProjectRewardBoxForm from '@/components/ProjectRewardBoxForm.vue'
 
 const props = defineProps({
   reward: {
     type: Object as PropType<ProjectReward | null>,
     default: null,
   },
+  isSelected: {
+    type: Boolean,
+    default: false,
+  },
 })
+
+const emit = defineEmits<{
+  (e: 'select'): void
+  (e: 'submit'): void
+}>()
 
 const isOutOfStock = computed(() => {
   if (props.reward === null) return false
 
   return props.reward.stock === 0
 })
-
-const isNoReward = computed(() => {
-  return props.reward === null
-})
-
-const name = computed(() => {
-  return props.reward?.name ?? 'Pledge with no reward'
-})
-
-const pledge = computed(() => {
-  return props.reward?.pledge ?? 0
-})
-
+const isNoReward = computed(() => props.reward === null)
+const name = computed(() => props.reward?.name ?? 'Pledge with no reward')
+const minPledge = computed(() => props.reward?.pledge ?? 0)
+const stock = computed(() => props.reward?.stock ?? 0)
 const detail = computed(() => {
   return (
     props.reward?.detail ??
@@ -34,17 +36,31 @@ const detail = computed(() => {
   )
 })
 
-const stock = computed(() => {
-  return props.reward?.stock ?? 0
-})
+function nameClicked() {
+  if (isOutOfStock.value) return
+
+  emit('select')
+}
+
+const inputPledge = ref<number>(minPledge.value)
 </script>
 
 <template>
-  <section class="container" :class="{ 'out-of-stock': isOutOfStock }">
-    <div class="basic-info">
-      <div class="name">{{ name }}</div>
-      <div class="pledge">
-        <template v-if="!isNoReward">Pledge ${{ pledge }} or more</template>
+  <section
+    class="container"
+    :class="{ 'out-of-stock': isOutOfStock, selected: isSelected }"
+  >
+    <div class="basic-info" @click="nameClicked">
+      <div class="mark-wrapper">
+        <toggle-mark :on="isSelected" />
+      </div>
+      <div class="name-wrapper">
+        <div class="name">{{ name }}</div>
+        <div class="pledge">
+          <template v-if="!isNoReward"
+            >Pledge ${{ minPledge }} or more</template
+          >
+        </div>
       </div>
     </div>
     <div class="detail">{{ detail }}</div>
@@ -54,6 +70,14 @@ const stock = computed(() => {
         >left
       </div>
     </div>
+    <div class="form-wrapper">
+      <project-reward-box-form
+        v-if="isSelected"
+        v-model="inputPledge"
+        :min-pledge="minPledge"
+        @submit="emit('submit')"
+      />
+    </div>
   </section>
 </template>
 
@@ -62,26 +86,51 @@ const stock = computed(() => {
   padding: var(--spacing-6);
   border: 1px solid var(--color-border);
   border-radius: var(--spacing-2);
+  transition: border 0.2s;
 
   & .basic-info {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 0 var(--spacing-8);
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--spacing-4);
+    margin-block-end: var(--spacing-6);
 
+    & .name-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    & .mark-wrapper {
+      width: var(--font-size-large);
+      height: var(--font-size-large);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
     & .name {
       font-size: var(--font-size-small);
       font-weight: var(--font-weight-bold);
       margin-block-end: var(--spacing-2);
+      transition: color 0.2s;
     }
     & .pledge {
       font-size: var(--font-size-small);
       font-weight: var(--font-weight-bold);
       color: var(--color-text-primary);
-      margin-block-end: var(--spacing-8);
+    }
+
+    &:hover {
+      cursor: pointer;
+      & .mark-wrapper {
+        opacity: 1;
+      }
+      & .name {
+        color: var(--color-text-primary);
+      }
     }
   }
-
   & .detail {
     font-size: var(--font-size-small);
     color: var(--color-text-subtle);
@@ -106,24 +155,47 @@ const stock = computed(() => {
       }
     }
   }
+  & .form-wrapper {
+    margin-block-start: var(--spacing-12);
+  }
   & .button-label {
     font-size: var(--font-size-small);
   }
+}
 
-  &.out-of-stock {
+.container.out-of-stock {
+  & .basic-info {
     & .name {
       color: var(--color-text-subtle);
     }
     & .pledge {
       color: var(--color-text-primary-light);
     }
-    & .detail {
-      color: var(--color-text-xsubtle);
-    }
-    & .left {
-      & > .number {
+    &:hover {
+      cursor: default;
+      & .name {
         color: var(--color-text-subtle);
       }
+    }
+  }
+
+  & .detail {
+    color: var(--color-text-xsubtle);
+  }
+  & .left {
+    & > .number {
+      color: var(--color-text-subtle);
+    }
+  }
+}
+
+.container.selected {
+  border-color: var(--color-primary);
+  border-width: 2px;
+
+  & .basic-info {
+    & .mark-wrapper {
+      opacity: 1;
     }
   }
 }

@@ -16,8 +16,10 @@ const props = defineProps({
 
 const emit = defineEmits<{
   (e: 'clickClose'): void
+  (e: 'submit'): void
 }>()
 
+const noRewardId = 0
 const dialog = ref<null | HTMLElement>(null)
 
 function openModal() {
@@ -36,6 +38,16 @@ function closeModal() {
   }
 
   ;(dialog.value as any).close()
+}
+
+const selectedRewardId = ref<number | null>(null)
+
+function selectReward(rewardId: number) {
+  selectedRewardId.value = rewardId
+}
+
+function isSelected(rewardId: number): boolean {
+  return rewardId === selectedRewardId.value
 }
 
 watch(
@@ -66,11 +78,18 @@ watch(
       Want to support us in bringing {{ props.project.name }} out in the world?
     </p>
     <div class="rewards-container">
-      <project-reward-box />
+      <project-reward-box
+        :is-selected="isSelected(noRewardId)"
+        @select="selectReward(noRewardId)"
+        @submit="emit('submit')"
+      />
       <project-reward-box
         v-for="reward in props.project.rewards"
         :key="reward.id"
         :reward="reward"
+        :is-selected="isSelected(reward.id)"
+        @select="selectReward(reward.id)"
+        @submit="emit('submit')"
       />
     </div>
   </dialog>
