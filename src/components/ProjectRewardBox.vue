@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { computed, PropType, ref } from 'vue'
 import { ProjectReward } from '@/models/project'
-import PrimaryButton from '@/components/common/PrimaryButton.vue'
 import ToggleMark from '@/components/common/ToggleMark.vue'
+import ProjectRewardBoxForm from '@/components/ProjectRewardBoxForm.vue'
 
 const props = defineProps({
   reward: {
@@ -27,7 +27,7 @@ const isOutOfStock = computed(() => {
 })
 const isNoReward = computed(() => props.reward === null)
 const name = computed(() => props.reward?.name ?? 'Pledge with no reward')
-const pledge = computed(() => props.reward?.pledge ?? 0)
+const minPledge = computed(() => props.reward?.pledge ?? 0)
 const stock = computed(() => props.reward?.stock ?? 0)
 const detail = computed(() => {
   return (
@@ -42,8 +42,8 @@ function nameClicked() {
   emit('select')
 }
 
-const inputPledge = ref<number>(25)
-const canSubmit = computed(() => inputPledge.value > 0)
+const inputPledge = ref<number>(minPledge.value)
+// const canSubmit = computed(() => inputPledge.value > 0)
 </script>
 
 <template>
@@ -57,7 +57,7 @@ const canSubmit = computed(() => inputPledge.value > 0)
       </div>
       <div class="name">{{ name }}</div>
       <div class="pledge">
-        <template v-if="!isNoReward">Pledge ${{ pledge }} or more</template>
+        <template v-if="!isNoReward">Pledge ${{ minPledge }} or more</template>
       </div>
     </div>
     <div class="detail">{{ detail }}</div>
@@ -67,13 +67,19 @@ const canSubmit = computed(() => inputPledge.value > 0)
         >left
       </div>
     </div>
-    <form v-if="isSelected" @submit.prevent="emit('submit')">
+    <project-reward-box-form
+      v-if="isSelected"
+      v-model="inputPledge"
+      :min-pledge="minPledge"
+      @submit="emit('submit')"
+    />
+    <!-- <form v-if="isSelected" @submit.prevent="emit('submit')">
       <label>Enter your pledge</label>
       <input v-model.number="inputPledge" type="number" min="0" />
       <primary-button type="submit" :disabled="!canSubmit"
         >Continue</primary-button
       >
-    </form>
+    </form> -->
   </section>
 </template>
 
