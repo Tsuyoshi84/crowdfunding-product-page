@@ -54,9 +54,13 @@ const inputPledge = ref<number>(minPledge.value)
       <div class="mark-wrapper">
         <toggle-mark :on="isSelected" />
       </div>
-      <div class="name">{{ name }}</div>
-      <div class="pledge">
-        <template v-if="!isNoReward">Pledge ${{ minPledge }} or more</template>
+      <div class="name-wrapper">
+        <div class="name">{{ name }}</div>
+        <div class="pledge">
+          <template v-if="!isNoReward"
+            >Pledge ${{ minPledge }} or more</template
+          >
+        </div>
       </div>
     </div>
     <div class="detail">{{ detail }}</div>
@@ -66,12 +70,14 @@ const inputPledge = ref<number>(minPledge.value)
         >left
       </div>
     </div>
-    <project-reward-box-form
-      v-if="isSelected"
-      v-model="inputPledge"
-      :min-pledge="minPledge"
-      @submit="emit('submit')"
-    />
+    <div class="form-wrapper">
+      <project-reward-box-form
+        v-if="isSelected"
+        v-model="inputPledge"
+        :min-pledge="minPledge"
+        @submit="emit('submit')"
+      />
+    </div>
   </section>
 </template>
 
@@ -84,9 +90,18 @@ const inputPledge = ref<number>(minPledge.value)
 
   & .basic-info {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 0 var(--spacing-8);
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--spacing-4);
+    margin-block-end: var(--spacing-6);
+
+    & .name-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
 
     & .mark-wrapper {
       width: var(--font-size-large);
@@ -104,7 +119,6 @@ const inputPledge = ref<number>(minPledge.value)
       font-size: var(--font-size-small);
       font-weight: var(--font-weight-bold);
       color: var(--color-text-primary);
-      margin-block-end: var(--spacing-8);
     }
 
     &:hover {
@@ -140,6 +154,9 @@ const inputPledge = ref<number>(minPledge.value)
         margin-inline-end: var(--spacing-2);
       }
     }
+  }
+  & .form-wrapper {
+    margin-block-start: var(--spacing-12);
   }
   & .button-label {
     font-size: var(--font-size-small);
