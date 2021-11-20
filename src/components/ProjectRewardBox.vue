@@ -43,7 +43,6 @@ function nameClicked() {
 }
 
 const inputPledge = ref<number>(minPledge.value)
-// const canSubmit = computed(() => inputPledge.value > 0)
 </script>
 
 <template>
@@ -73,13 +72,6 @@ const inputPledge = ref<number>(minPledge.value)
       :min-pledge="minPledge"
       @submit="emit('submit')"
     />
-    <!-- <form v-if="isSelected" @submit.prevent="emit('submit')">
-      <label>Enter your pledge</label>
-      <input v-model.number="inputPledge" type="number" min="0" />
-      <primary-button type="submit" :disabled="!canSubmit"
-        >Continue</primary-button
-      >
-    </form> -->
   </section>
 </template>
 
