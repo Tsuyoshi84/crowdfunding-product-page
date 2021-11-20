@@ -2,6 +2,7 @@
 import { computed, PropType, ref } from 'vue'
 import { ProjectReward } from '@/models/project'
 import PrimaryButton from '@/components/common/PrimaryButton.vue'
+import ToggleMark from '@/components/common/ToggleMark.vue'
 
 const props = defineProps({
   reward: {
@@ -51,6 +52,9 @@ const canSubmit = computed(() => inputPledge.value > 0)
     :class="{ 'out-of-stock': isOutOfStock, selected: isSelected }"
   >
     <div class="basic-info" @click="nameClicked">
+      <div class="mark-wrapper">
+        <toggle-mark :on="isSelected" />
+      </div>
       <div class="name">{{ name }}</div>
       <div class="pledge">
         <template v-if="!isNoReward">Pledge ${{ pledge }} or more</template>
@@ -86,6 +90,12 @@ const canSubmit = computed(() => inputPledge.value > 0)
     justify-content: space-between;
     padding: 0 var(--spacing-8);
 
+    & .mark-wrapper {
+      width: var(--font-size-large);
+      height: var(--font-size-large);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
     & .name {
       font-size: var(--font-size-small);
       font-weight: var(--font-weight-bold);
@@ -101,7 +111,9 @@ const canSubmit = computed(() => inputPledge.value > 0)
 
     &:hover {
       cursor: pointer;
-
+      & .mark-wrapper {
+        opacity: 1;
+      }
       & .name {
         color: var(--color-text-primary);
       }
@@ -134,35 +146,42 @@ const canSubmit = computed(() => inputPledge.value > 0)
   & .button-label {
     font-size: var(--font-size-small);
   }
-  &.out-of-stock {
-    & .basic-info {
-      & .name {
-        color: var(--color-text-subtle);
-      }
-      & .pledge {
-        color: var(--color-text-primary-light);
-      }
-      &:hover {
-        cursor: default;
-        & .name {
-          color: var(--color-text-subtle);
-        }
-      }
-    }
+}
 
-    & .detail {
-      color: var(--color-text-xsubtle);
+.container.out-of-stock {
+  & .basic-info {
+    & .name {
+      color: var(--color-text-subtle);
     }
-    & .left {
-      & > .number {
+    & .pledge {
+      color: var(--color-text-primary-light);
+    }
+    &:hover {
+      cursor: default;
+      & .name {
         color: var(--color-text-subtle);
       }
     }
   }
 
-  &.selected {
-    border-color: var(--color-primary);
-    border-width: 2px;
+  & .detail {
+    color: var(--color-text-xsubtle);
+  }
+  & .left {
+    & > .number {
+      color: var(--color-text-subtle);
+    }
+  }
+}
+
+.container.selected {
+  border-color: var(--color-primary);
+  border-width: 2px;
+
+  & .basic-info {
+    & .mark-wrapper {
+      opacity: 1;
+    }
   }
 }
 
