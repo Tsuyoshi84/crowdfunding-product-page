@@ -26,6 +26,10 @@ function closeModal() {
   showsModal.value = false
 }
 
+function showCompleteModal() {
+  closeModal()
+}
+
 async function bookmarkToggled() {
   await toggleBookmarked()
 }
@@ -56,6 +60,7 @@ async function bookmarkToggled() {
     :project="project"
     :open="showsModal"
     @click-close="closeModal"
+    @submit="showCompleteModal"
   />
 </template>
 

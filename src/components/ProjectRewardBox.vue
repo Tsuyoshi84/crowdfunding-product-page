@@ -1,32 +1,33 @@
 <script lang="ts" setup>
-import { computed, PropType } from 'vue'
+import { computed, PropType, ref } from 'vue'
 import { ProjectReward } from '@/models/project'
+import PrimaryButton from '@/components/common/PrimaryButton.vue'
 
 const props = defineProps({
   reward: {
     type: Object as PropType<ProjectReward | null>,
     default: null,
   },
+  isSelected: {
+    type: Boolean,
+    default: false,
+  },
 })
+
+const emit = defineEmits<{
+  (e: 'select'): void
+  (e: 'submit'): void
+}>()
 
 const isOutOfStock = computed(() => {
   if (props.reward === null) return false
 
   return props.reward.stock === 0
 })
-
-const isNoReward = computed(() => {
-  return props.reward === null
-})
-
-const name = computed(() => {
-  return props.reward?.name ?? 'Pledge with no reward'
-})
-
-const pledge = computed(() => {
-  return props.reward?.pledge ?? 0
-})
-
+const isNoReward = computed(() => props.reward === null)
+const name = computed(() => props.reward?.name ?? 'Pledge with no reward')
+const pledge = computed(() => props.reward?.pledge ?? 0)
+const stock = computed(() => props.reward?.stock ?? 0)
 const detail = computed(() => {
   return (
     props.reward?.detail ??
@@ -34,14 +35,17 @@ const detail = computed(() => {
   )
 })
 
-const stock = computed(() => {
-  return props.reward?.stock ?? 0
-})
+const inputPledge = ref<number>(25)
+
+const canSubmit = computed(() => inputPledge.value > 0)
 </script>
 
 <template>
-  <section class="container" :class="{ 'out-of-stock': isOutOfStock }">
-    <div class="basic-info">
+  <section
+    class="container"
+    :class="{ 'out-of-stock': isOutOfStock, selected: isSelected }"
+  >
+    <div class="basic-info" @click="emit('select')">
       <div class="name">{{ name }}</div>
       <div class="pledge">
         <template v-if="!isNoReward">Pledge ${{ pledge }} or more</template>
@@ -54,6 +58,13 @@ const stock = computed(() => {
         >left
       </div>
     </div>
+    <form v-if="isSelected" @submit.prevent="emit('submit')">
+      <label>Enter your pledge</label>
+      <input v-model.number="inputPledge" type="number" min="0" />
+      <primary-button type="submit" :disabled="!canSubmit"
+        >Continue</primary-button
+      >
+    </form>
   </section>
 </template>
 
@@ -62,6 +73,7 @@ const stock = computed(() => {
   padding: var(--spacing-6);
   border: 1px solid var(--color-border);
   border-radius: var(--spacing-2);
+  transition: border 0.2s;
 
   & .basic-info {
     display: flex;
@@ -73,12 +85,21 @@ const stock = computed(() => {
       font-size: var(--font-size-small);
       font-weight: var(--font-weight-bold);
       margin-block-end: var(--spacing-2);
+      transition: color 0.2s;
     }
     & .pledge {
       font-size: var(--font-size-small);
       font-weight: var(--font-weight-bold);
       color: var(--color-text-primary);
       margin-block-end: var(--spacing-8);
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      & .name {
+        color: var(--color-text-primary);
+      }
     }
   }
 
@@ -125,6 +146,11 @@ const stock = computed(() => {
         color: var(--color-text-subtle);
       }
     }
+  }
+
+  &.selected {
+    border-color: var(--color-primary);
+    border-width: 2px;
   }
 }
 

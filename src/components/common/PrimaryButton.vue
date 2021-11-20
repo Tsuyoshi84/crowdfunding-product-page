@@ -1,15 +1,21 @@
 <script lang="ts" setup>
+import { PropType } from 'vue'
+
 defineProps({
   disabled: {
     type: Boolean,
     default: false,
+  },
+  type: {
+    type: String as PropType<'button' | 'submit'>,
+    default: 'button',
   },
 })
 </script>
 
 <template>
   <button
-    type="button"
+    :type="type"
     class="primary-button"
     :disabled="disabled"
     v-bind="$attrs"
