@@ -35,8 +35,13 @@ const detail = computed(() => {
   )
 })
 
-const inputPledge = ref<number>(25)
+function nameClicked() {
+  if (isOutOfStock.value) return
 
+  emit('select')
+}
+
+const inputPledge = ref<number>(25)
 const canSubmit = computed(() => inputPledge.value > 0)
 </script>
 
@@ -45,7 +50,7 @@ const canSubmit = computed(() => inputPledge.value > 0)
     class="container"
     :class="{ 'out-of-stock': isOutOfStock, selected: isSelected }"
   >
-    <div class="basic-info" @click="emit('select')">
+    <div class="basic-info" @click="nameClicked">
       <div class="name">{{ name }}</div>
       <div class="pledge">
         <template v-if="!isNoReward">Pledge ${{ pledge }} or more</template>
@@ -102,7 +107,6 @@ const canSubmit = computed(() => inputPledge.value > 0)
       }
     }
   }
-
   & .detail {
     font-size: var(--font-size-small);
     color: var(--color-text-subtle);
@@ -130,14 +134,22 @@ const canSubmit = computed(() => inputPledge.value > 0)
   & .button-label {
     font-size: var(--font-size-small);
   }
-
   &.out-of-stock {
-    & .name {
-      color: var(--color-text-subtle);
+    & .basic-info {
+      & .name {
+        color: var(--color-text-subtle);
+      }
+      & .pledge {
+        color: var(--color-text-primary-light);
+      }
+      &:hover {
+        cursor: default;
+        & .name {
+          color: var(--color-text-subtle);
+        }
+      }
     }
-    & .pledge {
-      color: var(--color-text-primary-light);
-    }
+
     & .detail {
       color: var(--color-text-xsubtle);
     }
