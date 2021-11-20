@@ -5,14 +5,26 @@ import ProjectAbout from './ProjectAbout.vue'
 import { useProjectStore } from '@/stores/project'
 import { onMounted } from 'vue-demi'
 import { storeToRefs } from 'pinia'
+import ProjectModal from './ProjectModal.vue'
+import { ref } from 'vue'
 
 const store = useProjectStore()
 const { fetchProject, toggleBookmarked } = store
 const { project } = storeToRefs(store)
+const showsModal = ref(false)
+const modal = ref<InstanceType<typeof ProjectModal>>()
 
 onMounted(async () => {
   await fetchProject()
 })
+
+function openModal() {
+  showsModal.value = true
+}
+
+function closeModal() {
+  showsModal.value = false
+}
 
 async function bookmarkToggled() {
   await toggleBookmarked()
@@ -29,11 +41,22 @@ async function bookmarkToggled() {
       alt=""
     />
     <template v-if="project">
-      <project-summary :project="project" @toggle-bookmark="bookmarkToggled" />
+      <project-summary
+        :project="project"
+        @click-back-project="openModal"
+        @toggle-bookmark="bookmarkToggled"
+      />
       <project-status :project="project" />
       <project-about :project="project" />
     </template>
   </article>
+  <project-modal
+    v-if="project"
+    ref="modal"
+    :project="project"
+    :open="showsModal"
+    @click-close="closeModal"
+  />
 </template>
 
 <style lang="postcss" scoped>

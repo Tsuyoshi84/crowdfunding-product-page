@@ -11,13 +11,10 @@ defineProps({
   },
 })
 
-const emits = defineEmits<{
+const emit = defineEmits<{
   (e: 'toggleBookmark'): void
+  (e: 'clickBackProject'): void
 }>()
-
-function bookmarkClicked() {
-  emits('toggleBookmark')
-}
 </script>
 
 <template>
@@ -25,12 +22,13 @@ function bookmarkClicked() {
     <h1 class="name">{{ project.name }}</h1>
     <p class="description">{{ project.description }}</p>
     <div class="button-container">
-      <primary-button @click="bookmarkClicked"
+      <primary-button @click="emit('clickBackProject')"
         >Back this project</primary-button
       >
       <bookmark-button
+        data-testid="bookmark-button"
         :bookmarked="project.bookmarked"
-        @click="bookmarkClicked"
+        @click="emit('toggleBookmark')"
       />
     </div>
   </section>

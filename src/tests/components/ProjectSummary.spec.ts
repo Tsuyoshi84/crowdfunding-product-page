@@ -24,7 +24,7 @@ const project: Project = {
 }
 
 test('increments value on click', async () => {
-  const { getByText, emitted } = render(ProjectSummary, {
+  const { getByText, getByTestId, emitted } = render(ProjectSummary, {
     props: {
       project,
     },
@@ -34,9 +34,12 @@ test('increments value on click', async () => {
   getByText('This is an awesome project')
 
   const button = getByText('Back this project')
-
   await fireEvent.click(button)
   await fireEvent.click(button)
+  expect(emitted()['clickBackProject']).toHaveLength(2)
 
+  const bookmarkButton = getByTestId('bookmark-button')
+  await fireEvent.click(bookmarkButton)
+  await fireEvent.click(bookmarkButton)
   expect(emitted()['toggleBookmark']).toHaveLength(2)
 })
