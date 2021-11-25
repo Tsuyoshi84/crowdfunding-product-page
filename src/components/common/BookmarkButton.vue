@@ -43,12 +43,12 @@ const label = computed<string>(() => {
     width: 3rem;
     height: 3rem;
 
-    & /deep/ circle {
+    & circle {
       transition: fill 0.2s ease-in-out;
       fill: var(--color-disabled);
     }
 
-    & /deep/ path {
+    & path {
       transition: fill 0.2s ease-in-out;
       fill: var(--color-disabled-light-2);
     }
@@ -68,7 +68,7 @@ const label = computed<string>(() => {
 
   &:is(:hover, :focus, :active) {
     & .icon {
-      & /deep/ circle {
+      & circle {
         fill: var(--color-disabled-light-1);
       }
     }
@@ -80,11 +80,11 @@ const label = computed<string>(() => {
 
   &.bookmarked {
     & .icon {
-      & /deep/ circle {
+      & circle {
         fill: var(--color-primary);
       }
 
-      & /deep/ path {
+      & path {
         fill: hsl(0, 0%, 100%);
       }
     }
@@ -95,7 +95,7 @@ const label = computed<string>(() => {
 
     &:is(:hover, :focus, :active) {
       & .icon {
-        & /deep/ circle {
+        & circle {
           fill: var(--color-primary-dark);
         }
       }
