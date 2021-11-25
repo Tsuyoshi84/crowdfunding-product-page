@@ -59,16 +59,21 @@ dialog {
   border: none;
   border-radius: var(--spacing-2);
   padding: var(--spacing-6);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--spacing-4);
-  padding: var(--spacing-8);
-  margin-inline-start: var(--spacing-6);
-  margin-inline-end: var(--spacing-6);
 
-  &::backdrop {
-    background-color: hsl(0, 0%, 0%, 0.4);
+  &[open] {
+    display: block;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-4);
+    padding: var(--spacing-8);
+    margin-inline-start: var(--spacing-6);
+    margin-inline-end: var(--spacing-6);
+
+    &::backdrop {
+      background-color: hsl(0, 0%, 0%, 0.4);
+    }
   }
 }
 
