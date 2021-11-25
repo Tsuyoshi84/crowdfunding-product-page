@@ -86,6 +86,10 @@ label {
       font-size: var(--font-size-medium);
       color: var(--color-text-main);
       text-align: right;
+
+      &:focus {
+        outline: none;
+      }
     }
   }
 }

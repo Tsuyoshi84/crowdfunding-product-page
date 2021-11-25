@@ -40,16 +40,6 @@ function closeModal() {
   ;(dialog.value as any).close()
 }
 
-const selectedRewardId = ref<number | null>(null)
-
-function selectReward(rewardId: number) {
-  selectedRewardId.value = rewardId
-}
-
-function isSelected(rewardId: number): boolean {
-  return rewardId === selectedRewardId.value
-}
-
 watch(
   () => props.open,
   (open) => {
@@ -60,6 +50,16 @@ watch(
     }
   },
 )
+
+const selectedRewardId = ref<number | null>(null)
+
+function selectReward(rewardId: number) {
+  selectedRewardId.value = rewardId
+}
+
+function isSelected(rewardId: number): boolean {
+  return rewardId === selectedRewardId.value
+}
 </script>
 
 <template>
