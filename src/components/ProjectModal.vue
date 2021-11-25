@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Project } from '@/models/project'
+import { Project, ProjectReward } from '@/models/project'
 import { PropType, watch, ref } from 'vue'
 import ProjectRewardBox from '@/components/ProjectRewardBox.vue'
 
@@ -7,6 +7,10 @@ const props = defineProps({
   project: {
     type: Object as PropType<Project>,
     required: true,
+  },
+  reward: {
+    type: Object as PropType<ProjectReward | null>,
+    default: null,
   },
   open: {
     type: Boolean,
@@ -28,6 +32,7 @@ function openModal() {
     return
   }
 
+  selectedRewardId.value = props.reward?.id ?? null
   ;(dialog.value as any).showModal()
 }
 

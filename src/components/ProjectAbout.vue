@@ -1,14 +1,18 @@
 <script lang="ts" setup>
 import { PropType } from 'vue'
-import { Project } from '@/models/project'
+import { Project, ProjectReward as Reward } from '@/models/project'
 import ProjectReward from '@/components/ProjectReward.vue'
 
-const props = defineProps({
+defineProps({
   project: {
     type: Object as PropType<Readonly<Project>>,
     required: true,
   },
 })
+
+const emit = defineEmits<{
+  (e: 'selectReward', detail: { reward: Reward }): void
+}>()
 </script>
 
 <template>
@@ -20,6 +24,7 @@ const props = defineProps({
         v-for="reward in project.rewards"
         :key="reward.id"
         :reward="reward"
+        @click-select="emit('selectReward', { reward })"
       />
     </div>
   </section>

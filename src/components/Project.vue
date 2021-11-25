@@ -8,6 +8,7 @@ import { storeToRefs } from 'pinia'
 import ProjectModal from './ProjectModal.vue'
 import { ref } from 'vue'
 import ProjectCompleteModal from './ProjectCompleteModal.vue'
+import { ProjectReward } from '@/models/project'
 
 const store = useProjectStore()
 const { fetchProject, toggleBookmarked } = store
@@ -17,8 +18,10 @@ onMounted(async () => {
   await fetchProject()
 })
 
+const selectedReward = ref<ProjectReward | null>(null)
 const showsModal = ref(false)
-function openModal() {
+function openModal(reward: ProjectReward | null = null) {
+  selectedReward.value = reward
   showsModal.value = true
 }
 function closeModal() {
@@ -55,12 +58,16 @@ async function bookmarkToggled() {
         @toggle-bookmark="bookmarkToggled"
       />
       <project-status :project="project" />
-      <project-about :project="project" />
+      <project-about
+        :project="project"
+        @select-reward="({ reward }) => openModal(reward)"
+      />
     </template>
   </article>
   <project-modal
     v-if="project"
     :project="project"
+    :reward="selectedReward"
     :open="showsModal"
     @click-close="closeModal"
     @submit="showCompleteModal"

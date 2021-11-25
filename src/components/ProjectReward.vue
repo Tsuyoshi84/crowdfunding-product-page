@@ -10,6 +10,10 @@ const props = defineProps({
   },
 })
 
+const emit = defineEmits<{
+  (e: 'clickSelect'): void
+}>()
+
 const isOutOfStock = computed(() => {
   return props.reward.stock === 0
 })
@@ -30,7 +34,7 @@ const buttonLabel = computed(() => {
         <span class="number">{{ reward.stock }}</span
         >left
       </div>
-      <primary-button :disabled="isOutOfStock"
+      <primary-button :disabled="isOutOfStock" @click="emit('clickSelect')"
         ><span class="button-label">{{ buttonLabel }}</span></primary-button
       >
     </div>
