@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { on } from 'events'
-import { onMounted, ref, watch } from 'vue'
+import { ref, watch } from 'vue'
 import PrimaryButton from './common/PrimaryButton.vue'
 
 const props = defineProps({
@@ -30,9 +29,6 @@ function closeModal() {
   ;(dialog.value as any).close()
 }
 
-onMounted(() => {
-  openModal()
-})
 watch(
   () => props.open,
   (open) => {
