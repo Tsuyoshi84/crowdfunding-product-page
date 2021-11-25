@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { on } from 'events'
+import { onMounted, ref, watch } from 'vue'
 import PrimaryButton from './common/PrimaryButton.vue'
 
 const props = defineProps({
@@ -29,6 +30,9 @@ function closeModal() {
   ;(dialog.value as any).close()
 }
 
+onMounted(() => {
+  openModal()
+})
 watch(
   () => props.open,
   (open) => {
@@ -43,14 +47,22 @@ watch(
 
 <template>
   <dialog ref="dialog">
-    <img src="@/assets/images/icon-check.svg" width="60" height="60" alt="" />
+    <img
+      class="icon-check"
+      src="@/assets/images/icon-check.svg"
+      width="60"
+      height="60"
+      alt=""
+    />
     <div class="title">Thanks for your support!</div>
     <p class="message">
       Your pledge brings us one step closer to sharing mastercraft Bamboo
       Monitor Riser worldwide.You will get an email once our campaign is
       completed.
     </p>
-    <primary-button @click="closeModal">Got it!</primary-button>
+    <primary-button @click="closeModal">
+      <span class="button-label">Got it!</span>
+    </primary-button>
   </dialog>
 </template>
 
@@ -59,22 +71,25 @@ dialog {
   border: none;
   border-radius: var(--spacing-2);
   padding: var(--spacing-6);
+  width: calc(100vw - var(--spacing-12));
+  max-width: 28rem;
 
   &[open] {
     display: block;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: var(--spacing-4);
     padding: var(--spacing-8);
-    margin-inline-start: var(--spacing-6);
-    margin-inline-end: var(--spacing-6);
 
     &::backdrop {
       background-color: hsl(0, 0%, 0%, 0.4);
     }
   }
+}
+
+.icon-check {
+  margin-block-end: var(--spacing-6);
 }
 
 .title {
@@ -88,5 +103,9 @@ dialog {
   font-size: var(--font-size-small);
   line-height: 1.5rem;
   text-align: center;
+}
+
+.button-label {
+  font-size: var(--font-size-small);
 }
 </style>
