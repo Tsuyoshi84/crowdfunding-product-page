@@ -33,11 +33,14 @@ const label = computed<string>(() => {
 
 <style lang="postcss" scoped>
 .bookmark-button {
-  border: none;
-  cursor: pointer;
   display: flex;
   align-items: center;
   gap: 1rem;
+  border: none;
+  background-color: var(--color-disabled-light-3);
+  border-radius: 2rem;
+  padding: 0 1rem 0 0;
+  cursor: pointer;
 
   & .icon {
     width: 3rem;
@@ -79,9 +82,11 @@ const label = computed<string>(() => {
   }
 
   &.bookmarked {
+    background-color: var(--color-primary-light-2);
+
     & .icon {
       & circle {
-        fill: var(--color-primary);
+        fill: var(--color-primary-dark);
       }
 
       & path {
@@ -90,19 +95,7 @@ const label = computed<string>(() => {
     }
 
     & .label {
-      color: var(--color-primary);
-    }
-
-    &:is(:hover, :focus, :active) {
-      & .icon {
-        & circle {
-          fill: var(--color-primary-dark);
-        }
-      }
-
-      & .label {
-        color: var(--color-primary-dark);
-      }
+      color: var(--color-primary-dark);
     }
   }
 }
