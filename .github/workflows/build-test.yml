@@ -41,3 +41,4 @@ jobs:
         with:
           install: false
           command: yarn cypress run-ct
+          record: true
