@@ -1,4 +1,6 @@
 {
+  "projectId": "ofbjo1",
+  "baseUrl": "http://localhost:3000",
   "component": {
     "componentFolder": "src",
     "testFiles": "**/*.cy.ts"
