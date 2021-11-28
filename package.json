@@ -10,7 +10,8 @@
     "lint:fix": "eslint './**/*.{ts,js,vue}' --fix",
     "format": "prettier --write './**/*.{ts,js,vue}'",
     "format:check": "prettier --check './**/*.{ts,js,vue}'",
-    "cypress": "cypress open-ct",
+    "cy": "cypress open-ct",
+    "cy:it": "cypress run",
     "test": "jest"
   },
   "dependencies": {
@@ -33,7 +34,9 @@
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-vue": "8.1.1",
     "jest": "26",
+    "local-cypress": "^1.2.3",
     "postcss-nesting": "7.0.1",
+    "postinstall-postinstall": "^2.1.0",
     "prettier": "2.4.1",
     "ts-jest": "26",
     "typescript": "4.5.2",

@@ -1,3 +1,5 @@
+import { cy, context, it, beforeEach } from 'local-cypress'
+
 context('Basic', () => {
   beforeEach(() => {
     cy.visit('/')

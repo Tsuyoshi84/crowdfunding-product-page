@@ -1,3 +1,4 @@
+import { it, describe } from 'local-cypress'
 import { mount } from '@cypress/vue'
 import PrimaryButton from './PrimaryButton.vue'
 import '@/assets/styles/main.css'
