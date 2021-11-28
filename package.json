@@ -10,6 +10,7 @@
     "lint:fix": "eslint './**/*.{ts,js,vue}' --fix",
     "format": "prettier --write './**/*.{ts,js,vue}'",
     "format:check": "prettier --check './**/*.{ts,js,vue}'",
+    "cypress": "cypress open-ct",
     "test": "jest"
   },
   "dependencies": {
@@ -18,6 +19,8 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.16.4",
+    "@cypress/vite-dev-server": "^2.2.1",
+    "@cypress/vue": "^3.0.5",
     "@testing-library/vue": "^6.5.0",
     "@types/jest": "^27.0.3",
     "@types/node": "^16.11.9",
@@ -25,6 +28,7 @@
     "@vitejs/plugin-vue": "1.10.0",
     "@vue/compiler-sfc": "3.2.22",
     "cssnano": "5.0.11",
+    "cypress": "^9.1.0",
     "eslint": "8.3.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-vue": "8.1.1",
