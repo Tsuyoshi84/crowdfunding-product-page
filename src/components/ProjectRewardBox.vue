@@ -50,7 +50,7 @@ const inputPledge = ref<number>(minPledge.value)
     class="container"
     :class="{ 'out-of-stock': isOutOfStock, selected: isSelected }"
   >
-    <div class="basic-info" @click="nameClicked">
+    <div class="basic-info" data-cy="reward-basic-info" @click="nameClicked">
       <div class="mark-wrapper">
         <toggle-mark :on="isSelected" />
       </div>

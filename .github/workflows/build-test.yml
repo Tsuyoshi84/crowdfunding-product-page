@@ -26,3 +26,18 @@ jobs:
       - run: yarn format:check
       - run: yarn build
       - run: yarn test
+      - name: Cypress integration tests
+        uses: cypress-io/github-action@v2
+        with:
+          install: false
+          build: yarn build
+          start: npx vite --port 3000
+          record: true
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Cypress component tests
+        uses: cypress-io/github-action@v2
+        with:
+          install: false
+          command: yarn cypress run-ct

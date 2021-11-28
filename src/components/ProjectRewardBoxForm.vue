@@ -30,7 +30,7 @@ function onChanged(e: Event) {
 </script>
 
 <template>
-  <form @submit.prevent="emit('submit')">
+  <form data-cy="input-form" @submit.prevent="emit('submit')">
     <label for="pledge">Enter your pledge</label>
     <div class="wrapper">
       <div class="input-wrapper">
