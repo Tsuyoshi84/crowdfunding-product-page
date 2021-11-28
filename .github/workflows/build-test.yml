@@ -29,6 +29,7 @@ jobs:
       - name: Cypress integration tests
         uses: cypress-io/github-action@v2
         with:
+          install: false
           build: yarn build
           start: npx vite --port 3000
           record: true
