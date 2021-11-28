@@ -10,11 +10,4 @@ import AppHeader from './components/AppHeader.vue'
   </main>
 </template>
 
-<style lang="postcss">
-@media (min-width: 62em) {
-  header {
-    background-image: var(--gradient),
-      url('@/assets/images/image-hero-desktop.jpg');
-  }
-}
-</style>
+<style lang="postcss"></style>

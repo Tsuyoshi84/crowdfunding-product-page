@@ -131,4 +131,51 @@ nav {
     }
   }
 }
+
+@media (min-width: 62em) {
+  header {
+    height: 22rem;
+    padding: var(--spacing-12);
+    background-image: var(--gradient),
+      url('@/assets/images/image-hero-desktop.jpg');
+  }
+  .menu-button {
+    display: none;
+  }
+
+  nav {
+    position: initial;
+    width: initial;
+
+    &.close {
+      display: block;
+    }
+
+    & ul {
+      background-color: initial;
+      padding: 0;
+      margin: 0;
+      width: initial;
+      display: flex;
+      gap: var(--spacing-8);
+
+      & li {
+        padding: 0;
+
+        & > a {
+          color: var(--color-text-inversed);
+          font-size: var(--font-size-medium);
+          padding: 0;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        &:not(:last-child) {
+          border-bottom: initial;
+        }
+      }
+    }
+  }
+}
 </style>
