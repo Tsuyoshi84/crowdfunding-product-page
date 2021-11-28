@@ -10,7 +10,7 @@
     "lint:fix": "eslint './**/*.{ts,js,vue}' --fix",
     "format": "prettier --write './**/*.{ts,js,vue}'",
     "format:check": "prettier --check './**/*.{ts,js,vue}'",
-    "cy": "cypress open-ct",
+    "cy:ct": "cypress open-ct",
     "cy:it": "cypress run",
     "test": "jest"
   },

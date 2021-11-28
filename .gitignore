@@ -5,3 +5,4 @@ dist-ssr
 *.local
 .vscode
 cypress/videos/*.*
+**/**.ts.mp4

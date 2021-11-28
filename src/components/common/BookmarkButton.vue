@@ -39,8 +39,8 @@ const label = computed<string>(() => {
   border: none;
   background-color: var(--color-disabled-light-3);
   border-radius: 2rem;
-  padding: 0 1rem 0 0;
   cursor: pointer;
+  padding: 0;
 
   & .icon {
     width: 3rem;
@@ -97,6 +97,12 @@ const label = computed<string>(() => {
     & .label {
       color: var(--color-primary-dark);
     }
+  }
+}
+
+@media (min-width: 62em) {
+  .bookmark-button {
+    padding: 0 1rem 0 0;
   }
 }
 </style>
