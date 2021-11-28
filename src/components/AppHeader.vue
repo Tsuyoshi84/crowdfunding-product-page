@@ -16,6 +16,7 @@ const buttonLabel = computed(() => {
 </script>
 
 <template>
+  <div class="backdrop-shadow" :class="{ open: isMenuOpen }"></div>
   <header>
     <div>
       <img
@@ -47,6 +48,20 @@ const buttonLabel = computed(() => {
 </template>
 
 <style scoped lang="postcss">
+.backdrop-shadow.open {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.2)
+  );
+  z-index: var(--z-index-backdrop-shadow);
+}
+
 header {
   --gradient: linear-gradient(
     to bottom,
@@ -63,10 +78,15 @@ header {
   align-items: flex-start;
   justify-content: space-between;
   padding: var(--spacing-6);
+  z-index: var(--z-index-menu);
 
   & > .logo {
     margin: var(--spacing-6) 0 0 var(--spacing-6);
     object-fit: contain;
+  }
+
+  & > * {
+    z-index: var(--z-index-menu);
   }
 }
 
@@ -78,10 +98,10 @@ header {
 }
 
 nav {
-  z-index: 10;
   position: fixed;
   top: var(--spacing-16);
   width: 100%;
+  z-index: var(--z-index-menu);
 
   &.close {
     display: none;

@@ -69,6 +69,7 @@ dialog {
   padding: var(--spacing-6);
   width: calc(100vw - var(--spacing-12));
   max-width: 28rem;
+  z-index: var(--z-index-modal);
 
   &[open] {
     display: block;

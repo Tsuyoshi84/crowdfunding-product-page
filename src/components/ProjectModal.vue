@@ -105,6 +105,7 @@ dialog {
   border: none;
   border-radius: var(--spacing-2);
   padding: var(--spacing-6);
+  z-index: var(--z-index-modal);
 
   &::backdrop {
     background-color: hsl(0, 0%, 0%, 0.4);
