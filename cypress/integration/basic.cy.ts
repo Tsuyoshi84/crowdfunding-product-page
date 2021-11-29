@@ -27,6 +27,8 @@ context('Basic', () => {
       .contains('Back this project')
       .should('exist')
 
+    cy.wait(1000)
+
     cy.get('[data-cy=reward-basic-info]').eq(1).click()
 
     cy.get('[data-cy=input-form]').contains('Enter your pledge').should('exist')
