@@ -44,7 +44,10 @@ function onChanged(e: Event) {
           @input="onChanged"
         />
       </div>
-      <primary-button type="submit" :disabled="!canSubmit"
+      <primary-button
+        type="submit"
+        :disabled="!canSubmit"
+        data-cy="submit-button"
         >Continue</primary-button
       >
     </div>

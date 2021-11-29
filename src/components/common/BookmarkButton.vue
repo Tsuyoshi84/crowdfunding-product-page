@@ -19,6 +19,7 @@ const label = computed<string>(() => {
     aria-label="Toggle bookmark"
     :class="{ bookmarked: props.bookmarked }"
     v-bind="$attrs"
+    data-cy="bookmark-button"
   >
     <!-- icon-bookmark.svg -->
     <svg class="icon" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
