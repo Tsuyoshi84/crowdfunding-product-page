@@ -13,7 +13,6 @@ jobs:
   build-test:
     name: Build and Test
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js
@@ -26,16 +25,34 @@ jobs:
       - run: yarn format:check
       - run: yarn build
       - run: yarn test
+
+  cypress-test:
+    name: Cypress Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
       - name: Cypress integration tests
         uses: cypress-io/github-action@v2
         with:
-          install: false
+          install-command: yarn --frozen-lockfile --silent
           build: yarn build
-          start: npx vite --port 3000
+          start: yarn start
+          wait-on: 'http://localhost:3000'
+          browser: chrome
+          group: 'UI - Chrome'
           record: true
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload video and screenshots if failure
+        uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+
       - name: Cypress component tests
         uses: cypress-io/github-action@v2
         with:

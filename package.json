@@ -6,6 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
+    "start": "vite --port 3000",
     "lint": "eslint './**/*.{ts,js,vue}'",
     "lint:fix": "eslint './**/*.{ts,js,vue}' --fix",
     "format": "prettier --write './**/*.{ts,js,vue}'",
