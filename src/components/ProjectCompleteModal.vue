@@ -42,7 +42,7 @@ watch(
 </script>
 
 <template>
-  <dialog ref="dialog" data-cy="complete-modal">
+  <dialog ref="dialog" data-test="complete-modal">
     <img
       class="icon-check"
       src="@/assets/images/icon-check.svg"
@@ -57,7 +57,9 @@ watch(
       completed.
     </p>
     <primary-button @click="closeModal">
-      <span class="button-label">Got it!</span>
+      <span class="button-label" data-test="complete-modal-close-button"
+        >Got it!</span
+      >
     </primary-button>
   </dialog>
 </template>

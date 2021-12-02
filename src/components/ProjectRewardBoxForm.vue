@@ -30,7 +30,7 @@ function onChanged(e: Event) {
 </script>
 
 <template>
-  <form data-cy="input-form" @submit.prevent="emit('submit')">
+  <form data-test="input-form" @submit.prevent="emit('submit')">
     <label for="pledge">Enter your pledge</label>
     <div class="wrapper">
       <div class="input-wrapper">
@@ -47,7 +47,7 @@ function onChanged(e: Event) {
       <primary-button
         type="submit"
         :disabled="!canSubmit"
-        data-cy="submit-button"
+        data-test="submit-button"
         >Continue</primary-button
       >
     </div>

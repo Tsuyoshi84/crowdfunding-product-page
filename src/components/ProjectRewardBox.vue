@@ -49,8 +49,9 @@ const inputPledge = ref<number>(minPledge.value)
   <section
     class="container"
     :class="{ 'out-of-stock': isOutOfStock, selected: isSelected }"
+    data-test="project-reward-box"
   >
-    <div class="basic-info" data-cy="reward-basic-info" @click="nameClicked">
+    <div class="basic-info" data-test="reward-basic-info" @click="nameClicked">
       <div class="mark-wrapper">
         <toggle-mark :on="isSelected" />
       </div>
