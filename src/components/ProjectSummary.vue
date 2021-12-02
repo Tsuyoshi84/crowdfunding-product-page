@@ -19,8 +19,10 @@ const emit = defineEmits<{
 
 <template>
   <section class="container">
-    <h1 class="name">{{ project.name }}</h1>
-    <p class="description">{{ project.description }}</p>
+    <h1 data-cy="project-name" class="name">{{ project.name }}</h1>
+    <p data-cy="project-description" class="description">
+      {{ project.description }}
+    </p>
     <div class="button-container">
       <primary-button data-cy="back-project" @click="emit('clickBackProject')"
         >Back this project</primary-button
