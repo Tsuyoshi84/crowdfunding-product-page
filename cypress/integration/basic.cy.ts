@@ -17,7 +17,7 @@ context('Basic', () => {
   it('toggle bookmark button', () => {
     cy.url().should('eq', 'http://localhost:3000/')
 
-    cy.get('[data-test=bookmark-button]')
+    cy.getBySel('bookmark-button')
       .click()
       .contains('Bookmarked')
       .should('exist')
@@ -56,5 +56,7 @@ context('Basic', () => {
     cy.getBySel('submit-button').should('be.enabled').click()
 
     cy.getBySel('complete-modal').should('be.visible')
+    cy.getBySel('complete-modal-close-button').should('be.visible').click()
+    cy.getBySel('complete-modal').should('not.be.visible')
   })
 })

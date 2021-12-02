@@ -57,7 +57,9 @@ watch(
       completed.
     </p>
     <primary-button @click="closeModal">
-      <span class="button-label">Got it!</span>
+      <span class="button-label" data-test="complete-modal-close-button"
+        >Got it!</span
+      >
     </primary-button>
   </dialog>
 </template>
