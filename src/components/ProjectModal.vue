@@ -68,7 +68,7 @@ function isSelected(rewardId: number): boolean {
 </script>
 
 <template>
-  <dialog ref="dialog" data-cy="project-modal">
+  <dialog ref="dialog" data-test="project-modal">
     <div class="title-container">
       <h2 class="title">Back this project</h2>
       <button

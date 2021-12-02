@@ -42,7 +42,7 @@ watch(
 </script>
 
 <template>
-  <dialog ref="dialog" data-cy="complete-modal">
+  <dialog ref="dialog" data-test="complete-modal">
     <img
       class="icon-check"
       src="@/assets/images/icon-check.svg"

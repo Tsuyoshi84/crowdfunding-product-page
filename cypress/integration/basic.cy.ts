@@ -17,7 +17,7 @@ context('Basic', () => {
   it('toggle bookmark button', () => {
     cy.url().should('eq', 'http://localhost:3000/')
 
-    cy.get('[data-cy=bookmark-button]')
+    cy.get('[data-test=bookmark-button]')
       .click()
       .contains('Bookmarked')
       .should('exist')
@@ -29,32 +29,34 @@ context('Basic', () => {
   it('back project', () => {
     cy.url().should('eq', 'http://localhost:3000/')
 
-    cy.get('[data-cy=project-name]').should('exist').contains(project.name)
-    cy.get('[data-cy=project-description]')
+    cy.get('[data-test=project-name]').should('exist').contains(project.name)
+    cy.get('[data-test=project-description]')
       .should('exist')
       .contains(project.description)
 
-    cy.get('[data-cy=back-project]')
+    cy.get('[data-test=back-project]')
       .should('exist')
       .contains('Back this project')
       .click()
 
-    cy.get('[data-cy=project-modal]').should('be.visible')
-    cy.get('[data-cy=input-form]').should('not.exist')
+    cy.get('[data-test=project-modal]').should('be.visible')
+    cy.get('[data-test=input-form]').should('not.exist')
 
-    cy.get('[data-cy=reward-basic-info]').eq(1).click()
+    cy.get('[data-test=reward-basic-info]').eq(1).click()
 
-    cy.get('[data-cy=input-form]').contains('Enter your pledge').should('exist')
+    cy.get('[data-test=input-form]')
+      .contains('Enter your pledge')
+      .should('exist')
 
     cy.get('[name=pledge]')
       .should('have.value', 25)
       .type('{backspace}{backspace}')
       .type('1')
-    cy.get('[data-cy=submit-button]').should('be.disabled')
+    cy.get('[data-test=submit-button]').should('be.disabled')
 
     cy.get('[name=pledge]').type('{backspace}').type('100')
-    cy.get('[data-cy=submit-button]').should('be.enabled').click()
+    cy.get('[data-test=submit-button]').should('be.enabled').click()
 
-    cy.get('[data-cy=complete-modal]').should('be.visible')
+    cy.get('[data-test=complete-modal]').should('be.visible')
   })
 })
