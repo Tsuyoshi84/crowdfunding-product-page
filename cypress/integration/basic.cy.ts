@@ -1,4 +1,4 @@
-import { cy, context, it, beforeEach } from 'local-cypress'
+import { cy, context, it, beforeEach, expect } from 'local-cypress'
 import { Project } from '../../src/models/project'
 
 context('Basic', () => {
@@ -29,24 +29,22 @@ context('Basic', () => {
   it('back project', () => {
     cy.url().should('eq', 'http://localhost:3000/')
 
-    cy.get('[data-test=project-name]').should('exist').contains(project.name)
+    cy.getBySel('project-name').should('exist').contains(project.name)
     cy.get('[data-test=project-description]')
       .should('exist')
       .contains(project.description)
 
-    cy.get('[data-test=back-project]')
+    cy.getBySel('back-project')
       .should('exist')
       .contains('Back this project')
       .click()
 
-    cy.get('[data-test=project-modal]').should('be.visible')
-    cy.get('[data-test=input-form]').should('not.exist')
+    cy.getBySel('project-modal').should('be.visible')
+    cy.getBySel('input-form').should('not.exist')
 
-    cy.get('[data-test=reward-basic-info]').eq(1).click()
+    cy.getBySel('reward-basic-info').eq(1).click()
 
-    cy.get('[data-test=input-form]')
-      .contains('Enter your pledge')
-      .should('exist')
+    cy.getBySel('input-form').contains('Enter your pledge').should('exist')
 
     cy.get('[name=pledge]')
       .should('have.value', 25)
@@ -55,8 +53,8 @@ context('Basic', () => {
     cy.get('[data-test=submit-button]').should('be.disabled')
 
     cy.get('[name=pledge]').type('{backspace}').type('100')
-    cy.get('[data-test=submit-button]').should('be.enabled').click()
+    cy.getBySel('submit-button').should('be.enabled').click()
 
-    cy.get('[data-test=complete-modal]').should('be.visible')
+    cy.getBySel('complete-modal').should('be.visible')
   })
 })
