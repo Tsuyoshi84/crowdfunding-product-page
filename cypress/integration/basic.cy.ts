@@ -29,6 +29,7 @@ context('Basic', () => {
   it('back project', () => {
     cy.url().should('eq', 'http://localhost:3000/')
 
+    cy.screenshot('01-project-page', { capture: 'viewport', overwrite: true })
     cy.getBySel('project-name').should('exist').contains(project.name)
     cy.get('[data-test=project-description]')
       .should('exist')
@@ -38,6 +39,10 @@ context('Basic', () => {
       .should('exist')
       .contains('Back this project')
       .click()
+    cy.screenshot('02-show-project-modal', {
+      capture: 'viewport',
+      overwrite: true,
+    })
 
     cy.getBySel('project-modal').should('be.visible')
     cy.getBySel('input-form').should('not.exist')
@@ -55,6 +60,7 @@ context('Basic', () => {
     cy.get('[name=pledge]').type('{backspace}').type('100')
     cy.getBySel('submit-button').should('be.enabled').click()
 
+    cy.screenshot('03-pledge-success', { capture: 'viewport', overwrite: true })
     cy.getBySel('complete-modal').should('be.visible')
     cy.getBySel('complete-modal-close-button').should('be.visible').click()
     cy.getBySel('complete-modal').should('not.be.visible')
