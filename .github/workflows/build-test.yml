@@ -24,7 +24,6 @@ jobs:
       - run: yarn lint
       - run: yarn format:check
       - run: yarn build
-      - run: yarn test
 
   cypress-test:
     name: Cypress Test

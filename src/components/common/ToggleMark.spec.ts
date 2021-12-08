@@ -1,5 +1,4 @@
 import { mount } from '@cypress/vue'
-import { it, describe, cy } from 'local-cypress'
 import ToggleMark from './ToggleMark.vue'
 import ToggleMarkPreview from './ToggleMark.preview.vue'
 import '@/assets/styles/main.css'

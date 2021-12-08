@@ -1,4 +1,3 @@
-import { cy, context, it, beforeEach, expect } from 'local-cypress'
 import { Project } from '../../src/models/project'
 
 context('Basic', () => {
@@ -30,10 +29,10 @@ context('Basic', () => {
     cy.url().should('eq', 'http://localhost:3000/')
 
     cy.screenshot('01-project-page', { capture: 'viewport', overwrite: true })
-    cy.getBySel('project-name').should('exist').contains(project.name)
+    cy.getBySel('project-name').should('exist').contains(project.name!)
     cy.get('[data-test=project-description]')
       .should('exist')
-      .contains(project.description)
+      .contains(project.description!)
 
     cy.getBySel('back-project')
       .should('exist')

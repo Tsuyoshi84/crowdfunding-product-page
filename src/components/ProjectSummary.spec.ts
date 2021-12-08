@@ -1,6 +1,8 @@
-import { render } from '@testing-library/vue'
-import ProjectAbout from '@/components/ProjectAbout.vue'
+import { mount } from '@cypress/vue'
 import { Project } from '@/models/project'
+import ProjectSummary from './ProjectSummary.vue'
+import '@/assets/styles/main.css'
+import '@/assets/styles/font.css'
 
 const project: Project = {
   id: 1,
@@ -23,12 +25,13 @@ const project: Project = {
   ],
 }
 
-test('increments value on click', async () => {
-  const { getByText } = render(ProjectAbout, {
-    props: {
-      project,
-    },
+describe('ProjectSummary', () => {
+  beforeEach(() => {
+    mount(ProjectSummary, { props: { project } })
   })
 
-  getByText(project.detail)
+  it('shows texts', () => {
+    cy.get('.name').contains(project.name).should('be.visible')
+    cy.get('.description').contains(project.description).should('be.visible')
+  })
 })
