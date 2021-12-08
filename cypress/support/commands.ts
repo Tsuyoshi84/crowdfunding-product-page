@@ -24,7 +24,9 @@ function getBySelLike(selector: string, args?: Parameters<typeof cy.get>[1]) {
 }
 
 // Add custom commands to Cypress
+// @ts-ignore
 Cypress.Commands.add('getBySel', getBySel)
+// @ts-ignore
 Cypress.Commands.add('getBySelLike', getBySelLike)
 
 // Add new command to the existing Cypress interface
@@ -36,7 +38,9 @@ declare global {
     }
 
     interface Chainable {
+      // @ts-ignore
       getBySel: typeof getBySel
+      // @ts-ignore
       getBySelLike: typeof getBySelLike
     }
   }

@@ -1,6 +1,5 @@
 import { mount } from '@cypress/vue'
 import { ProjectReward as Reward } from '@/models/project-reward'
-import { it, describe, cy } from 'local-cypress'
 import ProjectReward from './ProjectReward.vue'
 import '@/assets/styles/main.css'
 import '@/assets/styles/font.css'

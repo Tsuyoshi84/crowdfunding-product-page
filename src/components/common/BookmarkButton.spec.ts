@@ -1,5 +1,4 @@
 import { mount } from '@cypress/vue'
-import { it, describe, cy } from 'local-cypress'
 import BookmarkButton from './BookmarkButton.vue'
 import BookmarkButtonPreview from './BookmarkButton.preview.vue'
 import '@/assets/styles/main.css'

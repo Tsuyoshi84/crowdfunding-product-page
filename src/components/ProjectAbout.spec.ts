@@ -1,6 +1,5 @@
 import { mount } from '@cypress/vue'
 import { Project } from '@/models/project'
-import { it, describe, cy } from 'local-cypress'
 import ProjectAbout from './ProjectAbout.vue'
 import '@/assets/styles/main.css'
 import '@/assets/styles/font.css'
