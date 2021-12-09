@@ -10,4 +10,8 @@ import AppHeader from './components/AppHeader.vue'
   </main>
 </template>
 
-<style lang="postcss"></style>
+<style lang="postcss">
+main {
+  background-color: var(--color-base-background);
+}
+</style>

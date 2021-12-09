@@ -86,8 +86,9 @@ async function bookmarkToggled() {
   justify-content: center;
   background-color: var(--color-background);
   border-radius: var(--spacing-2);
-  margin: calc(var(--spacing-12) * -1) var(--spacing-6);
+  margin: 0 var(--spacing-6);
   padding: 0 var(--spacing-8);
+  transform: translateY(calc(var(--spacing-20) * -1));
 }
 .logo {
   --size: 3.5rem;
@@ -98,7 +99,7 @@ async function bookmarkToggled() {
 
 @media (min-width: 62em) {
   .article {
-    max-width: 40rem;
+    max-width: 44rem;
     margin-inline-start: auto;
     margin-inline-end: auto;
   }
