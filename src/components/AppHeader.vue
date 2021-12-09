@@ -34,7 +34,7 @@ const buttonLabel = computed(() => {
         :aria-label="buttonLabel"
         @click="isMenuOpen = !isMenuOpen"
       >
-        <img :src="menuIconSrc" alt="" />
+        <img :src="menuIconSrc" alt="" width="16" height="15" />
       </button>
     </div>
     <nav :class="{ close: !isMenuOpen }">
