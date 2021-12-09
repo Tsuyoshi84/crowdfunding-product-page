@@ -42,7 +42,7 @@ const emit = defineEmits<{
   margin-block-end: var(--spacing-24);
 }
 .name {
-  font-size: var(--font-size-large);
+  font-size: var(--font-size-xxlarge);
   padding: 0 var(--spacing-8);
   text-align: center;
 }
