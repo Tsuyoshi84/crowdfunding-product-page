@@ -134,7 +134,7 @@ nav {
 
 @media (min-width: 62em) {
   header {
-    height: 22rem;
+    height: 25rem;
     padding: var(--spacing-12);
     background-image: var(--gradient),
       url('@/assets/images/image-hero-desktop.jpg');
