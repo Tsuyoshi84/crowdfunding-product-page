@@ -49,7 +49,7 @@ const label = computed<string>(() => {
 
     & circle {
       transition: fill 0.2s ease-in-out;
-      fill: var(--color-disabled);
+      fill: var(--color-disabled-dark);
     }
 
     & path {
