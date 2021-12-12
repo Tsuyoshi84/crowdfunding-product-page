@@ -22,13 +22,15 @@ const props = defineProps({
 
 <style lang="postcss" scoped>
 .progress {
+  /* Reset the default appearance */
+  -webkit-appearance: none;
   appearance: none;
   width: 100%;
   height: 100%;
   color: var(--color-primary);
 
   &[value]::-webkit-progress-bar {
-    background-color: var(--color-background);
+    background-color: var(--color-background-gray);
     border-radius: var(--spacing-6);
   }
 
