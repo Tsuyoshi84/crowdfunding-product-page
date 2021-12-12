@@ -44,12 +44,12 @@ const label = computed<string>(() => {
   padding: 0;
 
   & .icon {
-    width: 3rem;
-    height: 3rem;
+    width: var(--spacing-14);
+    height: var(--spacing-14);
 
     & circle {
       transition: fill 0.2s ease-in-out;
-      fill: var(--color-disabled);
+      fill: var(--color-disabled-dark);
     }
 
     & path {
@@ -103,7 +103,7 @@ const label = computed<string>(() => {
 
 @media (min-width: 62em) {
   .bookmark-button {
-    padding: 0 1rem 0 0;
+    padding: 0 var(--spacing-6) 0 0;
   }
 }
 </style>

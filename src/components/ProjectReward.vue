@@ -23,7 +23,7 @@ const buttonLabel = computed(() => {
 </script>
 
 <template>
-  <section class="container" :class="{ 'out-of-stock': isOutOfStock }">
+  <section class="reward-container" :class="{ 'out-of-stock': isOutOfStock }">
     <div class="basic-info">
       <div class="name">{{ reward.name }}</div>
       <div class="pledge">Pledge ${{ reward.pledge }} or more</div>
@@ -42,7 +42,7 @@ const buttonLabel = computed(() => {
 </template>
 
 <style lang="postcss" scoped>
-.container {
+.reward-container {
   padding: var(--spacing-6);
   border: 1px solid var(--color-border);
   border-radius: var(--spacing-2);
@@ -59,7 +59,6 @@ const buttonLabel = computed(() => {
     }
     & .pledge {
       font-size: var(--font-size-small);
-      font-weight: var(--font-weight-bold);
       color: var(--color-text-primary);
       margin-block-end: var(--spacing-8);
     }
@@ -77,7 +76,6 @@ const buttonLabel = computed(() => {
     justify-content: space-between;
     align-items: flex-start;
     gap: var(--spacing-6);
-    margin-block-end: var(--spacing-8);
     & .left {
       color: var(--color-text-subtle);
 
@@ -115,6 +113,16 @@ const buttonLabel = computed(() => {
   .container {
     & .basic-info {
       flex-direction: row;
+      & .name {
+        font-size: var(--font-size-large);
+      }
+      & .pledge {
+        font-size: var(--font-size-medium);
+      }
+    }
+    & .detail {
+      font-size: var(--font-size-medium);
+      line-height: 2rem;
     }
     & .stock-info {
       flex-direction: row;

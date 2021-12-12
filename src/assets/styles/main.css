@@ -7,8 +7,11 @@
   --color-disabled-light-1: hsl(0deg 0% 54%);
   --color-disabled-light-2: hsl(0deg 0% 69%);
   --color-disabled-light-3: hsl(0deg 0% 95%);
+  --color-disabled-dark: hsl(0deg 0% 18%);
   --color-border: hsl(0deg 0% 80%);
+  --color-border-light: hsl(0deg 0% 95%);
   --color-background: hsl(0deg 0% 100%);
+  --color-background-gray: hsl(0deg 0% 96%);
   --color-base-background: hsl(0deg 0% 98%);
 
   --color-text-main: hsl(0deg 0% 0%);
@@ -24,10 +27,15 @@
   --spacing-4: 1rem;
   --spacing-6: 1.5rem;
   --spacing-8: 2rem;
+  --spacing-10: 2.5rem;
   --spacing-12: 3rem;
+  --spacing-14: 3.5rem;
   --spacing-16: 4rem;
   --spacing-20: 5rem;
   --spacing-24: 6rem;
+  --spacing-28: 7rem;
+  --spacing-32: 8rem;
+  --spacing-36: 9rem;
 
   --font-size-small: 0.8rem;
   --font-size-medium: 1rem;

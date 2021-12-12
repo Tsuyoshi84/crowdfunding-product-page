@@ -135,7 +135,7 @@ nav {
 @media (min-width: 62em) {
   header {
     height: 25rem;
-    padding: var(--spacing-12);
+    padding: var(--spacing-12) var(--spacing-36);
     background-image: var(--gradient),
       url('@/assets/images/image-hero-desktop.jpg');
   }
@@ -164,7 +164,7 @@ nav {
 
         & > a {
           color: var(--color-text-inversed);
-          font-size: var(--font-size-medium);
+          font-size: var(--font-size-small);
           padding: 0;
           &:hover {
             cursor: pointer;
