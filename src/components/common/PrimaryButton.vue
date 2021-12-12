@@ -28,13 +28,13 @@ defineProps({
 .primary-button {
   color: var(--color-text-inversed);
   font-size: var(--font-size-medium);
-  font-weight: var(--font-weight-bold);
   background-color: var(--color-primary);
   border: none;
-  padding: var(--spacing-4) var(--spacing-8);
+  padding: var(--spacing-4) var(--spacing-12);
   border-radius: var(--spacing-16);
   cursor: pointer;
   transition: background-color 0.2s;
+  min-height: var(--spacing-14);
 
   &:is(:hover, :focus, :active) {
     background-color: var(--color-primary-dark);

@@ -79,7 +79,7 @@ async function bookmarkToggled() {
   justify-content: center;
   gap: var(--spacing-6);
   margin: 0 var(--spacing-6);
-  transform: translateY(calc(var(--spacing-20) * -1));
+  transform: translateY(calc(var(--spacing-24) * -1));
 }
 
 @media (min-width: 62em) {

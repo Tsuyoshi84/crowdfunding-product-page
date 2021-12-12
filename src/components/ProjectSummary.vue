@@ -62,9 +62,11 @@ const emit = defineEmits<{
   }
 
   & .name {
-    font-size: var(--font-size-xxlarge);
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-bold);
     padding: 0 var(--spacing-8);
     text-align: center;
+    margin-block-end: var(--spacing-1);
   }
   & .description {
     color: var(--color-text-subtle);
@@ -81,6 +83,11 @@ const emit = defineEmits<{
 
 @media (min-width: 62em) {
   .container {
+    padding: 0 var(--spacing-12) var(--spacing-12);
+    & .name {
+      font-size: var(--font-size-xxxlarge);
+    }
+
     & .description {
       font-size: var(--font-size-medium);
       margin-block-end: var(--spacing-8);
