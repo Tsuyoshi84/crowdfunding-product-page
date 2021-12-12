@@ -101,7 +101,9 @@ defineProps({
       align-items: flex-start;
     }
     & .border {
-      display: none;
+      width: 1px;
+      height: 4rem;
+      transform: translateX(calc(var(--spacing-4) * -1));
     }
   }
 }
