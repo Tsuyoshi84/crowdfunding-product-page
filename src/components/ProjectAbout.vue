@@ -16,7 +16,7 @@ const emit = defineEmits<{
 </script>
 
 <template>
-  <section>
+  <section class="container">
     <h2 class="about">About this project</h2>
     <p class="detail">{{ project.detail }}</p>
     <div class="reward-wrapper">
@@ -31,19 +31,38 @@ const emit = defineEmits<{
 </template>
 
 <style lang="postcss" scoped>
-.about {
-  font-size: var(--font-size-large);
+.container {
+  width: 100%;
+  margin-block-end: var(--spacing-24);
+  background-color: var(--color-background);
+  border-radius: var(--spacing-2);
+  border: 1px solid var(--color-border-light);
+  padding: var(--spacing-12);
+
+  & .about {
+    margin: 0 0 var(--spacing-8);
+    font-size: var(--font-size-large);
+  }
+  & .detail {
+    font-size: var(--font-size-small);
+    color: var(--color-text-subtle);
+    line-height: 1.5rem;
+    white-space: break-spaces;
+    margin-block-end: var(--spacing-8);
+  }
+  & .reward-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-6);
+  }
 }
-.detail {
-  font-size: var(--font-size-small);
-  color: var(--color-text-subtle);
-  line-height: 1.5rem;
-  white-space: break-spaces;
-  margin-block-end: var(--spacing-8);
-}
-.reward-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-6);
+
+@media (min-width: 62em) {
+  .container {
+    & .detail {
+      font-size: var(--font-size-medium);
+      line-height: 2rem;
+    }
+  }
 }
 </style>

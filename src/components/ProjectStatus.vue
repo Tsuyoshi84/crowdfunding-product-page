@@ -13,79 +13,96 @@ defineProps({
 </script>
 
 <template>
-  <section class="info-container">
-    <div class="sub-info-container">
-      <div class="main">${{ formatNumber(project.currentAmount) }}</div>
-      <div class="sub">of ${{ formatNumber(project.targetAmount) }} backed</div>
+  <section class="container">
+    <div class="info-container">
+      <div class="sub-info-container">
+        <div class="main">${{ formatNumber(project.currentAmount) }}</div>
+        <div class="sub">
+          of ${{ formatNumber(project.targetAmount) }} backed
+        </div>
+      </div>
+      <div class="border"></div>
+      <div class="sub-info-container">
+        <div class="main">{{ formatNumber(project.numOfBuckers) }}</div>
+        <div class="sub">total backers</div>
+      </div>
+      <div class="border"></div>
+      <div class="sub-info-container">
+        <div class="main">{{ project.daysLeft }}</div>
+        <div class="sub">days left</div>
+      </div>
     </div>
-    <div class="border"></div>
-    <div class="sub-info-container">
-      <div class="main">{{ formatNumber(project.numOfBuckers) }}</div>
-      <div class="sub">total backers</div>
-    </div>
-    <div class="border"></div>
-    <div class="sub-info-container">
-      <div class="main">{{ project.daysLeft }}</div>
-      <div class="sub">days left</div>
+    <div class="progress-container">
+      <ProjectProgress :project="project" />
     </div>
   </section>
-  <div class="progress-container">
-    <ProjectProgress :project="project" />
-  </div>
 </template>
 
 <style scoped lang="postcss">
-.info-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
-}
-.sub-info-container {
+.container {
   width: 100%;
+  border-radius: var(--spacing-2);
+  border: 1px solid var(--color-border-light);
+  padding: var(--spacing-12);
+  background-color: var(--color-background);
   display: flex;
-  gap: 0.5rem;
   flex-direction: column;
-  justify-content: center;
-}
-.main {
-  font-size: var(--font-size-xxxxlarge);
-  font-weight: var(--font-weight-bold);
-  display: flex;
-  justify-content: center;
-}
-.sub {
-  font-size: var(--font-size-small);
-  font-weight: var(--font-weight-light);
-  letter-spacing: 0.05rem;
-  color: var(--color-text-subtle);
-  display: flex;
-  justify-content: center;
-}
-.border {
-  width: 5rem;
-  height: 1px;
-  background-color: var(--color-border);
-}
+  gap: var(--spacing-4);
 
-.progress-container {
-  width: 100%;
-  height: var(--spacing-4);
-  margin: var(--spacing-8) 0 var(--spacing-24);
+  & .info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  & .sub-info-container {
+    width: 100%;
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    justify-content: center;
+  }
+  & .main {
+    font-size: var(--font-size-xxxxlarge);
+    font-weight: var(--font-weight-bold);
+    display: flex;
+    justify-content: center;
+  }
+  & .sub {
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-light);
+    letter-spacing: 0.05rem;
+    color: var(--color-text-subtle);
+    display: flex;
+    justify-content: center;
+  }
+  & .border {
+    width: 5rem;
+    height: 1px;
+    background-color: var(--color-border);
+  }
+
+  & .progress-container {
+    width: 100%;
+    height: var(--spacing-4);
+    margin-block-start: var(--spacing-4);
+  }
 }
 
 @media (min-width: 62em) {
-  .info-container {
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .sub-info-container {
-    align-items: flex-start;
-  }
-  .border {
-    display: none;
+  .container {
+    & .info-container {
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    & .sub-info-container {
+      align-items: flex-start;
+    }
+    & .border {
+      display: none;
+    }
   }
 }
 </style>

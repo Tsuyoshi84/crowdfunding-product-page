@@ -44,13 +44,6 @@ async function bookmarkToggled() {
 
 <template>
   <article class="article">
-    <img
-      class="logo"
-      src="@/assets/images/logo-mastercraft.svg"
-      width="50"
-      height="50"
-      alt=""
-    />
     <template v-if="project">
       <project-summary
         :project="project"
@@ -84,22 +77,14 @@ async function bookmarkToggled() {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-background);
-  border-radius: var(--spacing-2);
+  gap: var(--spacing-6);
   margin: 0 var(--spacing-6);
-  padding: 0 var(--spacing-8);
   transform: translateY(calc(var(--spacing-20) * -1));
-}
-.logo {
-  --size: 3.5rem;
-  width: var(--size);
-  height: var(--size);
-  margin-block-start: calc(var(--size) * -0.5);
 }
 
 @media (min-width: 62em) {
   .article {
-    max-width: 44rem;
+    max-width: 45rem;
     margin-inline-start: auto;
     margin-inline-end: auto;
   }
