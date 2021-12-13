@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "pinia": "^2.0.6",
-    "vue": "3.2.23"
+    "vue": "3.2.26"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.16.4",
