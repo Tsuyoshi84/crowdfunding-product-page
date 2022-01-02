@@ -15,7 +15,7 @@
     "cy:it": "cypress open"
   },
   "dependencies": {
-    "pinia": "^2.0.6",
+    "pinia": "^2.0.9",
     "vue": "3.2.26"
   },
   "devDependencies": {
