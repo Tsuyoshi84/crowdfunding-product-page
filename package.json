@@ -15,14 +15,14 @@
     "cy:it": "cypress open"
   },
   "dependencies": {
-    "pinia": "^2.0.6",
+    "pinia": "^2.0.9",
     "vue": "3.2.26"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.16.5",
     "@cypress/vite-dev-server": "^2.2.2",
     "@cypress/vue": "^3.1.0",
-    "@types/node": "^17.0.1",
+    "@types/node": "^17.0.6",
     "@typescript-eslint/parser": "5.7.0",
     "@vitejs/plugin-vue": "2.0.1",
     "@vue/compiler-sfc": "3.2.26",
