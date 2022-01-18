@@ -1,35 +1,32 @@
-import { ref, computed } from 'vue'
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { Project } from '@/models/project'
 import { getProject } from '@/services/project-service'
 
-export const useProjectStore = defineStore('project', () => {
-  /** Current project */
-  const _project = ref<Project | null>(null)
+type State = {
+  project: Project | null
+}
 
-  const project = computed(() => {
-    return _project.value
-  })
+export const useProjectStore = defineStore('project', {
+  state: () =>
+    ({
+      project: null,
+    } as State),
+  actions: {
+    async fetchProject() {
+      this.project = await getProject()
+    },
+    /**
+     * Toggle bookmarked
+     */
+    toggleBookmarked() {
+      if (this.project === null) return
 
-  /** Fetch project */
-  async function fetchProject() {
-    _project.value = await getProject()
-  }
-
-  async function toggleBookmarked() {
-    if (!_project.value) return
-
-    _project.value = {
-      ..._project.value,
-      bookmarked: !_project.value.bookmarked,
-    }
-  }
-
-  return {
-    project,
-    fetchProject,
-    toggleBookmarked,
-  }
+      this.project = {
+        ...this.project,
+        bookmarked: !this.project.bookmarked,
+      }
+    },
+  },
 })
 
 if (import.meta.hot)
