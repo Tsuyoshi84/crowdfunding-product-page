@@ -1,15 +1,12 @@
 <script lang="ts" setup>
-import { PropType } from 'vue'
 import { Project } from '@/models/project'
 import { formatNumber } from '@/ui/format'
 import ProjectProgress from '@/components/ProjectProgress.vue'
 
-defineProps({
-  project: {
-    type: Object as PropType<Project>,
-    required: true,
-  },
-})
+interface Props {
+  project: Project
+}
+const { project } = defineProps<Props>()
 </script>
 
 <template>

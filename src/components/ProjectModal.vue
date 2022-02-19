@@ -1,22 +1,14 @@
 <script setup lang="ts">
 import { Project, ProjectReward } from '@/models/project'
-import { PropType, watch, ref } from 'vue'
+import { watch, ref } from 'vue'
 import ProjectRewardBox from '@/components/ProjectRewardBox.vue'
 
-const props = defineProps({
-  project: {
-    type: Object as PropType<Project>,
-    required: true,
-  },
-  reward: {
-    type: Object as PropType<ProjectReward | null>,
-    default: null,
-  },
-  open: {
-    type: Boolean,
-    default: false,
-  },
-})
+interface Props {
+  project: Project
+  reward: ProjectReward | null
+  open: boolean
+}
+const { reward = null, open = false } = defineProps<Props>()
 
 const emit = defineEmits<{
   (e: 'clickClose'): void
@@ -32,7 +24,7 @@ function openModal() {
     return
   }
 
-  selectedRewardId.value = props.reward?.id ?? null
+  selectedRewardId.value = reward?.id ?? null
   ;(dialog.value as any).showModal()
 }
 
@@ -46,7 +38,7 @@ function closeModal() {
 }
 
 watch(
-  () => props.open,
+  () => open,
   (open) => {
     if (open) {
       openModal()
@@ -80,7 +72,7 @@ function isSelected(rewardId: number): boolean {
       </button>
     </div>
     <p class="explanation">
-      Want to support us in bringing {{ props.project.name }} out in the world?
+      Want to support us in bringing {{ project.name }} out in the world?
     </p>
     <div class="rewards-container">
       <project-reward-box
@@ -89,11 +81,11 @@ function isSelected(rewardId: number): boolean {
         @submit="emit('submit')"
       />
       <project-reward-box
-        v-for="reward in props.project.rewards"
-        :key="reward.id"
-        :reward="reward"
-        :is-selected="isSelected(reward.id)"
-        @select="selectReward(reward.id)"
+        v-for="r in project.rewards"
+        :key="r.id"
+        :reward="r"
+        :is-selected="isSelected(r.id)"
+        @select="selectReward(r.id)"
         @submit="emit('submit')"
       />
     </div>

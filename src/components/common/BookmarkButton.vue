@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-
 const props = defineProps({
   bookmarked: {
     type: Boolean,
@@ -8,7 +6,7 @@ const props = defineProps({
   },
 })
 
-const label = computed<string>(() => {
+const label = $computed<string>(() => {
   return props.bookmarked ? 'Bookmarked' : 'Bookmark'
 })
 </script>

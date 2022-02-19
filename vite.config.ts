@@ -9,5 +9,5 @@ export default defineConfig({
       { find: 'components', replacement: '/src/components' },
     ],
   },
-  plugins: [vue()],
+  plugins: [vue({ reactivityTransform: true })],
 })

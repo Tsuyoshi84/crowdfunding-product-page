@@ -1,17 +1,15 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-
 import iconCloseMenu from '@/assets/images/icon-close-menu.svg'
 import iconHamburger from '@/assets/images/icon-hamburger.svg'
 
-const isMenuOpen = ref(false)
+const isMenuOpen = $ref(false)
 
-const menuIconSrc = computed(() => {
-  return isMenuOpen.value ? iconCloseMenu : iconHamburger
+const menuIconSrc = $computed(() => {
+  return isMenuOpen ? iconCloseMenu : iconHamburger
 })
 
-const buttonLabel = computed(() => {
-  return isMenuOpen.value ? 'Close menu' : 'Open menu'
+const buttonLabel = $computed(() => {
+  return isMenuOpen ? 'Close menu' : 'Open menu'
 })
 </script>
 

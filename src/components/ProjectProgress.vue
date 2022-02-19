@@ -1,21 +1,18 @@
 <script lang="ts" setup>
-import { PropType } from 'vue'
 import { Project } from '@/models/project'
 
-const props = defineProps({
-  project: {
-    type: Object as PropType<Readonly<Project>>,
-    required: true,
-  },
-})
+interface Props {
+  project: Project
+}
+const { project } = defineProps<Props>()
 </script>
 
 <template>
   <progress
     class="progress"
     v-bind="{
-      value: props.project.currentAmount,
-      max: props.project.targetAmount,
+      value: project.currentAmount,
+      max: project.targetAmount,
     }"
   ></progress>
 </template>

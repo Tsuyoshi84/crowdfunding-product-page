@@ -1,24 +1,18 @@
 <script setup lang="ts">
 import PrimaryButton from '@/components/common/PrimaryButton.vue'
-import { computed } from 'vue'
 
-const props = defineProps({
-  modelValue: {
-    type: Number,
-    required: true,
-  },
-  minPledge: {
-    type: Number,
-    default: 0,
-  },
-})
+interface Props {
+  modelValue: number
+  minPledge: number
+}
+const { modelValue, minPledge = 0 } = defineProps<Props>()
 
 const emit = defineEmits<{
   (e: 'update:modelValue', value: number): void
   (e: 'submit'): void
 }>()
 
-const canSubmit = computed(() => props.modelValue >= props.minPledge)
+const canSubmit = $computed(() => modelValue >= minPledge)
 
 function onChanged(e: Event) {
   if (typeof (e.currentTarget as any).value !== 'string') return
