@@ -2,12 +2,10 @@
 import { ref, watch } from 'vue'
 import PrimaryButton from './common/PrimaryButton.vue'
 
-const props = defineProps({
-  open: {
-    type: Boolean,
-    default: false,
-  },
-})
+interface Props {
+  open: boolean
+}
+const { open = false } = defineProps<Props>()
 
 const dialog = ref<null | HTMLElement>(null)
 
@@ -30,7 +28,7 @@ function closeModal() {
 }
 
 watch(
-  () => props.open,
+  () => open,
   (open) => {
     if (open) {
       openModal()

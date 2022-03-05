@@ -1,24 +1,21 @@
 <script lang="ts" setup>
-import { computed, PropType } from 'vue'
 import { ProjectReward } from '@/models/project'
 import PrimaryButton from '@/components/common/PrimaryButton.vue'
 
-const props = defineProps({
-  reward: {
-    type: Object as PropType<ProjectReward>,
-    required: true,
-  },
-})
+interface Props {
+  reward: ProjectReward
+}
+const { reward } = defineProps<Props>()
 
 const emit = defineEmits<{
   (e: 'clickSelect'): void
 }>()
 
-const isOutOfStock = computed(() => {
-  return props.reward.stock === 0
+const isOutOfStock = $computed<boolean>(() => {
+  return reward.stock === 0
 })
-const buttonLabel = computed(() => {
-  return isOutOfStock.value ? 'Out of Stock' : 'Select Reward'
+const buttonLabel = $computed<string>(() => {
+  return isOutOfStock ? 'Out of Stock' : 'Select Reward'
 })
 </script>
 

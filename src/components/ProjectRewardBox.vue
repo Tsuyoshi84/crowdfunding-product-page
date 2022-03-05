@@ -1,48 +1,43 @@
 <script lang="ts" setup>
-import { computed, PropType, ref } from 'vue'
 import { ProjectReward } from '@/models/project'
 import ToggleMark from '@/components/common/ToggleMark.vue'
 import ProjectRewardBoxForm from '@/components/ProjectRewardBoxForm.vue'
 
-const props = defineProps({
-  reward: {
-    type: Object as PropType<ProjectReward | null>,
-    default: null,
-  },
-  isSelected: {
-    type: Boolean,
-    default: false,
-  },
-})
+interface Props {
+  reward: ProjectReward | null
+  isSelected: boolean
+}
+
+const { reward = null, isSelected = false } = defineProps<Props>()
 
 const emit = defineEmits<{
   (e: 'select'): void
   (e: 'submit'): void
 }>()
 
-const isOutOfStock = computed(() => {
-  if (props.reward === null) return false
+const isOutOfStock = $computed(() => {
+  if (reward === null) return false
 
-  return props.reward.stock === 0
+  return reward.stock === 0
 })
-const isNoReward = computed(() => props.reward === null)
-const name = computed(() => props.reward?.name ?? 'Pledge with no reward')
-const minPledge = computed(() => props.reward?.pledge ?? 0)
-const stock = computed(() => props.reward?.stock ?? 0)
-const detail = computed(() => {
+const isNoReward = $computed(() => reward === null)
+const name = $computed(() => reward?.name ?? 'Pledge with no reward')
+const minPledge = $computed(() => reward?.pledge ?? 0)
+const stock = $computed(() => reward?.stock ?? 0)
+const detail = $computed(() => {
   return (
-    props.reward?.detail ??
+    reward?.detail ??
     'Choose to support us without a reward if you simple believe in our project. As a backer, you will be signed up to receive product updates via email'
   )
 })
 
 function nameClicked() {
-  if (isOutOfStock.value) return
+  if (isOutOfStock) return
 
   emit('select')
 }
 
-const inputPledge = ref<number>(minPledge.value)
+const inputPledge = $ref<number>(minPledge)
 </script>
 
 <template>

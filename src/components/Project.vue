@@ -18,14 +18,15 @@ onMounted(async () => {
   await fetchProject()
 })
 
-const selectedReward = ref<ProjectReward | null>(null)
-const showsModal = ref(false)
+let selectedReward = $ref<ProjectReward | null>(null)
+let showsModal = $ref(false)
+
 function openModal(reward: ProjectReward | null = null) {
-  selectedReward.value = reward
-  showsModal.value = true
+  selectedReward = reward
+  showsModal = true
 }
 function closeModal() {
-  showsModal.value = false
+  showsModal = false
 }
 
 const showsCompleteModal = ref(false)

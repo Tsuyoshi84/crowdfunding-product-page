@@ -1,15 +1,12 @@
 <script lang="ts" setup>
-import { PropType } from 'vue'
 import { Project } from '@/models/project'
 import PrimaryButton from '@/components/common/PrimaryButton.vue'
 import BookmarkButton from '@/components/common/BookmarkButton.vue'
 
-defineProps({
-  project: {
-    type: Object as PropType<Project>,
-    required: true,
-  },
-})
+interface Props {
+  project: Project
+}
+const { project } = defineProps<Props>()
 
 const emit = defineEmits<{
   (e: 'toggleBookmark'): void

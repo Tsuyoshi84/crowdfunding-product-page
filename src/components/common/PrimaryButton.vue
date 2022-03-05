@@ -1,16 +1,9 @@
 <script lang="ts" setup>
-import { PropType } from 'vue'
-
-defineProps({
-  disabled: {
-    type: Boolean,
-    default: false,
-  },
-  type: {
-    type: String as PropType<'button' | 'submit'>,
-    default: 'button',
-  },
-})
+interface Props {
+  disabled: boolean
+  type: 'button' | 'submit'
+}
+const { disabled = false, type = 'button' } = defineProps<Props>()
 </script>
 
 <template>

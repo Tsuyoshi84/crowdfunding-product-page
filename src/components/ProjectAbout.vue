@@ -1,14 +1,11 @@
 <script lang="ts" setup>
-import { PropType } from 'vue'
 import { Project, ProjectReward as Reward } from '@/models/project'
 import ProjectReward from '@/components/ProjectReward.vue'
 
-defineProps({
-  project: {
-    type: Object as PropType<Readonly<Project>>,
-    required: true,
-  },
-})
+interface Props {
+  project: Project
+}
+defineProps<Props>()
 
 const emit = defineEmits<{
   (e: 'selectReward', detail: { reward: Reward }): void
