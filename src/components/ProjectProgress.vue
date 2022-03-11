@@ -19,11 +19,11 @@ const { project } = defineProps<Props>()
 
 <style lang="postcss" scoped>
 .progress {
-  /* Reset the default appearance */
-  -webkit-appearance: none;
-  appearance: none;
   width: 100%;
   height: 100%;
+
+  /* Reset the default appearance */
+  appearance: none;
   color: var(--color-primary);
 
   &[value]::-webkit-progress-bar {
@@ -32,8 +32,8 @@ const { project } = defineProps<Props>()
   }
 
   &[value]::-webkit-progress-value {
-    border-radius: var(--spacing-3);
     background-color: var(--color-primary);
+    border-radius: var(--spacing-3);
   }
 }
 </style>

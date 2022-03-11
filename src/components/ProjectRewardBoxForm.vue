@@ -56,8 +56,8 @@ form {
 }
 
 label {
-  text-align: center;
   color: var(--color-text-subtle);
+  text-align: center;
 }
 
 .wrapper {
@@ -66,22 +66,22 @@ label {
   gap: var(--spacing-4);
 
   & .input-wrapper {
-    color: var(--color-text-subtle);
-    border: 1px solid var(--color-border);
-    border-radius: var(--font-size-xlarge);
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: var(--spacing-2);
     padding: var(--spacing-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--font-size-xlarge);
+    color: var(--color-text-subtle);
+    gap: var(--spacing-2);
 
     & input {
       width: 100%;
       border: none;
       border-radius: var(--border-radius);
-      font-weight: var(--font-weight-bold);
-      font-size: var(--font-size-medium);
       color: var(--color-text-main);
+      font-size: var(--font-size-medium);
+      font-weight: var(--font-weight-bold);
       text-align: right;
 
       &:focus {

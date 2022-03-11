@@ -34,34 +34,34 @@ const label = $computed<string>(() => {
 .bookmark-button {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  padding: 0;
   border: none;
   background-color: var(--color-disabled-light-3);
   border-radius: 2rem;
   cursor: pointer;
-  padding: 0;
+  gap: 1rem;
 
   & .icon {
     width: var(--spacing-14);
     height: var(--spacing-14);
 
     & circle {
-      transition: fill 0.2s ease-in-out;
       fill: var(--color-disabled-dark);
+      transition: fill 0.2s ease-in-out;
     }
 
     & path {
-      transition: fill 0.2s ease-in-out;
       fill: var(--color-disabled-light-2);
+      transition: fill 0.2s ease-in-out;
     }
   }
 
   & .label {
+    display: none;
     color: var(--color-disabled);
     font-size: var(--font-size-medium);
     font-weight: var(--font-weight-bold);
     transition: color 0.2s ease-in-out;
-    display: none;
 
     @media (min-width: 62em) {
       display: initial;
@@ -89,7 +89,7 @@ const label = $computed<string>(() => {
       }
 
       & path {
-        fill: hsl(0, 0%, 100%);
+        fill: hsl(0deg 0% 100%);
       }
     }
 

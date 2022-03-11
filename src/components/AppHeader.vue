@@ -48,35 +48,36 @@ const buttonLabel = $computed(() => {
 <style scoped lang="postcss">
 .backdrop-shadow.open {
   position: fixed;
+  z-index: var(--z-index-backdrop-shadow);
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
+  left: 0;
   background-image: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.2)
+    rgb(0 0 0 / 50%),
+    rgb(0 0 0 / 20%)
   );
-  z-index: var(--z-index-backdrop-shadow);
 }
 
 header {
   --gradient: linear-gradient(
     to bottom,
-    hsla(0deg, 0%, 0%, 0.52),
-    hsla(0deg, 0%, 100%, 0)
+    hsl(0deg 0% 0% / 52%),
+    hsl(0deg 0% 100% / 0%)
   );
-  background-image: var(--gradient),
-    url('@/assets/images/image-hero-mobile.jpg');
-  background-size: cover;
-  height: 19rem;
-  border-block-end: 1px solid #eaeaea;
+
+  z-index: var(--z-index-menu);
   display: flex;
+  height: 19rem;
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
   padding: var(--spacing-6);
-  z-index: var(--z-index-menu);
+  background-image: var(--gradient),
+    url('@/assets/images/image-hero-mobile.jpg');
+  background-size: cover;
+  border-block-end: 1px solid #eaeaea;
 
   & > .logo {
     margin: var(--spacing-6) 0 0 var(--spacing-6);
@@ -89,37 +90,37 @@ header {
 }
 
 .menu-button {
+  padding: 0;
   border: none;
   cursor: pointer;
   outline: none;
-  padding: 0;
 }
 
 nav {
   position: fixed;
+  z-index: var(--z-index-menu);
   top: var(--spacing-16);
   width: 100%;
-  z-index: var(--z-index-menu);
 
   &.close {
     display: none;
   }
 
   & ul {
-    background-color: var(--color-background);
-    padding: 0;
     width: calc(100% - var(--spacing-6) * 2);
+    padding: 0;
+    background-color: var(--color-background);
     border-radius: var(--spacing-2);
 
     & li {
-      list-style: none;
       padding: 0;
       padding: var(--spacing-6) var(--spacing-3);
+      list-style: none;
 
       & > a {
+        padding: 1rem;
         color: var(--color-text);
         font-size: var(--font-size-large);
-        padding: 1rem;
         text-decoration: none;
       }
 
@@ -137,6 +138,7 @@ nav {
     background-image: var(--gradient),
       url('@/assets/images/image-hero-desktop.jpg');
   }
+
   .menu-button {
     display: none;
   }
@@ -150,20 +152,21 @@ nav {
     }
 
     & ul {
-      background-color: initial;
+      display: flex;
+      width: initial;
       padding: 0;
       margin: 0;
-      width: initial;
-      display: flex;
+      background-color: initial;
       gap: var(--spacing-8);
 
       & li {
         padding: 0;
 
         & > a {
+          padding: 0;
           color: var(--color-text-inversed);
           font-size: var(--font-size-small);
-          padding: 0;
+
           &:hover {
             cursor: pointer;
           }

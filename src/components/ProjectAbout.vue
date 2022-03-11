@@ -30,23 +30,25 @@ const emit = defineEmits<{
 <style lang="postcss" scoped>
 .container {
   width: 100%;
-  margin-block-end: var(--spacing-24);
+  padding: var(--spacing-12);
+  border: 1px solid var(--color-border-light);
   background-color: var(--color-background);
   border-radius: var(--spacing-2);
-  border: 1px solid var(--color-border-light);
-  padding: var(--spacing-12);
+  margin-block-end: var(--spacing-24);
 
   & .about {
     margin: 0 0 var(--spacing-8);
     font-size: var(--font-size-large);
   }
+
   & .detail {
-    font-size: var(--font-size-small);
     color: var(--color-text-subtle);
+    font-size: var(--font-size-small);
     line-height: 1.5rem;
-    white-space: break-spaces;
     margin-block-end: var(--spacing-8);
+    white-space: break-spaces;
   }
+
   & .reward-wrapper {
     display: flex;
     flex-direction: column;

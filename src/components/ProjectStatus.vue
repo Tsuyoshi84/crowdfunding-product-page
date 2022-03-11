@@ -37,43 +37,47 @@ const { project } = defineProps<Props>()
 
 <style scoped lang="postcss">
 .container {
-  width: 100%;
-  border-radius: var(--spacing-2);
-  border: 1px solid var(--color-border-light);
-  padding: var(--spacing-12);
-  background-color: var(--color-background);
   display: flex;
+  width: 100%;
   flex-direction: column;
+  padding: var(--spacing-12);
+  border: 1px solid var(--color-border-light);
+  background-color: var(--color-background);
+  border-radius: var(--spacing-2);
   gap: var(--spacing-4);
 
   & .info-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     gap: 1.5rem;
   }
+
   & .sub-info-container {
-    width: 100%;
     display: flex;
-    gap: 0.5rem;
+    width: 100%;
     flex-direction: column;
     justify-content: center;
+    gap: 0.5rem;
   }
+
   & .main {
-    font-size: var(--font-size-xxxxlarge);
-    font-weight: var(--font-weight-bold);
     display: flex;
     justify-content: center;
+    font-size: var(--font-size-xxxxlarge);
+    font-weight: var(--font-weight-bold);
   }
+
   & .sub {
+    display: flex;
+    justify-content: center;
+    color: var(--color-text-subtle);
     font-size: var(--font-size-small);
     font-weight: var(--font-weight-light);
     letter-spacing: 0.05rem;
-    color: var(--color-text-subtle);
-    display: flex;
-    justify-content: center;
   }
+
   & .border {
     width: 5rem;
     height: 1px;
@@ -94,9 +98,11 @@ const { project } = defineProps<Props>()
       flex-direction: row;
       justify-content: space-between;
     }
+
     & .sub-info-container {
       align-items: flex-start;
     }
+
     & .border {
       width: 1px;
       height: 4rem;

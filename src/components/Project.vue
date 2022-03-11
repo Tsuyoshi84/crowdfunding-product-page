@@ -78,16 +78,16 @@ async function bookmarkToggled() {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--spacing-6);
   margin: 0 var(--spacing-6);
+  gap: var(--spacing-6);
   transform: translateY(calc(var(--spacing-24) * -1));
 }
 
 @media (min-width: 62em) {
   .article {
     max-width: 45rem;
-    margin-inline-start: auto;
     margin-inline-end: auto;
+    margin-inline-start: auto;
   }
 }
 </style>

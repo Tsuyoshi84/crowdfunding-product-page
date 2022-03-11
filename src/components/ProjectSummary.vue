@@ -42,36 +42,39 @@ const emit = defineEmits<{
 
 <style scoped lang="postcss">
 .container {
-  width: 100%;
-  background-color: var(--color-background);
-  border-radius: var(--spacing-2);
-  border: 1px solid var(--color-border-light);
-  padding: 0 var(--spacing-8) var(--spacing-12);
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
+  padding: 0 var(--spacing-8) var(--spacing-12);
+  border: 1px solid var(--color-border-light);
+  background-color: var(--color-background);
+  border-radius: var(--spacing-2);
 
   & .logo {
     --size: 3.5rem;
+
     width: var(--size);
     height: var(--size);
     margin-block-start: calc(var(--size) * -0.5);
   }
 
   & .name {
+    padding: 0 var(--spacing-8);
     font-size: var(--font-size-large);
     font-weight: var(--font-weight-bold);
-    padding: 0 var(--spacing-8);
-    text-align: center;
     margin-block-end: var(--spacing-1);
+    text-align: center;
   }
+
   & .description {
     color: var(--color-text-subtle);
     font-size: var(--font-size-small);
-    text-align: center;
     line-height: var(--spacing-6);
     margin-block-end: var(--spacing-3);
+    text-align: center;
   }
+
   & .button-container {
     display: flex;
     justify-content: center;
@@ -81,6 +84,7 @@ const emit = defineEmits<{
 @media (min-width: 62em) {
   .container {
     padding: 0 var(--spacing-12) var(--spacing-12);
+
     & .name {
       font-size: var(--font-size-xxxlarge);
     }
@@ -89,6 +93,7 @@ const emit = defineEmits<{
       font-size: var(--font-size-medium);
       margin-block-end: var(--spacing-8);
     }
+
     & .button-container {
       width: 100%;
       justify-content: space-between;

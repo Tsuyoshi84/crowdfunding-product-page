@@ -13,7 +13,6 @@
   --color-background: hsl(0deg 0% 100%);
   --color-background-gray: hsl(0deg 0% 96%);
   --color-base-background: hsl(0deg 0% 98%);
-
   --color-text-main: hsl(0deg 0% 0%);
   --color-text-inversed: hsl(0deg 0% 100%);
   --color-text-subtle: hsl(0deg 0% 50%);
@@ -21,7 +20,6 @@
   --color-text-primary: var(--color-primary);
   --color-text-primary-dark: var(--color-primary-dark);
   --color-text-primary-light: var(--color-primary-light);
-
   --spacing-2: 0.5rem;
   --spacing-3: 0.75rem;
   --spacing-4: 1rem;
@@ -36,7 +34,6 @@
   --spacing-28: 7rem;
   --spacing-32: 8rem;
   --spacing-36: 9rem;
-
   --font-size-small: 0.8rem;
   --font-size-medium: 1rem;
   --font-size-large: 1.2rem;
@@ -44,12 +41,10 @@
   --font-size-xxlarge: 1.6rem;
   --font-size-xxxlarge: 1.8rem;
   --font-size-xxxxlarge: 2rem;
-
   --font-weight-light: 300;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
-
   --z-index-backdrop-shadow: 1000;
   --z-index-menu: 1001;
   --z-index-modal: 1002;
@@ -62,10 +57,10 @@
 }
 
 body {
-  font-size: 16px;
-  font-family: 'Commissioner', sans-serif;
-  margin: 0;
   padding: 0;
+  margin: 0;
+  font-family: Commissioner, sans-serif;
+  font-size: 16px;
 }
 
 button {
