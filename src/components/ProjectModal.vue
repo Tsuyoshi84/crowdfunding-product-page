@@ -94,13 +94,13 @@ function isSelected(rewardId: number): boolean {
 
 <style scoped lang="postcss">
 dialog {
+  z-index: var(--z-index-modal);
+  padding: var(--spacing-6);
   border: none;
   border-radius: var(--spacing-2);
-  padding: var(--spacing-6);
-  z-index: var(--z-index-modal);
 
   &::backdrop {
-    background-color: hsl(0, 0%, 0%, 0.4);
+    background-color: hsl(0deg 0% 0% / 40%);
   }
 }
 
@@ -121,8 +121,8 @@ dialog {
 .explanation {
   color: var(--color-text-subtle);
   font-size: var(--font-size-small);
-  margin-block-end: var(--spacing-6);
   line-height: var(--spacing-6);
+  margin-block-end: var(--spacing-6);
 }
 
 .rewards-container {

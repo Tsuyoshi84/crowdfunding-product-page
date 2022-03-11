@@ -54,36 +54,40 @@ const buttonLabel = $computed<string>(() => {
       font-weight: var(--font-weight-bold);
       margin-block-end: var(--spacing-2);
     }
+
     & .pledge {
-      font-size: var(--font-size-small);
       color: var(--color-text-primary);
+      font-size: var(--font-size-small);
       margin-block-end: var(--spacing-8);
     }
   }
 
   & .detail {
-    font-size: var(--font-size-small);
     color: var(--color-text-subtle);
+    font-size: var(--font-size-small);
     line-height: 1.5rem;
     margin-block-end: var(--spacing-8);
   }
+
   & .stock-info {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: flex-start;
+    justify-content: space-between;
     gap: var(--spacing-6);
+
     & .left {
       color: var(--color-text-subtle);
 
       & > .number {
+        color: var(--color-text-main);
         font-size: var(--font-size-xxxlarge);
         font-weight: var(--font-weight-bold);
-        color: var(--color-text-main);
         margin-inline-end: var(--spacing-2);
       }
     }
   }
+
   & .button-label {
     font-size: var(--font-size-small);
   }
@@ -92,12 +96,15 @@ const buttonLabel = $computed<string>(() => {
     & .name {
       color: var(--color-text-subtle);
     }
+
     & .pledge {
       color: var(--color-text-primary-light);
     }
+
     & .detail {
       color: var(--color-text-xsubtle);
     }
+
     & .left {
       & > .number {
         color: var(--color-text-subtle);
@@ -110,17 +117,21 @@ const buttonLabel = $computed<string>(() => {
   .container {
     & .basic-info {
       flex-direction: row;
+
       & .name {
         font-size: var(--font-size-large);
       }
+
       & .pledge {
         font-size: var(--font-size-medium);
       }
     }
+
     & .detail {
       font-size: var(--font-size-medium);
       line-height: 2rem;
     }
+
     & .stock-info {
       flex-direction: row;
     }

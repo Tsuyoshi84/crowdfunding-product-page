@@ -87,16 +87,16 @@ const inputPledge = $ref<number>(minPledge)
   & .basic-info {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
     align-items: center;
+    justify-content: flex-start;
     gap: var(--spacing-4);
     margin-block-end: var(--spacing-6);
 
     & .name-wrapper {
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: flex-start;
+      justify-content: center;
     }
 
     & .mark-wrapper {
@@ -105,57 +105,77 @@ const inputPledge = $ref<number>(minPledge)
       opacity: 0;
       transition: opacity 0.2s;
     }
+
     & .name {
       font-size: var(--font-size-small);
       font-weight: var(--font-weight-bold);
       margin-block-end: var(--spacing-2);
       transition: color 0.2s;
     }
+
     & .pledge {
+      color: var(--color-text-primary);
       font-size: var(--font-size-small);
       font-weight: var(--font-weight-bold);
-      color: var(--color-text-primary);
     }
 
     &:hover {
       cursor: pointer;
+
       & .mark-wrapper {
         opacity: 1;
       }
+
       & .name {
         color: var(--color-text-primary);
       }
     }
   }
+
   & .detail {
-    font-size: var(--font-size-small);
     color: var(--color-text-subtle);
+    font-size: var(--font-size-small);
     line-height: 1.5rem;
     margin-block-end: var(--spacing-8);
   }
+
   & .stock-info {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: flex-start;
+    justify-content: space-between;
     gap: var(--spacing-6);
     margin-block-end: var(--spacing-4);
+
     & .left {
       color: var(--color-text-subtle);
 
       & > .number {
+        color: var(--color-text-main);
         font-size: var(--font-size-large);
         font-weight: var(--font-weight-bold);
-        color: var(--color-text-main);
         margin-inline-end: var(--spacing-2);
       }
     }
   }
+
   & .form-wrapper {
     margin-block-start: var(--spacing-12);
   }
+
   & .button-label {
     font-size: var(--font-size-small);
+  }
+}
+
+.container.selected {
+  border-width: 2px;
+  border-color: var(--color-primary);
+
+  & .basic-info {
+    & .mark-wrapper {
+      opacity: 1;
+    }
   }
 }
 
@@ -164,11 +184,14 @@ const inputPledge = $ref<number>(minPledge)
     & .name {
       color: var(--color-text-subtle);
     }
+
     & .pledge {
       color: var(--color-text-primary-light);
     }
+
     &:hover {
       cursor: default;
+
       & .name {
         color: var(--color-text-subtle);
       }
@@ -178,20 +201,10 @@ const inputPledge = $ref<number>(minPledge)
   & .detail {
     color: var(--color-text-xsubtle);
   }
+
   & .left {
     & > .number {
       color: var(--color-text-subtle);
-    }
-  }
-}
-
-.container.selected {
-  border-color: var(--color-primary);
-  border-width: 2px;
-
-  & .basic-info {
-    & .mark-wrapper {
-      opacity: 1;
     }
   }
 }
@@ -201,6 +214,7 @@ const inputPledge = $ref<number>(minPledge)
     & .basic-info {
       flex-direction: row;
     }
+
     & .stock-info {
       flex-direction: row;
     }

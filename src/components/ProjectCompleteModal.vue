@@ -64,23 +64,23 @@ watch(
 
 <style scoped lang="postcss">
 dialog {
-  border: none;
-  border-radius: var(--spacing-2);
-  padding: var(--spacing-6);
+  z-index: var(--z-index-modal);
   width: calc(100vw - var(--spacing-12));
   max-width: 28rem;
-  z-index: var(--z-index-modal);
+  padding: var(--spacing-6);
+  border: none;
+  border-radius: var(--spacing-2);
 
   &[open] {
     display: block;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--spacing-4);
     padding: var(--spacing-8);
+    gap: var(--spacing-4);
 
     &::backdrop {
-      background-color: hsl(0, 0%, 0%, 0.4);
+      background-color: hsl(0deg 0% 0% / 40%);
     }
   }
 }
