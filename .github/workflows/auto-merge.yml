@@ -1,6 +1,6 @@
 name: Dependabot auto-merge
 on:
-  check_run:
+  check_suite:
     types: [completed]
 
 permissions:
