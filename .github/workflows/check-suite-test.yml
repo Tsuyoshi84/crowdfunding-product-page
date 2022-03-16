@@ -1,0 +1,10 @@
+name: Check suite test
+on:
+  check_suite:
+    types: [completed]
+
+jobs:
+  check_passed:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'Check passed'
