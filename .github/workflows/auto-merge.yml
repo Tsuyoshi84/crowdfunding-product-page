@@ -1,5 +1,7 @@
 name: Dependabot auto-merge
-on: status
+on:
+  check_run:
+    types: [completed]
 
 permissions:
   pull-requests: write
