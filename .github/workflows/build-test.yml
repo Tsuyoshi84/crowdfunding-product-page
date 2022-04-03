@@ -15,29 +15,35 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 6.x.x
       - name: Use Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '16.x'
-          cache: yarn
-      - run: yarn install --frozen-lockfile
-      - run: yarn lint
-      - run: yarn lint-css
-      - run: yarn format:check
-      - run: yarn build
+          cache: 'pnpm'
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm lint-css
+      - run: pnpm format:check
+      - run: pnpm build
 
   cypress-test:
     name: Cypress Test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 6.x.x
 
       - name: Cypress integration tests
         uses: cypress-io/github-action@v2
         with:
-          install-command: yarn --frozen-lockfile --silent
-          build: yarn build
-          start: yarn serve
+          install-command: pnpm --frozen-lockfile
+          build: pnpm build
+          start: pnpm serve
           wait-on: 'http://localhost:3000'
           browser: chrome
           group: 'UI - Chrome'
@@ -62,4 +68,4 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           install: false
-          command: yarn cypress run-ct
+          command: pnpm cypress run-ct
