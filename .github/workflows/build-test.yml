@@ -41,7 +41,7 @@ jobs:
       - name: Cypress integration tests
         uses: cypress-io/github-action@v2
         with:
-          install-command: pnpm --frozen-lockfile
+          install-command: pnpm install --frozen-lockfile
           build: pnpm build
           start: pnpm serve
           wait-on: 'http://localhost:3000'
