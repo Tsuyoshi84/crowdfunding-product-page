@@ -15,24 +15,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Cache pnpm modules
-        uses: actions/cache@v2
-        with:
-          path: ~/.pnpm-store
-          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-
-
       - uses: pnpm/action-setup@v2
         with:
           version: 6.x.x
-          run_install: |
-            - args: [--frozen-lockfile]
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '16.x'
           cache: 'pnpm'
+      - run: pnpm install --frozen-lockfile
       - run: pnpm lint
       - run: pnpm lint-css
       - run: pnpm format:check
@@ -43,18 +34,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Cache pnpm modules
-        uses: actions/cache@v2
-        with:
-          path: ~/.pnpm-store
-          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-
       - uses: pnpm/action-setup@v2
         with:
           version: 6.x.x
-          run_install: |
-            - args: [--frozen-lockfile]
+      - run: pnpm install --frozen-lockfile
 
       - name: Cypress integration tests
         uses: cypress-io/github-action@v2
