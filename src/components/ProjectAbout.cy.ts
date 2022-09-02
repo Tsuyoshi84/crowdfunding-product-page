@@ -1,4 +1,3 @@
-import { mount } from '@cypress/vue'
 import { Project } from '@/models/project'
 import ProjectAbout from './ProjectAbout.vue'
 import '@/assets/styles/main.css'
@@ -7,7 +6,7 @@ import '@/assets/styles/font.css'
 describe('ProjectAbout', () => {
   beforeEach(() => {
     cy.fixture<Project>('project').then((project) => {
-      mount(ProjectAbout, { props: { project } })
+      cy.mount(ProjectAbout, { props: { project } })
     })
   })
 

@@ -1,7 +1,7 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 interface Props {
-  disabled: boolean
-  type: 'button' | 'submit'
+  disabled?: boolean
+  type?: 'button' | 'submit'
 }
 const { disabled = false, type = 'button' } = defineProps<Props>()
 </script>
