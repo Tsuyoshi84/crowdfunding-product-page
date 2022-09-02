@@ -28,7 +28,7 @@ specifiers:
   typescript: 4.6.3
   vite: 3.0.9
   vue: ^3.2.38
-  vue-template-compiler: ^2.6.14
+  vue-template-compiler: ^2.7.10
 
 dependencies:
   pinia: 2.0.13_zhprqwcefibye6ydd5f375hq3i
@@ -60,7 +60,7 @@ devDependencies:
   stylelint-prettier: 2.0.0_axejln3sy6yheuebeysph4yz3i
   typescript: 4.6.3
   vite: 3.0.9
-  vue-template-compiler: 2.6.14
+  vue-template-compiler: 2.7.10
 
 packages:
 
@@ -2077,7 +2077,7 @@ packages:
     dev: true
 
   /de-indent/1.0.2:
-    resolution: {integrity: sha1-sgOOhG3DO6pXlhKNCAS0VbjB4h0=}
+    resolution: {integrity: sha512-e/1zu3xH5MQryN2zdVaF0OrdNLUbvWxzMbi+iNA6Bky7l1RoP8a2fIbRocyHclXt/arDrrR6lL3TqFD9pMQTsg==}
     dev: true
 
   /debug/3.2.7_supports-color@8.1.1:
@@ -4956,8 +4956,8 @@ packages:
       - supports-color
     dev: true
 
-  /vue-template-compiler/2.6.14:
-    resolution: {integrity: sha512-ODQS1SyMbjKoO1JBJZojSw6FE4qnh9rIpUZn2EUT86FKizx9uH5z6uXiIrm4/Nb/gwxTi/o17ZDEGWAXHvtC7g==}
+  /vue-template-compiler/2.7.10:
+    resolution: {integrity: sha512-QO+8R9YRq1Gudm8ZMdo/lImZLJVUIAM8c07Vp84ojdDAf8HmPJc7XB556PcXV218k2AkKznsRz6xB5uOjAC4EQ==}
     dependencies:
       de-indent: 1.0.2
       he: 1.2.0
