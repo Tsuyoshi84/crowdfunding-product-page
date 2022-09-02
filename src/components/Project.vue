@@ -45,19 +45,19 @@ async function bookmarkToggled() {
 <template>
   <article class="article">
     <template v-if="project">
-      <project-summary
+      <ProjectSummary
         :project="project"
         @click-back-project="openModal"
         @toggle-bookmark="bookmarkToggled"
       />
-      <project-status :project="project" />
-      <project-about
+      <ProjectStatus :project="project" />
+      <ProjectAbout
         :project="project"
         @select-reward="({ reward }) => openModal(reward)"
       />
     </template>
   </article>
-  <project-modal
+  <ProjectModal
     v-if="project"
     :project="project"
     :reward="selectedReward"
@@ -65,7 +65,7 @@ async function bookmarkToggled() {
     @click-close="closeModal"
     @submit="showCompleteModal"
   />
-  <project-complete-modal
+  <ProjectCompleteModal
     :open="showsCompleteModal"
     @click-close="closeCompleteModal"
   />

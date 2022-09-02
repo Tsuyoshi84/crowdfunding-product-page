@@ -31,8 +31,8 @@ const buttonLabel = $computed<string>(() => {
         <span class="number">{{ reward.stock }}</span
         >left
       </div>
-      <primary-button :disabled="isOutOfStock" @click="emit('clickSelect')"
-        ><span class="button-label">{{ buttonLabel }}</span></primary-button
+      <PrimaryButton :disabled="isOutOfStock" @click="emit('clickSelect')"
+        ><span class="button-label">{{ buttonLabel }}</span></PrimaryButton
       >
     </div>
   </section>

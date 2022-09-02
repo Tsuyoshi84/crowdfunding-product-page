@@ -5,7 +5,7 @@ const bookmarkedList = [true, false]
 </script>
 
 <template>
-  <bookmark-button
+  <BookmarkButton
     v-for="(bookmarked, index) in bookmarkedList"
     :key="index"
     :bookmarked="bookmarked"

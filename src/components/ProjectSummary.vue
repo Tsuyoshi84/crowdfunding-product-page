@@ -28,10 +28,10 @@ const emit = defineEmits<{
       {{ project.description }}
     </p>
     <div class="button-container">
-      <primary-button data-test="back-project" @click="emit('clickBackProject')"
-        >Back this project</primary-button
+      <PrimaryButton data-test="back-project" @click="emit('clickBackProject')"
+        >Back this project</PrimaryButton
       >
-      <bookmark-button
+      <BookmarkButton
         data-testid="bookmark-button"
         :bookmarked="project.bookmarked"
         @click="emit('toggleBookmark')"

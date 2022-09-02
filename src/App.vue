@@ -4,9 +4,9 @@ import AppHeader from './components/AppHeader.vue'
 </script>
 
 <template>
-  <app-header />
+  <AppHeader />
   <main>
-    <project />
+    <Project />
   </main>
 </template>
 

@@ -75,12 +75,12 @@ function isSelected(rewardId: number): boolean {
       Want to support us in bringing {{ project.name }} out in the world?
     </p>
     <div class="rewards-container">
-      <project-reward-box
+      <ProjectRewardBox
         :is-selected="isSelected(noRewardId)"
         @select="selectReward(noRewardId)"
         @submit="emit('submit')"
       />
-      <project-reward-box
+      <ProjectRewardBox
         v-for="r in project.rewards"
         :key="r.id"
         :reward="r"

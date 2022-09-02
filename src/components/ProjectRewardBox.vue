@@ -48,7 +48,7 @@ const inputPledge = $ref<number>(minPledge)
   >
     <div class="basic-info" data-test="reward-basic-info" @click="nameClicked">
       <div class="mark-wrapper">
-        <toggle-mark :on="isSelected" />
+        <ToggleMark :on="isSelected" />
       </div>
       <div class="name-wrapper">
         <div class="name">{{ name }}</div>
@@ -67,7 +67,7 @@ const inputPledge = $ref<number>(minPledge)
       </div>
     </div>
     <div class="form-wrapper">
-      <project-reward-box-form
+      <ProjectRewardBoxForm
         v-if="isSelected"
         v-model="inputPledge"
         :min-pledge="minPledge"

@@ -10,6 +10,6 @@ const onList = [true, false]
     :key="index"
     style="width: 50px; height: 50px"
   >
-    <toggle-mark :on="on" />
+    <ToggleMark :on="on" />
   </div>
 </template>
