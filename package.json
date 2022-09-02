@@ -13,6 +13,7 @@
     "lint-css:fix": "stylelint '**/*.vue' '**/*.css' --ignore-path .gitignore --fix",
     "format": "prettier --write './**/*.{ts,js,vue}'",
     "format:check": "prettier --check './**/*.{ts,js,vue}'",
+    "typecheck": "vue-tsc --noEmit --skipLibCheck",
     "cy:ct": "cypress open-ct",
     "cy:it": "cypress open"
   },
@@ -45,6 +46,7 @@
     "stylelint-prettier": "^2.0.0",
     "typescript": "4.8.2",
     "vite": "3.0.9",
-    "vue-template-compiler": "^2.7.10"
+    "vue-template-compiler": "^2.7.10",
+    "vue-tsc": "^0.40.5"
   }
 }
