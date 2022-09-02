@@ -40,7 +40,7 @@ jobs:
       - run: pnpm install --frozen-lockfile
 
       - name: Cypress integration tests
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v4
         with:
           install: false
           build: pnpm build
@@ -66,7 +66,7 @@ jobs:
           path: cypress/screenshots
 
       - name: Cypress component tests
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v4
         with:
           install: false
           command: pnpm cypress run-ct
