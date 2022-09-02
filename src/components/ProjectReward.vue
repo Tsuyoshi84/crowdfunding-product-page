@@ -22,13 +22,15 @@ const buttonLabel = $computed<string>(() => {
 <template>
   <section class="reward-container" :class="{ 'out-of-stock': isOutOfStock }">
     <div class="basic-info">
-      <div class="name">{{ reward.name }}</div>
-      <div class="pledge">Pledge ${{ reward.pledge }} or more</div>
+      <div class="name" data-test="name">{{ reward.name }}</div>
+      <div class="pledge" data-test="pledge">
+        Pledge ${{ reward.pledge }} or more
+      </div>
     </div>
-    <div class="detail">{{ reward.detail }}</div>
+    <div class="detail" data-test="detail">{{ reward.detail }}</div>
     <div class="stock-info">
       <div class="left">
-        <span class="number">{{ reward.stock }}</span
+        <span class="number" data-test="number">{{ reward.stock }}</span
         >left
       </div>
       <PrimaryButton :disabled="isOutOfStock" @click="emit('clickSelect')"

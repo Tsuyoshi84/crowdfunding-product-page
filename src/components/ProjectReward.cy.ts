@@ -18,9 +18,9 @@ describe('ProjectReward', () => {
   })
 
   it('shows texts', () => {
-    cy.get('.name').contains(reward.name).should('be.visible')
-    cy.get('.pledge').contains('Pledge $3 or more').should('be.visible')
-    cy.get('.detail').contains(reward.detail).should('be.visible')
-    cy.get('.number').contains(reward.stock).should('be.visible')
+    cy.getBySel('name').contains(reward.name).should('be.visible')
+    cy.getBySel('pledge').contains('Pledge $3 or more').should('be.visible')
+    cy.getBySel('detail').contains(reward.detail).should('be.visible')
+    cy.getBySel('number').contains(reward.stock).should('be.visible')
   })
 })
