@@ -45,7 +45,7 @@ jobs:
           install: false
           build: pnpm build
           start: pnpm serve
-          wait-on: 'http://localhost:3000'
+          wait-on: 'http://localhost:5173'
           browser: chrome
           group: 'UI - Chrome'
           record: true
