@@ -14,7 +14,7 @@ context('Basic', () => {
   })
 
   it('toggle bookmark button', () => {
-    cy.url().should('eq', 'http://localhost:3000/')
+    cy.url().should('eq', 'http://localhost:5173/')
 
     cy.getBySel('bookmark-button')
       .click()
@@ -26,7 +26,7 @@ context('Basic', () => {
   })
 
   it('back project', () => {
-    cy.url().should('eq', 'http://localhost:3000/')
+    cy.url().should('eq', 'http://localhost:5173/')
 
     cy.screenshot('01-project-page', { capture: 'viewport', overwrite: true })
     cy.getBySel('project-name').should('exist').contains(project.name!)
