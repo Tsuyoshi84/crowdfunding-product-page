@@ -10,6 +10,7 @@ module.exports = {
     'vue/component-name-in-template-casing': ['error', 'PascalCase'],
 
     // Disabled rules
+    'vue/multi-word-component-names': 'off',
     'vue/no-setup-props-destructure': 'off',
   },
   parserOptions: {
