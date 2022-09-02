@@ -7,8 +7,9 @@ module.exports = {
     'prettier',
   ],
   rules: {
-    // override/add rules settings here, such as:
-    // 'vue/no-unused-vars': 'error'
+    'vue/component-name-in-template-casing': ['error', 'PascalCase'],
+
+    // Disabled rules
     'vue/no-setup-props-destructure': 'off',
   },
   parserOptions: {
