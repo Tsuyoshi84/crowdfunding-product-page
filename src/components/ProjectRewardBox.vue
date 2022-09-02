@@ -4,7 +4,7 @@ import ToggleMark from '@/components/common/ToggleMark.vue'
 import ProjectRewardBoxForm from '@/components/ProjectRewardBoxForm.vue'
 
 interface Props {
-  reward: ProjectReward | null
+  reward?: ProjectReward | null
   isSelected: boolean
 }
 

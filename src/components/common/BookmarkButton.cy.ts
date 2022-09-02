@@ -1,4 +1,3 @@
-import { mount } from '@cypress/vue'
 import BookmarkButton from './BookmarkButton.vue'
 import BookmarkButtonPreview from './BookmarkButton.preview.vue'
 import '@/assets/styles/main.css'
@@ -10,11 +9,11 @@ describe('BookmarkButton', () => {
   for (const viewport of viewportList) {
     it(`Preview viewportList=${viewport}`, () => {
       cy.viewport(viewport)
-      mount(BookmarkButtonPreview)
+      cy.mount(BookmarkButtonPreview)
     })
   }
 
   it('shows button', () => {
-    mount(BookmarkButton, {}).get('button').should('be.visible')
+    cy.mount(BookmarkButton, {}).get('button').should('be.visible')
   })
 })

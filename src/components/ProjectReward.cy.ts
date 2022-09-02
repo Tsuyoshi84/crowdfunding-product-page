@@ -1,5 +1,4 @@
-import { mount } from '@cypress/vue'
-import { ProjectReward as Reward } from '@/models/project-reward'
+import { ProjectReward as Reward } from '@/models/project'
 import ProjectReward from './ProjectReward.vue'
 import '@/assets/styles/main.css'
 import '@/assets/styles/font.css'
@@ -14,7 +13,7 @@ const reward: Reward = {
 
 describe('ProjectReward', () => {
   beforeEach(() => {
-    mount(ProjectReward, { props: { reward } })
+    cy.mount(ProjectReward, { props: { reward } })
   })
 
   it('shows texts', () => {
