@@ -14,8 +14,7 @@
     "format": "prettier --write './**/*.{ts,js,vue}'",
     "format:check": "prettier --check './**/*.{ts,js,vue}'",
     "typecheck": "vue-tsc --noEmit --skipLibCheck",
-    "cy:ct": "cypress open-ct",
-    "cy:it": "cypress open"
+    "cy": "cypress open"
   },
   "dependencies": {
     "pinia": "^2.0.21",

@@ -57,8 +57,8 @@ async function bookmarkToggled(): Promise<void> {
   <ProjectModal
     v-if="project"
     ref="projectModal"
+    v-model:reward="selectedReward"
     :project="project"
-    :reward="selectedReward"
     @submit="showCompleteModal"
   />
   <ProjectCompleteModal ref="completeModal" />
