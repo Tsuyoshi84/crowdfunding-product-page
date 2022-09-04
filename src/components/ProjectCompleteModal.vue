@@ -58,6 +58,7 @@ dialog {
 
     &::backdrop {
       background-color: hsl(0deg 0% 0% / 40%);
+      transition: backdrop-filter 0.3s ease;
     }
   }
 }
