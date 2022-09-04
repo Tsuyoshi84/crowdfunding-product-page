@@ -12,10 +12,10 @@ describe('<ProjectSummary>', () => {
 
   it('shows texts', () => {
     cy.getBySel('project-name')
-      .contains('An awesome project')
+      .should('contain.text', 'An awesome project')
       .should('be.visible')
     cy.getBySel('project-description')
-      .contains('This is an awesome project')
+      .should('contain.text', 'This is an awesome project')
       .should('be.visible')
   })
 })
