@@ -6,7 +6,7 @@ const props = defineProps({
   },
 })
 
-const label = $computed<string>(() => {
+const label = $computed<'Bookmarked' | 'Bookmark'>(() => {
   return props.bookmarked ? 'Bookmarked' : 'Bookmark'
 })
 </script>

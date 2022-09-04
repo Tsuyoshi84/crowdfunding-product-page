@@ -3,7 +3,7 @@ import ToggleMarkPreview from './ToggleMark.preview.vue'
 import '@/assets/styles/main.css'
 import '@/assets/styles/font.css'
 
-describe('ToggleMark', () => {
+describe('<ToggleMark>', () => {
   it('preview', () => {
     cy.mount(ToggleMarkPreview)
   })

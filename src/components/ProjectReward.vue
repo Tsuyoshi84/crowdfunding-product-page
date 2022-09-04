@@ -11,12 +11,10 @@ const emit = defineEmits<{
   (e: 'clickSelect'): void
 }>()
 
-const isOutOfStock = $computed<boolean>(() => {
-  return reward.stock === 0
-})
-const buttonLabel = $computed<string>(() => {
-  return isOutOfStock ? 'Out of Stock' : 'Select Reward'
-})
+const isOutOfStock = $computed<boolean>(() => reward.stock === 0)
+const buttonLabel = $computed<string>(() =>
+  isOutOfStock ? 'Out of Stock' : 'Select Reward',
+)
 </script>
 
 <template>

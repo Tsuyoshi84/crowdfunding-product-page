@@ -3,7 +3,7 @@ import ProjectSummary from './ProjectSummary.vue'
 import '@/assets/styles/main.css'
 import '@/assets/styles/font.css'
 
-describe('ProjectSummary', () => {
+describe('<ProjectSummary>', () => {
   beforeEach(() => {
     cy.fixture<Project>('project').then((project) => {
       cy.mount(ProjectSummary, { props: { project } })

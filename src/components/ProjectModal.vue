@@ -16,44 +16,25 @@ const emit = defineEmits<{
 }>()
 
 const noRewardId = 0
-const dialog = ref<null | HTMLElement>(null)
 
-function openModal() {
-  if (typeof (dialog.value as any)?.showModal !== 'function') {
-    alert(`Sorry, this browser doesn't support dialog element. :(`)
-    return
-  }
-
+const dialog = $ref<null | HTMLDialogElement>(null)
+function openModal(): void {
   selectedRewardId.value = reward?.id ?? null
-  ;(dialog.value as any).showModal()
+  dialog?.showModal()
 }
-
-function closeModal() {
-  if (typeof (dialog.value as any)?.showModal !== 'function') {
-    alert(`Sorry, this browser doesn't support dialog element. :(`)
-    return
-  }
-
-  ;(dialog.value as any).close()
+function closeModal(): void {
+  dialog?.close()
 }
 
 watch(
   () => open,
-  (open) => {
-    if (open) {
-      openModal()
-    } else {
-      closeModal()
-    }
-  },
+  (open) => (open ? openModal() : closeModal()),
 )
 
 const selectedRewardId = ref<number | null>(null)
-
-function selectReward(rewardId: number) {
+function selectReward(rewardId: number): void {
   selectedRewardId.value = rewardId
 }
-
 function isSelected(rewardId: number): boolean {
   return rewardId === selectedRewardId.value
 }

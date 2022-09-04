@@ -20,24 +20,24 @@ onMounted(async () => {
 let selectedReward = $ref<ProjectReward | null>(null)
 let showsModal = $ref(false)
 
-function openModal(reward: ProjectReward | null = null) {
+function openModal(reward: ProjectReward | null = null): void {
   selectedReward = reward
   showsModal = true
 }
-function closeModal() {
+function closeModal(): void {
   showsModal = false
 }
 
 const showsCompleteModal = ref(false)
-function showCompleteModal() {
+function showCompleteModal(): void {
   closeModal()
   showsCompleteModal.value = true
 }
-function closeCompleteModal() {
+function closeCompleteModal(): void {
   showsCompleteModal.value = false
 }
 
-async function bookmarkToggled() {
+async function bookmarkToggled(): Promise<void> {
   await toggleBookmarked()
 }
 </script>
