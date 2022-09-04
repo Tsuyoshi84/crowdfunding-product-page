@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import ProjectRewardBox from '@/components/ProjectRewardBox.vue'
 import { Project, ProjectReward } from '@/models/project'
-import { defineExpose, ref } from 'vue'
+import { defineExpose } from 'vue'
 
 interface Props {
   project: Project
@@ -11,17 +11,24 @@ const { reward = null } = defineProps<Props>()
 
 const emit = defineEmits<{
   (e: 'submit'): void
+  (e: 'update:reward', reward: ProjectReward | null): void
 }>()
 
-const noRewardId = 0
+let noRewardSelected = $ref(false)
 
 const dialog = $ref<null | HTMLDialogElement>(null)
 function open(): void {
-  selectedRewardId.value = reward?.id ?? null
   dialog?.showModal()
 }
 function close(): void {
+  noRewardSelected = false
   dialog?.close()
+}
+
+function selectReward(reward: ProjectReward | null): void {
+  noRewardSelected = reward === null
+
+  emit('update:reward', reward)
 }
 
 defineExpose({
@@ -29,12 +36,8 @@ defineExpose({
   close,
 })
 
-const selectedRewardId = ref<number | null>(null)
-function selectReward(rewardId: number): void {
-  selectedRewardId.value = rewardId
-}
-function isSelected(rewardId: number): boolean {
-  return rewardId === selectedRewardId.value
+function isSelected({ id }: ProjectReward): boolean {
+  return id === reward?.id
 }
 </script>
 
@@ -52,16 +55,16 @@ function isSelected(rewardId: number): boolean {
       </p>
       <div class="rewards-container">
         <ProjectRewardBox
-          :is-selected="isSelected(noRewardId)"
-          @select="selectReward(noRewardId)"
+          :is-selected="noRewardSelected"
+          @select="selectReward(null)"
           @submit="emit('submit')"
         />
         <ProjectRewardBox
           v-for="r in project.rewards"
           :key="r.id"
           :reward="r"
-          :is-selected="isSelected(r.id)"
-          @select="selectReward(r.id)"
+          :is-selected="isSelected(r)"
+          @select="selectReward(r)"
           @submit="emit('submit')"
         />
       </div>
