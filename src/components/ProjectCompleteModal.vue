@@ -1,24 +1,19 @@
 <script setup lang="ts">
-import { watch } from 'vue'
+import { defineExpose } from 'vue'
 import PrimaryButton from './common/PrimaryButton.vue'
 
-interface Props {
-  open: boolean
-}
-const { open = false } = defineProps<Props>()
-
 const dialog = $ref<null | HTMLDialogElement>(null)
-function openModal(): void {
+function open(): void {
   dialog?.showModal()
 }
-function closeModal(): void {
+function close(): void {
   dialog?.close()
 }
 
-watch(
-  () => open,
-  (open) => (open ? openModal() : closeModal()),
-)
+defineExpose({
+  open,
+  close,
+})
 </script>
 
 <template>
@@ -36,7 +31,7 @@ watch(
       Monitor Riser worldwide.You will get an email once our campaign is
       completed.
     </p>
-    <PrimaryButton @click="closeModal">
+    <PrimaryButton @click="close">
       <span class="button-label" data-test="complete-modal-close-button"
         >Got it!</span
       >
