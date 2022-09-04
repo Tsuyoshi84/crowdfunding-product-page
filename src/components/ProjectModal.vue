@@ -1,35 +1,33 @@
 <script setup lang="ts">
-import { Project, ProjectReward } from '@/models/project'
-import { watch, ref } from 'vue'
 import ProjectRewardBox from '@/components/ProjectRewardBox.vue'
+import { Project, ProjectReward } from '@/models/project'
+import { defineExpose, ref } from 'vue'
 
 interface Props {
   project: Project
   reward: ProjectReward | null
-  open: boolean
 }
-const { reward = null, open = false } = defineProps<Props>()
+const { reward = null } = defineProps<Props>()
 
 const emit = defineEmits<{
-  (e: 'clickClose'): void
   (e: 'submit'): void
 }>()
 
 const noRewardId = 0
 
 const dialog = $ref<null | HTMLDialogElement>(null)
-function openModal(): void {
+function open(): void {
   selectedRewardId.value = reward?.id ?? null
   dialog?.showModal()
 }
-function closeModal(): void {
+function close(): void {
   dialog?.close()
 }
 
-watch(
-  () => open,
-  (open) => (open ? openModal() : closeModal()),
-)
+defineExpose({
+  open,
+  close,
+})
 
 const selectedRewardId = ref<number | null>(null)
 function selectReward(rewardId: number): void {
@@ -44,12 +42,7 @@ function isSelected(rewardId: number): boolean {
   <dialog ref="dialog" data-test="project-modal">
     <header class="title-container">
       <h2 class="title">Back this project</h2>
-      <button
-        class="close-button"
-        aria-label="close"
-        autofocus
-        @click="emit('clickClose')"
-      >
+      <button class="close-button" aria-label="close" autofocus @click="close">
         <img src="@/assets/images/icon-close-modal.svg" alt="" />
       </button>
     </header>
