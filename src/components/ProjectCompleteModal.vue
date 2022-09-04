@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { watch } from 'vue'
 import PrimaryButton from './common/PrimaryButton.vue'
 
 interface Props {
@@ -7,35 +7,17 @@ interface Props {
 }
 const { open = false } = defineProps<Props>()
 
-const dialog = ref<null | HTMLElement>(null)
-
-function openModal() {
-  if (typeof (dialog.value as any)?.showModal !== 'function') {
-    alert(`Sorry, this browser doesn't support dialog element. :(`)
-    return
-  }
-
-  ;(dialog.value as any).showModal()
+const dialog = $ref<null | HTMLDialogElement>(null)
+function openModal(): void {
+  dialog?.showModal()
 }
-
-function closeModal() {
-  if (typeof (dialog.value as any)?.showModal !== 'function') {
-    alert(`Sorry, this browser doesn't support dialog element. :(`)
-    return
-  }
-
-  ;(dialog.value as any).close()
+function closeModal(): void {
+  dialog?.close()
 }
 
 watch(
   () => open,
-  (open) => {
-    if (open) {
-      openModal()
-    } else {
-      closeModal()
-    }
-  },
+  (open) => (open ? openModal() : closeModal()),
 )
 </script>
 

@@ -15,16 +15,16 @@ const emit = defineEmits<{
   (e: 'submit'): void
 }>()
 
-const isOutOfStock = $computed(() => {
+const isOutOfStock = $computed<boolean>(() => {
   if (reward === null) return false
 
   return reward.stock === 0
 })
-const isNoReward = $computed(() => reward === null)
-const name = $computed(() => reward?.name ?? 'Pledge with no reward')
-const minPledge = $computed(() => reward?.pledge ?? 0)
-const stock = $computed(() => reward?.stock ?? 0)
-const detail = $computed(() => {
+const isNoReward = $computed<boolean>(() => reward === null)
+const name = $computed<string>(() => reward?.name ?? 'Pledge with no reward')
+const minPledge = $computed<number>(() => reward?.pledge ?? 0)
+const stock = $computed<number>(() => reward?.stock ?? 0)
+const detail = $computed<string>(() => {
   return (
     reward?.detail ??
     'Choose to support us without a reward if you simple believe in our project. As a backer, you will be signed up to receive product updates via email'

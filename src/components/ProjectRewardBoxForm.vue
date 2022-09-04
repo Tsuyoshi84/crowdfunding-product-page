@@ -12,9 +12,9 @@ const emit = defineEmits<{
   (e: 'submit'): void
 }>()
 
-const canSubmit = $computed(() => modelValue >= minPledge)
+const canSubmit = $computed<boolean>(() => modelValue >= minPledge)
 
-function onChanged(e: Event) {
+function onChanged(e: Event): void {
   if (typeof (e.currentTarget as any).value !== 'string') return
 
   const value = parseInt((e.currentTarget as any).value)
