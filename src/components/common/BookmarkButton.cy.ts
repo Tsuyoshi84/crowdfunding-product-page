@@ -3,7 +3,7 @@ import BookmarkButtonPreview from './BookmarkButton.preview.vue'
 import '@/assets/styles/main.css'
 import '@/assets/styles/font.css'
 
-describe('BookmarkButton', () => {
+describe('<BookmarkButton>', () => {
   const viewportList: Cypress.ViewportPreset[] = ['iphone-x', 'macbook-13']
 
   for (const viewport of viewportList) {

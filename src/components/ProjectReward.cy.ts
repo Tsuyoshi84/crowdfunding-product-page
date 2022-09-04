@@ -11,7 +11,7 @@ const reward: Reward = {
   pledge: 3,
 }
 
-describe('ProjectReward', () => {
+describe('<ProjectReward>', () => {
   beforeEach(() => {
     cy.mount(ProjectReward, { props: { reward } })
   })
