@@ -5,7 +5,7 @@ import ProjectAbout from './ProjectAbout.vue'
 import { useProjectStore } from '@/stores/project'
 import { storeToRefs } from 'pinia'
 import ProjectModal from './ProjectModal.vue'
-import { ref, onMounted } from 'vue'
+import { onMounted } from 'vue'
 import ProjectCompleteModal from './ProjectCompleteModal.vue'
 import { ProjectReward } from '@/models/project'
 
@@ -18,23 +18,20 @@ onMounted(async () => {
 })
 
 let selectedReward = $ref<ProjectReward | null>(null)
-let showsModal = $ref(false)
+
+const projectModal = $ref<null | InstanceType<typeof ProjectModal>>(null)
+const completeModal = $ref<null | InstanceType<typeof ProjectCompleteModal>>(
+  null,
+)
 
 function openModal(reward: ProjectReward | null = null): void {
   selectedReward = reward
-  showsModal = true
-}
-function closeModal(): void {
-  showsModal = false
+  projectModal?.open()
 }
 
-const showsCompleteModal = ref(false)
 function showCompleteModal(): void {
-  closeModal()
-  showsCompleteModal.value = true
-}
-function closeCompleteModal(): void {
-  showsCompleteModal.value = false
+  projectModal?.close()
+  completeModal?.open()
 }
 
 async function bookmarkToggled(): Promise<void> {
@@ -59,16 +56,12 @@ async function bookmarkToggled(): Promise<void> {
   </article>
   <ProjectModal
     v-if="project"
+    ref="projectModal"
     :project="project"
     :reward="selectedReward"
-    :open="showsModal"
-    @click-close="closeModal"
     @submit="showCompleteModal"
   />
-  <ProjectCompleteModal
-    :open="showsCompleteModal"
-    @click-close="closeCompleteModal"
-  />
+  <ProjectCompleteModal ref="completeModal" />
 </template>
 
 <style lang="postcss" scoped>
