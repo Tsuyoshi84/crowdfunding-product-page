@@ -42,34 +42,37 @@ function isSelected(rewardId: number): boolean {
 
 <template>
   <dialog ref="dialog" data-test="project-modal">
-    <div class="title-container">
+    <header class="title-container">
       <h2 class="title">Back this project</h2>
       <button
         class="close-button"
         aria-label="close"
+        autofocus
         @click="emit('clickClose')"
       >
         <img src="@/assets/images/icon-close-modal.svg" alt="" />
       </button>
-    </div>
-    <p class="explanation">
-      Want to support us in bringing {{ project.name }} out in the world?
-    </p>
-    <div class="rewards-container">
-      <ProjectRewardBox
-        :is-selected="isSelected(noRewardId)"
-        @select="selectReward(noRewardId)"
-        @submit="emit('submit')"
-      />
-      <ProjectRewardBox
-        v-for="r in project.rewards"
-        :key="r.id"
-        :reward="r"
-        :is-selected="isSelected(r.id)"
-        @select="selectReward(r.id)"
-        @submit="emit('submit')"
-      />
-    </div>
+    </header>
+    <article>
+      <p class="explanation">
+        Want to support us in bringing {{ project.name }} out in the world?
+      </p>
+      <div class="rewards-container">
+        <ProjectRewardBox
+          :is-selected="isSelected(noRewardId)"
+          @select="selectReward(noRewardId)"
+          @submit="emit('submit')"
+        />
+        <ProjectRewardBox
+          v-for="r in project.rewards"
+          :key="r.id"
+          :reward="r"
+          :is-selected="isSelected(r.id)"
+          @select="selectReward(r.id)"
+          @submit="emit('submit')"
+        />
+      </div>
+    </article>
   </dialog>
 </template>
 
