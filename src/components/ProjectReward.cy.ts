@@ -1,7 +1,5 @@
 import { ProjectReward as Reward } from '@/models/project'
 import ProjectReward from './ProjectReward.vue'
-import '@/assets/styles/main.css'
-import '@/assets/styles/font.css'
 
 const reward: Reward = {
   id: 1,

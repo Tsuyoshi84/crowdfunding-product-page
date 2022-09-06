@@ -1,8 +1,4 @@
 import PrimaryButton from './PrimaryButton.vue'
-import '@/assets/styles/main.css'
-import '@/assets/styles/font.css'
-
-type A = InstanceType<typeof PrimaryButton>
 
 describe('<PrimaryButton>', () => {
   const label = 'Click me'

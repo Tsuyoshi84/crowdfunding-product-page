@@ -1,7 +1,5 @@
 import ToggleMark from './ToggleMark.vue'
 import ToggleMarkPreview from './ToggleMark.preview.vue'
-import '@/assets/styles/main.css'
-import '@/assets/styles/font.css'
 
 describe('<ToggleMark>', () => {
   it('preview', () => {

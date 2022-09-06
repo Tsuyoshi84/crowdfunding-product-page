@@ -1,7 +1,5 @@
 import { Project } from '@/models/project'
 import ProjectAbout from './ProjectAbout.vue'
-import '@/assets/styles/main.css'
-import '@/assets/styles/font.css'
 
 describe('<ProjectAbout>', () => {
   beforeEach(() => {
