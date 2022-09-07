@@ -16,13 +16,13 @@ const { on = false } = defineProps<Props>()
 .outer-circle {
   display: flex;
   width: 100%;
-  height: 100%;
   min-width: 20px;
+  height: 100%;
   min-height: 20px;
-  aspect-ratio: 1;
   align-items: center;
   justify-content: center;
   border: 1px solid var(--color-border);
+  aspect-ratio: 1;
   border-radius: 50%;
 
   & .inner-circle {
