@@ -1,29 +1,38 @@
 <script setup lang="ts">
 import ProjectRewardBox from '@/components/ProjectRewardBox.vue'
 import { Project, ProjectReward } from '@/models/project'
-import { defineExpose } from 'vue'
+import { watch, defineExpose } from 'vue'
 
 interface Props {
   project: Project
   reward: ProjectReward | null
+  open: boolean
 }
-const { reward = null } = defineProps<Props>()
+
+const { reward = null, open = false } = defineProps<Props>()
 
 const emit = defineEmits<{
   (e: 'submit'): void
   (e: 'update:reward', reward: ProjectReward | null): void
+  (e: 'update:open', open: boolean): void
 }>()
 
 let noRewardSelected = $ref(false)
 
 const dialog = $ref<null | HTMLDialogElement>(null)
-function open(): void {
+function show(): void {
   dialog?.showModal()
 }
 function close(): void {
   noRewardSelected = false
   dialog?.close()
+  emit('update:open', false)
 }
+
+watch(
+  () => open,
+  (open) => (open ? show() : close()),
+)
 
 function selectReward(reward: ProjectReward | null): void {
   noRewardSelected = reward === null
