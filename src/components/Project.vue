@@ -19,19 +19,17 @@ onMounted(async () => {
 
 let selectedReward = $ref<ProjectReward | null>(null)
 
-const projectModal = $ref<null | InstanceType<typeof ProjectModal>>(null)
-const completeModal = $ref<null | InstanceType<typeof ProjectCompleteModal>>(
-  null,
-)
+let isProjectModalOpen = $ref(false)
+let isCompleteModalOpen = $ref(false)
 
 function openModal(reward: ProjectReward | null = null): void {
   selectedReward = reward
-  projectModal?.open()
+  isProjectModalOpen = true
 }
 
 function showCompleteModal(): void {
-  projectModal?.close()
-  completeModal?.open()
+  isProjectModalOpen = false
+  isCompleteModalOpen = true
 }
 
 async function bookmarkToggled(): Promise<void> {
@@ -56,12 +54,12 @@ async function bookmarkToggled(): Promise<void> {
   </article>
   <ProjectModal
     v-if="project"
-    ref="projectModal"
+    v-model:open="isProjectModalOpen"
     v-model:reward="selectedReward"
     :project="project"
     @submit="showCompleteModal"
   />
-  <ProjectCompleteModal ref="completeModal" />
+  <ProjectCompleteModal v-model:open="isCompleteModalOpen" />
 </template>
 
 <style lang="postcss" scoped>

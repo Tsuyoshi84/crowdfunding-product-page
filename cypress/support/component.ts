@@ -13,6 +13,8 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 
+import '../../src/setup'
+
 // Import commands.js using ES2015 syntax:
 import './commands'
 
@@ -33,7 +35,11 @@ declare global {
   }
 }
 
-Cypress.Commands.add('mount', mount)
+Cypress.Commands.add('mount', (...args) => {
+  return mount(...args).then((wrapper) => {
+    return cy.wrap(wrapper).as('vue')
+  })
+})
 
 // Example use:
 // cy.mount(MyComponent)

@@ -1,7 +1,5 @@
 import { Project } from '@/models/project'
 import ProjectSummary from './ProjectSummary.vue'
-import '@/assets/styles/main.css'
-import '@/assets/styles/font.css'
 
 describe('<ProjectSummary>', () => {
   beforeEach(() => {
@@ -12,10 +10,10 @@ describe('<ProjectSummary>', () => {
 
   it('shows texts', () => {
     cy.getBySel('project-name')
-      .contains('An awesome project')
+      .should('contain.text', 'An awesome project')
       .should('be.visible')
     cy.getBySel('project-description')
-      .contains('This is an awesome project')
+      .should('contain.text', 'This is an awesome project')
       .should('be.visible')
   })
 })

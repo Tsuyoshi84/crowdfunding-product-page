@@ -1,7 +1,5 @@
 import { ProjectReward as Reward } from '@/models/project'
 import ProjectReward from './ProjectReward.vue'
-import '@/assets/styles/main.css'
-import '@/assets/styles/font.css'
 
 const reward: Reward = {
   id: 1,
@@ -17,9 +15,15 @@ describe('<ProjectReward>', () => {
   })
 
   it('shows texts', () => {
-    cy.getBySel('name').contains(reward.name).should('be.visible')
-    cy.getBySel('pledge').contains('Pledge $3 or more').should('be.visible')
-    cy.getBySel('detail').contains(reward.detail).should('be.visible')
-    cy.getBySel('number').contains(reward.stock).should('be.visible')
+    cy.getBySel('name').should('contain.text', reward.name).should('be.visible')
+    cy.getBySel('pledge')
+      .should('contain.text', 'Pledge $3 or more')
+      .should('be.visible')
+    cy.getBySel('detail')
+      .should('contain.text', reward.detail)
+      .should('be.visible')
+    cy.getBySel('number')
+      .should('contain.text', reward.stock)
+      .should('be.visible')
   })
 })

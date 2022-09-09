@@ -14,11 +14,6 @@ export default defineConfig({
   },
 
   component: {
-    setupNodeEvents(on, config) {},
-    specPattern: 'src/**/*.spec.ts',
-  },
-
-  component: {
     devServer: {
       framework: 'vue',
       bundler: 'vite',

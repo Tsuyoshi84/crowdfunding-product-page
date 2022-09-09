@@ -1,13 +1,12 @@
 <script setup lang="ts">
-const props = defineProps({
-  bookmarked: {
-    type: Boolean,
-    required: true,
-  },
-})
+interface Props {
+  bookmarked?: boolean
+}
+
+const { bookmarked = false } = defineProps<Props>()
 
 const label = $computed<'Bookmarked' | 'Bookmark'>(() => {
-  return props.bookmarked ? 'Bookmarked' : 'Bookmark'
+  return bookmarked ? 'Bookmarked' : 'Bookmark'
 })
 </script>
 
@@ -15,7 +14,7 @@ const label = $computed<'Bookmarked' | 'Bookmark'>(() => {
   <button
     class="bookmark-button"
     aria-label="Toggle bookmark"
-    :class="{ bookmarked: props.bookmarked }"
+    :class="{ bookmarked }"
     v-bind="$attrs"
     data-test="bookmark-button"
   >

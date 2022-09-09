@@ -28,6 +28,7 @@ const buttonLabel = $computed(() => {
     <div>
       <button
         class="menu-button"
+        data-test="menu-button"
         type="button"
         :aria-label="buttonLabel"
         @click="isMenuOpen = !isMenuOpen"
@@ -39,7 +40,7 @@ const buttonLabel = $computed(() => {
       <ul>
         <li><a href="/about">About</a></li>
         <li><a href="/discover">Discover</a></li>
-        <li><a href="/about">Get Started</a></li>
+        <li><a href="/get-started">Get Started</a></li>
       </ul>
     </nav>
   </header>

@@ -18,10 +18,10 @@ context('Basic', () => {
 
     cy.getBySel('bookmark-button')
       .click()
-      .contains('Bookmarked')
+      .should('contain.text', 'Bookmarked')
       .should('exist')
       .click()
-      .contains('Bookmark')
+      .should('contain.text', 'Bookmark')
       .should('exist')
   })
 
@@ -29,14 +29,16 @@ context('Basic', () => {
     cy.url().should('eq', 'http://localhost:5173/')
 
     cy.screenshot('01-project-page', { capture: 'viewport', overwrite: true })
-    cy.getBySel('project-name').should('exist').contains(project.name!)
+    cy.getBySel('project-name')
+      .should('exist')
+      .should('contain.text', project.name!)
     cy.get('[data-test=project-description]')
       .should('exist')
-      .contains(project.description!)
+      .should('contain.text', project.description!)
 
     cy.getBySel('back-project')
       .should('exist')
-      .contains('Back this project')
+      .should('contain.text', 'Back this project')
       .click()
     cy.screenshot('02-show-project-modal', {
       capture: 'viewport',
@@ -48,7 +50,9 @@ context('Basic', () => {
 
     cy.getBySel('reward-basic-info').eq(1).click()
 
-    cy.getBySel('input-form').contains('Enter your pledge').should('exist')
+    cy.getBySel('input-form')
+      .should('contain.text', 'Enter your pledge')
+      .should('exist')
 
     cy.get('[name=pledge]')
       .should('have.value', 25)

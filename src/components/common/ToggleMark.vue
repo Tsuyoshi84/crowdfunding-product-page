@@ -8,7 +8,7 @@ const { on = false } = defineProps<Props>()
 
 <template>
   <div class="outer-circle" :class="{ on }">
-    <div class="circle"></div>
+    <div class="inner-circle"></div>
   </div>
 </template>
 
@@ -16,13 +16,16 @@ const { on = false } = defineProps<Props>()
 .outer-circle {
   display: flex;
   width: 100%;
+  min-width: 20px;
   height: 100%;
+  min-height: 20px;
   align-items: center;
   justify-content: center;
   border: 1px solid var(--color-border);
+  aspect-ratio: 1;
   border-radius: 50%;
 
-  & .circle {
+  & .inner-circle {
     width: 80%;
     height: 80%;
     background-color: transparent;
@@ -32,7 +35,7 @@ const { on = false } = defineProps<Props>()
 }
 
 .outer-circle.on {
-  & .circle {
+  & .inner-circle {
     background-color: var(--color-primary);
   }
 }

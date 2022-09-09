@@ -1,14 +1,19 @@
 import ToggleMark from './ToggleMark.vue'
-import ToggleMarkPreview from './ToggleMark.preview.vue'
-import '@/assets/styles/main.css'
-import '@/assets/styles/font.css'
 
 describe('<ToggleMark>', () => {
-  it('preview', () => {
-    cy.mount(ToggleMarkPreview)
+  it('should show', () => {
+    cy.mount(ToggleMark).get('div.outer-circle').should('be.visible')
   })
 
-  it('shows button', () => {
-    cy.mount(ToggleMark, {}).get('.outer-circle').should('be.visible')
+  it('inner circle background is transparent when not active', () => {
+    cy.mount(ToggleMark)
+      .get('div.inner-circle')
+      .should('have.css', 'background-color', 'rgba(0, 0, 0, 0)')
+  })
+
+  it('inner circle background is not transparent when not active', () => {
+    cy.mount(ToggleMark, { props: { on: true } })
+      .get('div.inner-circle')
+      .should('not.have.css', 'background-color', 'rgba(0, 0, 0, 0)')
   })
 })

@@ -1,14 +1,33 @@
 <script setup lang="ts">
-import { defineExpose } from 'vue'
+import { watch, defineExpose, onMounted } from 'vue'
 import PrimaryButton from './common/PrimaryButton.vue'
 
+const { open = false } = defineProps<{
+  open: boolean
+}>()
+
+defineEmits<{
+  (e: 'update:open', open: boolean): void
+}>()
+
 const dialog = $ref<null | HTMLDialogElement>(null)
-function open(): void {
+
+function show(): void {
   dialog?.showModal()
 }
+
 function close(): void {
   dialog?.close()
 }
+
+watch(
+  () => open,
+  (open) => (open ? show() : close()),
+)
+
+onMounted(() => {
+  open ? show() : close()
+})
 
 defineExpose({
   open,
@@ -31,7 +50,7 @@ defineExpose({
       Monitor Riser worldwide.You will get an email once our campaign is
       completed.
     </p>
-    <PrimaryButton @click="close">
+    <PrimaryButton @click="$emit('update:open', false)">
       <span class="button-label" data-test="complete-modal-close-button"
         >Got it!</span
       >
