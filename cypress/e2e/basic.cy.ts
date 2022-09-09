@@ -1,4 +1,4 @@
-import { Project } from '../../src/models/project'
+import { Project } from '@/models/project'
 
 context('Basic', () => {
   const project: Partial<Project> = {
@@ -13,31 +13,69 @@ context('Basic', () => {
     cy.visit('/')
   })
 
-  it('toggle bookmark button', () => {
+  it('should have the right URL', () => {
     cy.url().should('eq', 'http://localhost:5173/')
-
-    cy.getBySel('bookmark-button')
-      .click()
-      .should('contain.text', 'Bookmarked')
-      .should('exist')
-      .click()
-      .should('contain.text', 'Bookmark')
-      .should('exist')
   })
 
-  it('back project', () => {
-    cy.url().should('eq', 'http://localhost:5173/')
+  it('should change bookmark button texts when clicks', () => {
+    cy.getBySel('bookmark-button')
+      .click()
+      .should('be.visible')
+      .should('contain.text', 'Bookmarked')
+      .click()
+      .should('be.visible')
+      .should('contain.text', 'Bookmark')
+  })
 
+  it('should not show modal', () => {
+    cy.getBySel('project-modal').should('not.be.visible')
+    cy.getBySel('complete-modal').should('not.be.visible')
+  })
+
+  it('should show project info', () => {
+    cy.getBySel('project-status')
+      .should('contain.text', '$89,914')
+      .should('contain.text', 'of $100,000 backed')
+      .should('contain.text', '5,007')
+      .should('contain.text', '56')
+
+    cy.getBySel('project-reward')
+      .should('have.length', 3)
+      .first()
+      .should('contain.text', 'Bamboo Stand')
+      .should('contain.text', 'Pledge $25 or more')
+      .should('contain.text', '101')
+      .within(() => {
+        cy.getBySel('select-reward-button')
+          .should('be.enabled')
+          .should('contain.text', 'Select Reward')
+      })
+
+    cy.getBySel('project-reward')
+      .last()
+      .should('contain.text', 'Mahogany Special Edition')
+      .should('contain.text', 'Pledge $200 or more')
+      .should('contain.text', '0')
+      .within(() => {
+        cy.getBySel('select-reward-button')
+          .should('be.disabled')
+          .should('contain.text', 'Out of Stock')
+      })
+  })
+
+  it('should show modals after backing', () => {
     cy.screenshot('01-project-page', { capture: 'viewport', overwrite: true })
+
     cy.getBySel('project-name')
-      .should('exist')
+      .should('be.visible')
       .should('contain.text', project.name!)
+
     cy.get('[data-test=project-description]')
-      .should('exist')
+      .should('be.visible')
       .should('contain.text', project.description!)
 
     cy.getBySel('back-project')
-      .should('exist')
+      .should('be.visible')
       .should('contain.text', 'Back this project')
       .click()
     cy.screenshot('02-show-project-modal', {
@@ -52,18 +90,19 @@ context('Basic', () => {
 
     cy.getBySel('input-form')
       .should('contain.text', 'Enter your pledge')
-      .should('exist')
+      .should('be.visible')
 
-    cy.get('[name=pledge]')
+    cy.getBySel('pledge-input')
       .should('have.value', 25)
       .type('{backspace}{backspace}')
       .type('1')
-    cy.get('[data-test=submit-button]').should('be.disabled')
+    cy.getBySel('submit-button').contains('Continue').should('be.disabled')
 
-    cy.get('[name=pledge]').type('{backspace}').type('100')
+    cy.getBySel('pledge-input').type('{backspace}').type('100')
     cy.getBySel('submit-button').should('be.enabled').click()
 
     cy.screenshot('03-pledge-success', { capture: 'viewport', overwrite: true })
+    cy.getBySel('project-modal').should('not.be.visible')
     cy.getBySel('complete-modal').should('be.visible')
     cy.getBySel('complete-modal-close-button').should('be.visible').click()
     cy.getBySel('complete-modal').should('not.be.visible')

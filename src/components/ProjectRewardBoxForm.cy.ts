@@ -11,7 +11,7 @@ describe('<ProjectRewardBoxForm />', () => {
 
   it('should show input', () => {
     cy.mount(ProjectRewardBoxForm)
-      .get('input')
+      .getBySel('pledge-input')
       .should('be.visible')
       .should('have.attr', 'type', 'number')
   })
@@ -30,7 +30,7 @@ describe('<ProjectRewardBoxForm />', () => {
     })
 
     it('should reflect input value', () => {
-      cy.get('input').should('have.value', '100')
+      cy.getBySel('pledge-input').should('have.value', '100')
     })
 
     it('should enable button', () => {
