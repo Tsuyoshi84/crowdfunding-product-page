@@ -32,6 +32,7 @@ function onChanged(e: Event): void {
         <input
           id="pledge"
           name="pledge"
+          data-test="pledge-input"
           :value="modelValue"
           type="number"
           min="0"

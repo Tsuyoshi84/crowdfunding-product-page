@@ -2,8 +2,11 @@ import { Project } from '@/models/project'
 import ProjectAbout from './ProjectAbout.vue'
 
 describe('<ProjectAbout>', () => {
+  let project: Project
+
   beforeEach(() => {
-    cy.fixture<Project>('project').then((project) => {
+    cy.fixture<Project>('project').then((p) => {
+      project = p
       cy.mount(ProjectAbout, { props: { project } })
     })
   })
@@ -14,7 +17,7 @@ describe('<ProjectAbout>', () => {
       .should('be.visible')
 
     cy.getBySel('detail')
-      .should('contain.text', 'This is an awesome project')
+      .should('contain.text', project.detail)
       .should('be.visible')
   })
 })

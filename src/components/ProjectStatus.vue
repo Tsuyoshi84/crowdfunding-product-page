@@ -10,7 +10,7 @@ const { project } = defineProps<Props>()
 </script>
 
 <template>
-  <section class="container">
+  <section class="container" data-test="project-status">
     <div class="info-container">
       <div class="sub-info-container">
         <div class="main">${{ formatNumber(project.currentAmount) }}</div>

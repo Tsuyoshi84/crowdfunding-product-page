@@ -18,7 +18,11 @@ const buttonLabel = $computed<string>(() =>
 </script>
 
 <template>
-  <section class="reward-container" :class="{ 'out-of-stock': isOutOfStock }">
+  <section
+    class="reward-container"
+    :class="{ 'out-of-stock': isOutOfStock }"
+    data-test="project-reward"
+  >
     <div class="basic-info">
       <div class="name" data-test="name">{{ reward.name }}</div>
       <div class="pledge" data-test="pledge">
@@ -31,7 +35,10 @@ const buttonLabel = $computed<string>(() =>
         <span class="number" data-test="number">{{ reward.stock }}</span
         >left
       </div>
-      <PrimaryButton :disabled="isOutOfStock" @click="emit('clickSelect')"
+      <PrimaryButton
+        :disabled="isOutOfStock"
+        data-test="select-reward-button"
+        @click="emit('clickSelect')"
         ><span class="button-label">{{ buttonLabel }}</span></PrimaryButton
       >
     </div>
