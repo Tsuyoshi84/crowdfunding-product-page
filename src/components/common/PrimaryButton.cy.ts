@@ -12,7 +12,7 @@ describe('<PrimaryButton>', () => {
     cy.mount(PrimaryButton, { slots }).get('button').should('have.text', label)
   })
 
-  it('should emmit when clicked', () => {
+  it('should emit when clicked', () => {
     const clickSpy = cy.spy().as('clickSpy')
 
     cy.mount(PrimaryButton, { slots, props: { onClick: clickSpy } })
