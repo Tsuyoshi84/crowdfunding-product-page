@@ -1,0 +1,100 @@
+{
+  "title": "crowdfund",
+  "steps": [
+    {
+      "type": "setViewport",
+      "width": 1536,
+      "height": 1329,
+      "deviceScaleFactor": 1,
+      "isMobile": false,
+      "hasTouch": false,
+      "isLandscape": false
+    },
+    {
+      "type": "navigate",
+      "assertedEvents": [
+        {
+          "type": "navigation",
+          "url": "http://127.0.0.1:5173/",
+          "title": "Crouwdfunding product page | Frontend Mentor"
+        }
+      ],
+      "url": "http://127.0.0.1:5173/"
+    },
+    {
+      "type": "click",
+      "target": "main",
+      "selectors": [
+        [
+          "aria/Back this project"
+        ],
+        [
+          "[data-test=back-project-button]"
+        ]
+      ],
+      "offsetY": 39.703125,
+      "offsetX": 61
+    },
+    {
+      "type": "click",
+      "target": "main",
+      "selectors": [
+        [
+          "[data-test=reward-basic-info__reward-id-1]"
+        ]
+      ],
+      "offsetX": 6.28125,
+      "offsetY": 7.7265625
+    },
+    {
+      "type": "click",
+      "target": "main",
+      "selectors": [
+        [
+          "[data-test=project-reward-box__reward-id-1] [data-test=pledge-input]"
+        ]
+      ],
+      "offsetX": 156.0859375,
+      "offsetY": 11.171875
+    },
+    {
+      "type": "change",
+      "target": "main",
+      "selectors": [
+        [
+          "[data-test=project-reward-box__reward-id-1] [data-test=pledge-input]"
+        ]
+      ],
+      "value": "123"
+    },
+    {
+      "type": "click",
+      "target": "main",
+      "selectors": [
+        [
+          "aria/Continue"
+        ],
+        [
+          "[data-test=submit-button]"
+        ]
+      ],
+      "offsetY": 22.921875,
+      "offsetX": 68.5859375
+    },
+    {
+      "type": "click",
+      "target": "main",
+      "selectors": [
+        [
+          "aria/Got it!",
+          "aria/[role=\"generic\"]"
+        ],
+        [
+          "[data-test=complete-modal-close-button]"
+        ]
+      ],
+      "offsetY": 1.203125,
+      "offsetX": 13.078125
+    }
+  ]
+}
