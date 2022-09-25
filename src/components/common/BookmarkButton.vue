@@ -35,8 +35,8 @@ const label = $computed<'Bookmarked' | 'Bookmark'>(() => {
   align-items: center;
   padding: 0;
   border: none;
-  background-color: var(--color-disabled-light-3);
   border-radius: 2rem;
+  background-color: var(--color-disabled-light-3);
   cursor: pointer;
   gap: 1rem;
 

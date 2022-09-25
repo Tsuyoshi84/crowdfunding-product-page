@@ -22,14 +22,14 @@ const { on = false } = defineProps<Props>()
   align-items: center;
   justify-content: center;
   border: 1px solid var(--color-border);
-  aspect-ratio: 1;
   border-radius: 50%;
+  aspect-ratio: 1;
 
   & .inner-circle {
     width: 80%;
     height: 80%;
-    background-color: transparent;
     border-radius: 50%;
+    background-color: transparent;
     transition: all 0.2s;
   }
 }

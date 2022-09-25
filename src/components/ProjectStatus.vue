@@ -42,8 +42,8 @@ const { project } = defineProps<Props>()
   flex-direction: column;
   padding: var(--spacing-12);
   border: 1px solid var(--color-border-light);
-  background-color: var(--color-background);
   border-radius: var(--spacing-2);
+  background-color: var(--color-background);
   gap: var(--spacing-4);
 
   & .info-container {

@@ -22,8 +22,8 @@ const { disabled = false, type = 'button' } = defineProps<Props>()
   min-height: var(--spacing-14);
   padding: var(--spacing-4) var(--spacing-12);
   border: none;
-  background-color: var(--color-primary);
   border-radius: var(--spacing-16);
+  background-color: var(--color-primary);
   color: var(--color-text-inversed);
   cursor: pointer;
   font-size: var(--font-size-medium);
