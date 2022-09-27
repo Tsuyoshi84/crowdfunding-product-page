@@ -44,9 +44,13 @@ const inputPledge = $ref<number>(minPledge)
   <section
     class="container"
     :class="{ 'out-of-stock': isOutOfStock, selected: isSelected }"
-    data-test="project-reward-box"
+    :data-test="`project-reward-box__reward-id-${reward?.id ?? 0}`"
   >
-    <div class="basic-info" data-test="reward-basic-info" @click="nameClicked">
+    <div
+      class="basic-info"
+      :data-test="`reward-basic-info__reward-id-${reward?.id ?? 0}`"
+      @click="nameClicked"
+    >
       <div class="mark-wrapper">
         <ToggleMark :on="isSelected" />
       </div>

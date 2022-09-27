@@ -22,7 +22,7 @@ describe('Back project', () => {
       .should('be.visible')
       .should('contain.text', project.description!)
 
-    cy.getBySel('back-project')
+    cy.getBySel('back-project-button')
       .should('be.visible')
       .should('contain.text', 'Back this project')
       .click()
@@ -34,7 +34,7 @@ describe('Back project', () => {
     cy.getBySel('project-modal').should('be.visible')
     cy.getBySel('input-form').should('not.exist')
 
-    cy.getBySel('reward-basic-info').eq(1).click()
+    cy.getBySel('reward-basic-info__reward-id-1').click()
 
     cy.getBySel('input-form')
       .should('contain.text', 'Enter your pledge')
