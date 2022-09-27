@@ -10,7 +10,7 @@ import { Cypress, cy } from 'local-cypress'
  * @returns HTML elements
  */
 function getBySel(selector: string, args?: Parameters<typeof cy.get>[1]) {
-  return cy.get(`[data-test=${selector}]`, args)
+	return cy.get(`[data-test=${selector}]`, args)
 }
 
 /**
@@ -20,7 +20,7 @@ function getBySel(selector: string, args?: Parameters<typeof cy.get>[1]) {
  * @returns HTML elements
  */
 function getBySelLike(selector: string, args?: Parameters<typeof cy.get>[1]) {
-  return cy.get(`[data-test*=${selector}]`, args)
+	return cy.get(`[data-test*=${selector}]`, args)
 }
 
 // Add custom commands to Cypress
@@ -31,17 +31,17 @@ Cypress.Commands.add('getBySelLike', getBySelLike)
 
 // Add new command to the existing Cypress interface
 declare global {
-  namespace Cypress {
-    type Greeting = {
-      greeting: string
-      name: string
-    }
+	namespace Cypress {
+		type Greeting = {
+			greeting: string
+			name: string
+		}
 
-    interface Chainable {
-      // @ts-ignore
-      getBySel: typeof getBySel
-      // @ts-ignore
-      getBySelLike: typeof getBySelLike
-    }
-  }
+		interface Chainable {
+			// @ts-ignore
+			getBySel: typeof getBySel
+			// @ts-ignore
+			getBySelLike: typeof getBySelLike
+		}
+	}
 }

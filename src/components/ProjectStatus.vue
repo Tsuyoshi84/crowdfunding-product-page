@@ -4,110 +4,110 @@ import { formatNumber } from '@/ui/format'
 import ProjectProgress from '@/components/ProjectProgress.vue'
 
 interface Props {
-  project: Project
+	project: Project
 }
 const { project } = defineProps<Props>()
 </script>
 
 <template>
-  <section class="container" data-test="project-status">
-    <div class="info-container">
-      <div class="sub-info-container">
-        <div class="main">${{ formatNumber(project.currentAmount) }}</div>
-        <div class="sub">
-          of ${{ formatNumber(project.targetAmount) }} backed
-        </div>
-      </div>
-      <div class="border"></div>
-      <div class="sub-info-container">
-        <div class="main">{{ formatNumber(project.numOfBuckers) }}</div>
-        <div class="sub">total backers</div>
-      </div>
-      <div class="border"></div>
-      <div class="sub-info-container">
-        <div class="main">{{ project.daysLeft }}</div>
-        <div class="sub">days left</div>
-      </div>
-    </div>
-    <div class="progress-container">
-      <ProjectProgress :project="project" />
-    </div>
-  </section>
+	<section class="container" data-test="project-status">
+		<div class="info-container">
+			<div class="sub-info-container">
+				<div class="main">${{ formatNumber(project.currentAmount) }}</div>
+				<div class="sub">
+					of ${{ formatNumber(project.targetAmount) }} backed
+				</div>
+			</div>
+			<div class="border"></div>
+			<div class="sub-info-container">
+				<div class="main">{{ formatNumber(project.numOfBuckers) }}</div>
+				<div class="sub">total backers</div>
+			</div>
+			<div class="border"></div>
+			<div class="sub-info-container">
+				<div class="main">{{ project.daysLeft }}</div>
+				<div class="sub">days left</div>
+			</div>
+		</div>
+		<div class="progress-container">
+			<ProjectProgress :project="project" />
+		</div>
+	</section>
 </template>
 
 <style scoped lang="postcss">
 .container {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  padding: var(--spacing-12);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--spacing-2);
-  background-color: var(--color-background);
-  gap: var(--spacing-4);
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	padding: var(--spacing-12);
+	border: 1px solid var(--color-border-light);
+	border-radius: var(--spacing-2);
+	background-color: var(--color-background);
+	gap: var(--spacing-4);
 
-  & .info-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
-  }
+	& .info-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+	}
 
-  & .sub-info-container {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.5rem;
-  }
+	& .sub-info-container {
+		display: flex;
+		width: 100%;
+		flex-direction: column;
+		justify-content: center;
+		gap: 0.5rem;
+	}
 
-  & .main {
-    display: flex;
-    justify-content: center;
-    font-size: var(--font-size-xxxxlarge);
-    font-weight: var(--font-weight-bold);
-  }
+	& .main {
+		display: flex;
+		justify-content: center;
+		font-size: var(--font-size-xxxxlarge);
+		font-weight: var(--font-weight-bold);
+	}
 
-  & .sub {
-    display: flex;
-    justify-content: center;
-    color: var(--color-text-subtle);
-    font-size: var(--font-size-small);
-    font-weight: var(--font-weight-light);
-    letter-spacing: 0.05rem;
-  }
+	& .sub {
+		display: flex;
+		justify-content: center;
+		color: var(--color-text-subtle);
+		font-size: var(--font-size-small);
+		font-weight: var(--font-weight-light);
+		letter-spacing: 0.05rem;
+	}
 
-  & .border {
-    width: 5rem;
-    height: 1px;
-    background-color: var(--color-border);
-  }
+	& .border {
+		width: 5rem;
+		height: 1px;
+		background-color: var(--color-border);
+	}
 
-  & .progress-container {
-    width: 100%;
-    height: var(--spacing-4);
-    margin-block-start: var(--spacing-4);
-  }
+	& .progress-container {
+		width: 100%;
+		height: var(--spacing-4);
+		margin-block-start: var(--spacing-4);
+	}
 }
 
 @media (min-width: 62em) {
-  .container {
-    & .info-container {
-      width: 100%;
-      flex-direction: row;
-      justify-content: space-between;
-    }
+	.container {
+		& .info-container {
+			width: 100%;
+			flex-direction: row;
+			justify-content: space-between;
+		}
 
-    & .sub-info-container {
-      align-items: flex-start;
-    }
+		& .sub-info-container {
+			align-items: flex-start;
+		}
 
-    & .border {
-      width: 1px;
-      height: 4rem;
-      transform: translateX(calc(var(--spacing-4) * -1));
-    }
-  }
+		& .border {
+			width: 1px;
+			height: 4rem;
+			transform: translateX(calc(var(--spacing-4) * -1));
+		}
+	}
 }
 </style>

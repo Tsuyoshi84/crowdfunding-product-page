@@ -4,224 +4,224 @@ import ToggleMark from '@/components/common/ToggleMark.vue'
 import ProjectRewardBoxForm from '@/components/ProjectRewardBoxForm.vue'
 
 interface Props {
-  reward?: ProjectReward | null
-  isSelected: boolean
+	reward?: ProjectReward | null
+	isSelected: boolean
 }
 
 const { reward = null, isSelected = false } = defineProps<Props>()
 
 const emit = defineEmits<{
-  (e: 'select'): void
-  (e: 'submit'): void
+	(e: 'select'): void
+	(e: 'submit'): void
 }>()
 
 const isOutOfStock = $computed<boolean>(() => {
-  if (reward === null) return false
+	if (reward === null) return false
 
-  return reward.stock === 0
+	return reward.stock === 0
 })
 const isNoReward = $computed<boolean>(() => reward === null)
 const name = $computed<string>(() => reward?.name ?? 'Pledge with no reward')
 const minPledge = $computed<number>(() => reward?.pledge ?? 0)
 const stock = $computed<number>(() => reward?.stock ?? 0)
 const detail = $computed<string>(() => {
-  return (
-    reward?.detail ??
-    'Choose to support us without a reward if you simple believe in our project. As a backer, you will be signed up to receive product updates via email'
-  )
+	return (
+		reward?.detail ??
+		'Choose to support us without a reward if you simple believe in our project. As a backer, you will be signed up to receive product updates via email'
+	)
 })
 
 function nameClicked() {
-  if (isOutOfStock) return
+	if (isOutOfStock) return
 
-  emit('select')
+	emit('select')
 }
 
 const inputPledge = $ref<number>(minPledge)
 </script>
 
 <template>
-  <section
-    class="container"
-    :class="{ 'out-of-stock': isOutOfStock, selected: isSelected }"
-    :data-test="`project-reward-box__reward-id-${reward?.id ?? 0}`"
-  >
-    <div
-      class="basic-info"
-      :data-test="`reward-basic-info__reward-id-${reward?.id ?? 0}`"
-      @click="nameClicked"
-    >
-      <div class="mark-wrapper">
-        <ToggleMark :on="isSelected" />
-      </div>
-      <div class="name-wrapper">
-        <div class="name">{{ name }}</div>
-        <div class="pledge">
-          <template v-if="!isNoReward"
-            >Pledge ${{ minPledge }} or more</template
-          >
-        </div>
-      </div>
-    </div>
-    <div class="detail">{{ detail }}</div>
-    <div class="stock-info">
-      <div v-if="!isNoReward" class="left">
-        <span class="number">{{ stock }}</span
-        >left
-      </div>
-    </div>
-    <div class="form-wrapper">
-      <ProjectRewardBoxForm
-        v-if="isSelected"
-        v-model="inputPledge"
-        :min-pledge="minPledge"
-        @submit="emit('submit')"
-      />
-    </div>
-  </section>
+	<section
+		class="container"
+		:class="{ 'out-of-stock': isOutOfStock, selected: isSelected }"
+		:data-test="`project-reward-box__reward-id-${reward?.id ?? 0}`"
+	>
+		<div
+			class="basic-info"
+			:data-test="`reward-basic-info__reward-id-${reward?.id ?? 0}`"
+			@click="nameClicked"
+		>
+			<div class="mark-wrapper">
+				<ToggleMark :on="isSelected" />
+			</div>
+			<div class="name-wrapper">
+				<div class="name">{{ name }}</div>
+				<div class="pledge">
+					<template v-if="!isNoReward"
+						>Pledge ${{ minPledge }} or more</template
+					>
+				</div>
+			</div>
+		</div>
+		<div class="detail">{{ detail }}</div>
+		<div class="stock-info">
+			<div v-if="!isNoReward" class="left">
+				<span class="number">{{ stock }}</span
+				>left
+			</div>
+		</div>
+		<div class="form-wrapper">
+			<ProjectRewardBoxForm
+				v-if="isSelected"
+				v-model="inputPledge"
+				:min-pledge="minPledge"
+				@submit="emit('submit')"
+			/>
+		</div>
+	</section>
 </template>
 
 <style lang="postcss" scoped>
 .container {
-  padding: var(--spacing-6);
-  border: 1px solid var(--color-border);
-  border-radius: var(--spacing-2);
-  transition: border 0.2s;
+	padding: var(--spacing-6);
+	border: 1px solid var(--color-border);
+	border-radius: var(--spacing-2);
+	transition: border 0.2s;
 
-  & .basic-info {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: var(--spacing-4);
-    margin-block-end: var(--spacing-6);
+	& .basic-info {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-start;
+		gap: var(--spacing-4);
+		margin-block-end: var(--spacing-6);
 
-    & .name-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-    }
+		& .name-wrapper {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: center;
+		}
 
-    & .mark-wrapper {
-      width: var(--font-size-large);
-      height: var(--font-size-large);
-      opacity: 0;
-      transition: opacity 0.2s;
-    }
+		& .mark-wrapper {
+			width: var(--font-size-large);
+			height: var(--font-size-large);
+			opacity: 0;
+			transition: opacity 0.2s;
+		}
 
-    & .name {
-      font-size: var(--font-size-small);
-      font-weight: var(--font-weight-bold);
-      margin-block-end: var(--spacing-2);
-      transition: color 0.2s;
-    }
+		& .name {
+			font-size: var(--font-size-small);
+			font-weight: var(--font-weight-bold);
+			margin-block-end: var(--spacing-2);
+			transition: color 0.2s;
+		}
 
-    & .pledge {
-      color: var(--color-text-primary);
-      font-size: var(--font-size-small);
-      font-weight: var(--font-weight-bold);
-    }
+		& .pledge {
+			color: var(--color-text-primary);
+			font-size: var(--font-size-small);
+			font-weight: var(--font-weight-bold);
+		}
 
-    &:hover {
-      cursor: pointer;
+		&:hover {
+			cursor: pointer;
 
-      & .mark-wrapper {
-        opacity: 1;
-      }
+			& .mark-wrapper {
+				opacity: 1;
+			}
 
-      & .name {
-        color: var(--color-text-primary);
-      }
-    }
-  }
+			& .name {
+				color: var(--color-text-primary);
+			}
+		}
+	}
 
-  & .detail {
-    color: var(--color-text-subtle);
-    font-size: var(--font-size-small);
-    line-height: 1.5rem;
-    margin-block-end: var(--spacing-8);
-  }
+	& .detail {
+		color: var(--color-text-subtle);
+		font-size: var(--font-size-small);
+		line-height: 1.5rem;
+		margin-block-end: var(--spacing-8);
+	}
 
-  & .stock-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: var(--spacing-6);
-    margin-block-end: var(--spacing-4);
+	& .stock-info {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: var(--spacing-6);
+		margin-block-end: var(--spacing-4);
 
-    & .left {
-      color: var(--color-text-subtle);
+		& .left {
+			color: var(--color-text-subtle);
 
-      & > .number {
-        color: var(--color-text-main);
-        font-size: var(--font-size-large);
-        font-weight: var(--font-weight-bold);
-        margin-inline-end: var(--spacing-2);
-      }
-    }
-  }
+			& > .number {
+				color: var(--color-text-main);
+				font-size: var(--font-size-large);
+				font-weight: var(--font-weight-bold);
+				margin-inline-end: var(--spacing-2);
+			}
+		}
+	}
 
-  & .form-wrapper {
-    margin-block-start: var(--spacing-12);
-  }
+	& .form-wrapper {
+		margin-block-start: var(--spacing-12);
+	}
 
-  & .button-label {
-    font-size: var(--font-size-small);
-  }
+	& .button-label {
+		font-size: var(--font-size-small);
+	}
 }
 
 .container.selected {
-  border-width: 2px;
-  border-color: var(--color-primary);
+	border-width: 2px;
+	border-color: var(--color-primary);
 
-  & .basic-info {
-    & .mark-wrapper {
-      opacity: 1;
-    }
-  }
+	& .basic-info {
+		& .mark-wrapper {
+			opacity: 1;
+		}
+	}
 }
 
 .container.out-of-stock {
-  & .basic-info {
-    & .name {
-      color: var(--color-text-subtle);
-    }
+	& .basic-info {
+		& .name {
+			color: var(--color-text-subtle);
+		}
 
-    & .pledge {
-      color: var(--color-text-primary-light);
-    }
+		& .pledge {
+			color: var(--color-text-primary-light);
+		}
 
-    &:hover {
-      cursor: default;
+		&:hover {
+			cursor: default;
 
-      & .name {
-        color: var(--color-text-subtle);
-      }
-    }
-  }
+			& .name {
+				color: var(--color-text-subtle);
+			}
+		}
+	}
 
-  & .detail {
-    color: var(--color-text-xsubtle);
-  }
+	& .detail {
+		color: var(--color-text-xsubtle);
+	}
 
-  & .left {
-    & > .number {
-      color: var(--color-text-subtle);
-    }
-  }
+	& .left {
+		& > .number {
+			color: var(--color-text-subtle);
+		}
+	}
 }
 
 @media (min-width: 62em) {
-  .container {
-    & .basic-info {
-      flex-direction: row;
-    }
+	.container {
+		& .basic-info {
+			flex-direction: row;
+		}
 
-    & .stock-info {
-      flex-direction: row;
-    }
-  }
+		& .stock-info {
+			flex-direction: row;
+		}
+	}
 }
 </style>
