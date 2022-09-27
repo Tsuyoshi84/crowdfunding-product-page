@@ -56,7 +56,7 @@ const emit = defineEmits<{
 	}
 }
 
-@media (min-width: 62em) {
+@media (width >= 62em) {
 	.container {
 		& .detail {
 			font-size: var(--font-size-medium);

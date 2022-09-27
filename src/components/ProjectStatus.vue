@@ -91,7 +91,7 @@ const { project } = defineProps<Props>()
 	}
 }
 
-@media (min-width: 62em) {
+@media (width >= 62em) {
 	.container {
 		& .info-container {
 			width: 100%;
