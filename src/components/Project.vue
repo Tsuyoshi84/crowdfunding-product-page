@@ -14,7 +14,7 @@ const { fetchProject, toggleBookmarked } = store
 const { project } = storeToRefs(store)
 
 onMounted(async () => {
-  await fetchProject()
+	await fetchProject()
 })
 
 let selectedReward = $ref<ProjectReward | null>(null)
@@ -23,61 +23,61 @@ let isProjectModalOpen = $ref(false)
 let isCompleteModalOpen = $ref(false)
 
 function openModal(reward: ProjectReward | null = null): void {
-  selectedReward = reward
-  isProjectModalOpen = true
+	selectedReward = reward
+	isProjectModalOpen = true
 }
 
 function showCompleteModal(): void {
-  isProjectModalOpen = false
-  isCompleteModalOpen = true
+	isProjectModalOpen = false
+	isCompleteModalOpen = true
 }
 
 async function bookmarkToggled(): Promise<void> {
-  await toggleBookmarked()
+	await toggleBookmarked()
 }
 </script>
 
 <template>
-  <article class="article">
-    <template v-if="project">
-      <ProjectSummary
-        :project="project"
-        @click-back-project="openModal"
-        @toggle-bookmark="bookmarkToggled"
-      />
-      <ProjectStatus :project="project" />
-      <ProjectAbout
-        :project="project"
-        @select-reward="({ reward }) => openModal(reward)"
-      />
-    </template>
-  </article>
-  <ProjectModal
-    v-if="project"
-    v-model:open="isProjectModalOpen"
-    v-model:reward="selectedReward"
-    :project="project"
-    @submit="showCompleteModal"
-  />
-  <ProjectCompleteModal v-model:open="isCompleteModalOpen" />
+	<article class="article">
+		<template v-if="project">
+			<ProjectSummary
+				:project="project"
+				@click-back-project="openModal"
+				@toggle-bookmark="bookmarkToggled"
+			/>
+			<ProjectStatus :project="project" />
+			<ProjectAbout
+				:project="project"
+				@select-reward="({ reward }) => openModal(reward)"
+			/>
+		</template>
+	</article>
+	<ProjectModal
+		v-if="project"
+		v-model:open="isProjectModalOpen"
+		v-model:reward="selectedReward"
+		:project="project"
+		@submit="showCompleteModal"
+	/>
+	<ProjectCompleteModal v-model:open="isCompleteModalOpen" />
 </template>
 
 <style lang="postcss" scoped>
 .article {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0 var(--spacing-6);
-  gap: var(--spacing-6);
-  transform: translateY(calc(var(--spacing-24) * -1));
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 0 var(--spacing-6);
+	gap: var(--spacing-6);
+	transform: translateY(calc(var(--spacing-24) * -1));
 }
 
 @media (min-width: 62em) {
-  .article {
-    max-width: 45rem;
-    margin-inline-end: auto;
-    margin-inline-start: auto;
-  }
+	.article {
+		max-width: 45rem;
+		margin-inline-end: auto;
+		margin-inline-start: auto;
+	}
 }
 </style>
