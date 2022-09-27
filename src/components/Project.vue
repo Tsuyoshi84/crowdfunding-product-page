@@ -73,7 +73,7 @@ async function bookmarkToggled(): Promise<void> {
 	transform: translateY(calc(var(--spacing-24) * -1));
 }
 
-@media (min-width: 62em) {
+@media (width >= 62em) {
 	.article {
 		max-width: 45rem;
 		margin-inline-end: auto;

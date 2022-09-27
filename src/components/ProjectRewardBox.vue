@@ -213,7 +213,7 @@ const inputPledge = $ref<number>(minPledge)
 	}
 }
 
-@media (min-width: 62em) {
+@media (width >= 62em) {
 	.container {
 		& .basic-info {
 			flex-direction: row;

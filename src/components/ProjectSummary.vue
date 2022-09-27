@@ -83,7 +83,7 @@ const emit = defineEmits<{
 	}
 }
 
-@media (min-width: 62em) {
+@media (width >= 62em) {
 	.container {
 		padding: 0 var(--spacing-12) var(--spacing-12);
 

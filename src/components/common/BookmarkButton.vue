@@ -62,7 +62,7 @@ const label = $computed<'Bookmarked' | 'Bookmark'>(() => {
 		font-weight: var(--font-weight-bold);
 		transition: color 0.2s ease-in-out;
 
-		@media (min-width: 62em) {
+		@media (width >= 62em) {
 			display: initial;
 		}
 	}
@@ -98,7 +98,7 @@ const label = $computed<'Bookmarked' | 'Bookmark'>(() => {
 	}
 }
 
-@media (min-width: 62em) {
+@media (width >= 62em) {
 	.bookmark-button {
 		padding: 0 var(--spacing-6) 0 0;
 	}

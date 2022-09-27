@@ -132,7 +132,7 @@ nav {
 	}
 }
 
-@media (min-width: 62em) {
+@media (width >= 62em) {
 	header {
 		height: 25rem;
 		padding: var(--spacing-12) var(--spacing-36);

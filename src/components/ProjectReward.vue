@@ -120,7 +120,7 @@ const buttonLabel = $computed<string>(() =>
 	}
 }
 
-@media (min-width: 62em) {
+@media (width >= 62em) {
 	.container {
 		& .basic-info {
 			flex-direction: row;
