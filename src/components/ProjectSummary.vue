@@ -50,8 +50,8 @@ const emit = defineEmits<{
   align-items: center;
   padding: 0 var(--spacing-8) var(--spacing-12);
   border: 1px solid var(--color-border-light);
-  background-color: var(--color-background);
   border-radius: var(--spacing-2);
+  background-color: var(--color-background);
 
   & .logo {
     --size: 3.5rem;

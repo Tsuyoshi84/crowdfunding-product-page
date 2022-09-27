@@ -110,8 +110,8 @@ nav {
   & ul {
     width: calc(100% - var(--spacing-6) * 2);
     padding: 0;
-    background-color: var(--color-background);
     border-radius: var(--spacing-2);
+    background-color: var(--color-background);
 
     & li {
       padding: 0;

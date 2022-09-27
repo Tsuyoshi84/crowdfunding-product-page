@@ -27,13 +27,13 @@ const { project } = defineProps<Props>()
   color: var(--color-primary);
 
   &[value]::-webkit-progress-bar {
-    background-color: var(--color-background-gray);
     border-radius: var(--spacing-6);
+    background-color: var(--color-background-gray);
   }
 
   &[value]::-webkit-progress-value {
-    background-color: var(--color-primary);
     border-radius: var(--spacing-3);
+    background-color: var(--color-primary);
   }
 }
 </style>
