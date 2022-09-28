@@ -83,7 +83,7 @@ label {
 			color: var(--color-text-main);
 			font-size: var(--font-size-medium);
 			font-weight: var(--font-weight-bold);
-			text-align: right;
+			text-align: end;
 
 			&:focus {
 				outline: none;

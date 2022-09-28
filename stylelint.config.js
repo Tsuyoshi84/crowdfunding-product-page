@@ -5,4 +5,8 @@ module.exports = {
 		'stylelint-prettier/recommended',
 		'stylelint-config-idiomatic-order',
 	],
+	plugins: ['stylelint-use-logical'],
+	rules: {
+		'csstools/use-logical': 'always' || true || 'ignore' || false || null,
+	},
 }
