@@ -50,15 +50,12 @@ const buttonLabel = $computed(() => {
 .backdrop-shadow.open {
 	position: fixed;
 	z-index: var(--z-index-backdrop-shadow);
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
 	background-image: linear-gradient(
 		to bottom,
 		rgb(0 0 0 / 50%),
 		rgb(0 0 0 / 20%)
 	);
+	inset: 0;
 }
 
 header {
@@ -100,8 +97,8 @@ header {
 nav {
 	position: fixed;
 	z-index: var(--z-index-menu);
-	top: var(--spacing-16);
 	width: 100%;
+	inset-block-start: var(--spacing-16);
 
 	&.close {
 		display: none;
@@ -126,7 +123,7 @@ nav {
 			}
 
 			&:not(:last-child) {
-				border-bottom: 1px solid var(--color-border);
+				border-block-end: 1px solid var(--color-border);
 			}
 		}
 	}
@@ -174,7 +171,7 @@ nav {
 				}
 
 				&:not(:last-child) {
-					border-bottom: initial;
+					border-block-end: initial;
 				}
 			}
 		}
