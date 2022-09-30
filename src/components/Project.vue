@@ -68,16 +68,17 @@ async function bookmarkToggled(): Promise<void> {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	margin: 0 var(--spacing-6);
 	gap: var(--spacing-6);
+	margin-block: 0;
+	margin-inline: var(--spacing-6);
 	transform: translateY(calc(var(--spacing-24) * -1));
 }
 
 @media (width >= 62em) {
 	.article {
-		max-width: 45rem;
 		margin-inline-end: auto;
 		margin-inline-start: auto;
+		max-inline-size: 45rem;
 	}
 }
 </style>

@@ -24,7 +24,7 @@ specifiers:
   stylelint-config-standard: ^28.0.0
   stylelint-order: ^5.0.0
   stylelint-prettier: ^2.0.0
-  stylelint-use-logical: ^2.0.0
+  stylelint-use-logical-spec: ^4.1.0
   typescript: 4.8.2
   vite: 3.0.9
   vue: ^3.2.39
@@ -58,7 +58,7 @@ devDependencies:
   stylelint-config-standard: 28.0.0_stylelint@14.12.1
   stylelint-order: 5.0.0_stylelint@14.12.1
   stylelint-prettier: 2.0.0_tugccnn56qs6o3hpgajpfocewy
-  stylelint-use-logical: 2.0.0_stylelint@14.12.1
+  stylelint-use-logical-spec: 4.1.0_stylelint@14.12.1
   typescript: 4.8.2
   vite: 3.0.9
   vue-template-compiler: 2.7.10
@@ -3340,11 +3340,11 @@ packages:
       stylelint: 14.12.1
     dev: true
 
-  /stylelint-use-logical/2.0.0_stylelint@14.12.1:
-    resolution: {integrity: sha512-4wRXETzWSF3yc9znj28VOZZ+VyVys1jeb6L341tit3KkKuAqib1PkGq5lQK0Xf2NhdoHkEHCaFSJfCL8u6UTOA==}
-    engines: {node: '>=14.0.0'}
+  /stylelint-use-logical-spec/4.1.0_stylelint@14.12.1:
+    resolution: {integrity: sha512-uZ5mOST2gZ2QDUhX5JwXMojSibWrHw774wUvLr+OcGluXeh8WYp8AzS0d2ilqrX6Ao2xGCARUAA3pEO7y4kDgg==}
+    engines: {node: '>=8.0.0'}
     peerDependencies:
-      stylelint: '>= 11 < 15'
+      stylelint: '>=13'
     dependencies:
       stylelint: 14.12.1
     dev: true

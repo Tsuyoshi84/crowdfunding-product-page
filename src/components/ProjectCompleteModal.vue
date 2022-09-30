@@ -61,11 +61,11 @@ defineExpose({
 <style scoped lang="postcss">
 dialog {
 	z-index: var(--z-index-modal);
-	width: calc(100vw - var(--spacing-12));
-	max-width: 28rem;
 	padding: var(--spacing-6);
 	border: none;
 	border-radius: var(--spacing-2);
+	inline-size: calc(100vw - var(--spacing-12));
+	max-inline-size: 28rem;
 
 	&[open] {
 		display: block;

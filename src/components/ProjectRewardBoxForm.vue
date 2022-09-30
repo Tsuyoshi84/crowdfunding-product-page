@@ -77,12 +77,12 @@ label {
 		gap: var(--spacing-2);
 
 		& input {
-			width: 100%;
 			border: none;
 			border-radius: var(--border-radius);
 			color: var(--color-text-main);
 			font-size: var(--font-size-medium);
 			font-weight: var(--font-weight-bold);
+			inline-size: 100%;
 			text-align: end;
 
 			&:focus {

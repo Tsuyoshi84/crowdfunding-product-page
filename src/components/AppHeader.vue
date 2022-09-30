@@ -67,7 +67,6 @@ header {
 
 	z-index: var(--z-index-menu);
 	display: flex;
-	height: 19rem;
 	flex-direction: row;
 	align-items: flex-start;
 	justify-content: space-between;
@@ -75,10 +74,12 @@ header {
 	background-image: var(--gradient),
 		url('@/assets/images/image-hero-mobile.jpg');
 	background-size: cover;
+	block-size: 19rem;
 	border-block-end: 1px solid #eaeaea;
 
 	& > .logo {
-		margin: var(--spacing-6) 0 0 var(--spacing-6);
+		margin-block: var(--spacing-6) 0;
+		margin-inline: var(--spacing-6) 0;
 		object-fit: contain;
 	}
 
@@ -97,7 +98,7 @@ header {
 nav {
 	position: fixed;
 	z-index: var(--z-index-menu);
-	width: 100%;
+	inline-size: 100%;
 	inset-block-start: var(--spacing-16);
 
 	&.close {
@@ -105,10 +106,10 @@ nav {
 	}
 
 	& ul {
-		width: calc(100% - var(--spacing-6) * 2);
 		padding: 0;
 		border-radius: var(--spacing-2);
 		background-color: var(--color-background);
+		inline-size: calc(100% - var(--spacing-6) * 2);
 
 		& li {
 			padding: 0;
@@ -131,10 +132,11 @@ nav {
 
 @media (width >= 62em) {
 	header {
-		height: 25rem;
-		padding: var(--spacing-12) var(--spacing-36);
 		background-image: var(--gradient),
 			url('@/assets/images/image-hero-desktop.jpg');
+		block-size: 25rem;
+		padding-block: var(--spacing-12);
+		padding-inline: var(--spacing-36);
 	}
 
 	.menu-button {
@@ -143,7 +145,7 @@ nav {
 
 	nav {
 		position: initial;
-		width: initial;
+		inline-size: initial;
 
 		&.close {
 			display: block;
@@ -151,11 +153,11 @@ nav {
 
 		& ul {
 			display: flex;
-			width: initial;
 			padding: 0;
 			margin: 0;
 			background-color: initial;
 			gap: var(--spacing-8);
+			inline-size: initial;
 
 			& li {
 				padding: 0;

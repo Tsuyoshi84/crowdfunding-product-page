@@ -12,6 +12,10 @@ button {
 	background-color: transparent;
 }
 
+dialog {
+	margin: auto;
+}
+
 :root {
 	--color-primary: hsl(175deg 39% 52%);
 	--color-primary-dark: hsl(175deg 39% 35%);

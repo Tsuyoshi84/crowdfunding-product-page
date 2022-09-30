@@ -19,14 +19,15 @@ const { disabled = false, type = 'button' } = defineProps<Props>()
 
 <style lang="postcss" scoped>
 .primary-button {
-	min-height: var(--spacing-14);
-	padding: var(--spacing-4) var(--spacing-12);
 	border: none;
 	border-radius: var(--spacing-16);
 	background-color: var(--color-primary);
 	color: var(--color-text-inversed);
 	cursor: pointer;
 	font-size: var(--font-size-medium);
+	min-block-size: var(--spacing-14);
+	padding-block: var(--spacing-4);
+	padding-inline: var(--spacing-12);
 	transition: background-color 0.2s;
 
 	&:disabled {

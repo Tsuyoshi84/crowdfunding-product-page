@@ -45,27 +45,29 @@ const emit = defineEmits<{
 <style scoped lang="postcss">
 .container {
 	display: flex;
-	width: 100%;
 	flex-direction: column;
 	align-items: center;
-	padding: 0 var(--spacing-8) var(--spacing-12);
 	border: 1px solid var(--color-border-light);
 	border-radius: var(--spacing-2);
 	background-color: var(--color-background);
+	inline-size: 100%;
+	padding-block: 0 var(--spacing-12);
+	padding-inline: var(--spacing-8);
 
 	& .logo {
 		--size: 3.5rem;
 
-		width: var(--size);
-		height: var(--size);
+		block-size: var(--size);
+		inline-size: var(--size);
 		margin-block-start: calc(var(--size) * -0.5);
 	}
 
 	& .name {
-		padding: 0 var(--spacing-8);
 		font-size: var(--font-size-large);
 		font-weight: var(--font-weight-bold);
 		margin-block-end: var(--spacing-1);
+		padding-block: 0;
+		padding-inline: var(--spacing-8);
 		text-align: center;
 	}
 
@@ -85,7 +87,8 @@ const emit = defineEmits<{
 
 @media (width >= 62em) {
 	.container {
-		padding: 0 var(--spacing-12) var(--spacing-12);
+		padding-block: 0 var(--spacing-12);
+		padding-inline: var(--spacing-12);
 
 		& .name {
 			font-size: var(--font-size-xxxlarge);
@@ -97,8 +100,8 @@ const emit = defineEmits<{
 		}
 
 		& .button-container {
-			width: 100%;
 			justify-content: space-between;
+			inline-size: 100%;
 		}
 	}
 }

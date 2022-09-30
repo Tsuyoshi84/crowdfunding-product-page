@@ -104,8 +104,8 @@ const inputPledge = $ref<number>(minPledge)
 		}
 
 		& .mark-wrapper {
-			width: var(--font-size-large);
-			height: var(--font-size-large);
+			block-size: var(--font-size-large);
+			inline-size: var(--font-size-large);
 			opacity: 0;
 			transition: opacity 0.2s;
 		}

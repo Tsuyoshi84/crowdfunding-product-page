@@ -38,13 +38,13 @@ const { project } = defineProps<Props>()
 <style scoped lang="postcss">
 .container {
 	display: flex;
-	width: 100%;
 	flex-direction: column;
 	padding: var(--spacing-12);
 	border: 1px solid var(--color-border-light);
 	border-radius: var(--spacing-2);
 	background-color: var(--color-background);
 	gap: var(--spacing-4);
+	inline-size: 100%;
 
 	& .info-container {
 		display: flex;
@@ -56,10 +56,10 @@ const { project } = defineProps<Props>()
 
 	& .sub-info-container {
 		display: flex;
-		width: 100%;
 		flex-direction: column;
 		justify-content: center;
 		gap: 0.5rem;
+		inline-size: 100%;
 	}
 
 	& .main {
@@ -79,14 +79,14 @@ const { project } = defineProps<Props>()
 	}
 
 	& .border {
-		width: 5rem;
-		height: 1px;
 		background-color: var(--color-border);
+		block-size: 1px;
+		inline-size: 5rem;
 	}
 
 	& .progress-container {
-		width: 100%;
-		height: var(--spacing-4);
+		block-size: var(--spacing-4);
+		inline-size: 100%;
 		margin-block-start: var(--spacing-4);
 	}
 }
@@ -94,9 +94,9 @@ const { project } = defineProps<Props>()
 @media (width >= 62em) {
 	.container {
 		& .info-container {
-			width: 100%;
 			flex-direction: row;
 			justify-content: space-between;
+			inline-size: 100%;
 		}
 
 		& .sub-info-container {
@@ -104,8 +104,8 @@ const { project } = defineProps<Props>()
 		}
 
 		& .border {
-			width: 1px;
-			height: 4rem;
+			block-size: 4rem;
+			inline-size: 1px;
 			transform: translateX(calc(var(--spacing-4) * -1));
 		}
 	}
