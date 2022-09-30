@@ -29,16 +29,17 @@ const emit = defineEmits<{
 
 <style lang="postcss" scoped>
 .container {
-	width: 100%;
 	padding: var(--spacing-12);
 	border: 1px solid var(--color-border-light);
 	border-radius: var(--spacing-2);
 	background-color: var(--color-background);
+	inline-size: 100%;
 	margin-block-end: var(--spacing-24);
 
 	& .about {
-		margin: 0 0 var(--spacing-8);
 		font-size: var(--font-size-large);
+		margin-block: 0 var(--spacing-8);
+		margin-inline: 0;
 	}
 
 	& .detail {

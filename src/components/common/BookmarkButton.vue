@@ -41,8 +41,8 @@ const label = $computed<'Bookmarked' | 'Bookmark'>(() => {
 	gap: 1rem;
 
 	& .icon {
-		width: var(--spacing-14);
-		height: var(--spacing-14);
+		block-size: var(--spacing-14);
+		inline-size: var(--spacing-14);
 
 		& circle {
 			fill: var(--color-disabled-dark);
@@ -100,7 +100,8 @@ const label = $computed<'Bookmarked' | 'Bookmark'>(() => {
 
 @media (width >= 62em) {
 	.bookmark-button {
-		padding: 0 var(--spacing-6) 0 0;
+		padding-block: 0;
+		padding-inline: 0 var(--spacing-6);
 	}
 }
 </style>
