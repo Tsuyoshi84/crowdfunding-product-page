@@ -9,7 +9,9 @@ html:has(dialog[open]) {
 }
 
 button {
+	border: none;
 	background-color: transparent;
+	cursor: pointer;
 }
 
 dialog {
