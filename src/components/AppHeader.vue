@@ -15,7 +15,7 @@ const buttonLabel = $computed(() => {
 
 <template>
 	<div class="backdrop-shadow" :class="{ open: isMenuOpen }"></div>
-	<header>
+	<header class="header">
 		<div>
 			<img
 				class="logo"
@@ -36,7 +36,7 @@ const buttonLabel = $computed(() => {
 				<img :src="menuIconSrc" alt="" width="16" height="15" />
 			</button>
 		</div>
-		<nav :class="{ close: !isMenuOpen }">
+		<nav class="nav" :class="{ close: !isMenuOpen }">
 			<ul>
 				<li><a href="/about">About</a></li>
 				<li><a href="/discover">Discover</a></li>
@@ -58,7 +58,7 @@ const buttonLabel = $computed(() => {
 	inset: 0;
 }
 
-header {
+.header {
 	--gradient: linear-gradient(
 		to bottom,
 		hsl(0deg 0% 0% / 52%),
@@ -95,7 +95,7 @@ header {
 	outline: none;
 }
 
-nav {
+.nav {
 	position: fixed;
 	z-index: var(--z-index-menu);
 	inline-size: 100%;
@@ -131,7 +131,7 @@ nav {
 }
 
 @media (width >= 62em) {
-	header {
+	.header {
 		background-image: var(--gradient),
 			url('@/assets/images/image-hero-desktop.jpg');
 		block-size: 25rem;
@@ -143,7 +143,7 @@ nav {
 		display: none;
 	}
 
-	nav {
+	.nav {
 		position: initial;
 		inline-size: initial;
 
