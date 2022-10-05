@@ -12,20 +12,15 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
-    types:
-      - opened
-      - reopened
-      - synchronize
-      - ready_for_review
     paths-ignore:
       - '**.md'
       - '.vscode/**'
 
 jobs:
   build-test:
-    if: ! github.event.pull_request.draft
     name: Build and Test
     runs-on: ubuntu-latest
+    if: ${{ !github.event.pull_request.draft }}
     steps:
       - uses: actions/checkout@v2
       - uses: pnpm/action-setup@v2
@@ -43,9 +38,9 @@ jobs:
       - run: pnpm build
 
   cypress-test:
-    if: ! github.event.pull_request.draft
     name: Cypress Test
     runs-on: ubuntu-latest
+    if: ${{ !github.event.pull_request.draft }}
     steps:
       - uses: actions/checkout@v2
       - uses: pnpm/action-setup@v2
