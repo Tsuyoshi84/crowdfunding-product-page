@@ -16,5 +16,8 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "stylelint.useLocal": true,
-  "stylelint.autoFixOnSave": true
+  "stylelint.autoFixOnSave": true,
+  "files.associations": {
+    "*.css": "postcss",
+  }
 }

@@ -30,7 +30,6 @@ const { disabled = false, type = 'button' } = defineProps<Props>()
 
 	&:disabled {
 		background-color: var(--color-disabled-light-2);
-		cursor: not-allowed;
 	}
 
 	&:is(:hover, :focus, :active):not(:disabled) {
