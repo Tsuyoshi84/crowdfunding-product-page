@@ -1,7 +1,5 @@
 <script lang="ts" setup>
 import { Project } from '@/models/project'
-import PrimaryButton from '@/components/common/PrimaryButton.vue'
-import BookmarkButton from '@/components/common/BookmarkButton.vue'
 
 interface Props {
 	project: Project

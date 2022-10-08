@@ -1,7 +1,5 @@
 <script lang="ts" setup>
 import { ProjectReward } from '@/models/project'
-import ToggleMark from '@/components/common/ToggleMark.vue'
-import ProjectRewardBoxForm from '@/components/ProjectRewardBoxForm.vue'
 
 interface Props {
 	reward?: ProjectReward | null

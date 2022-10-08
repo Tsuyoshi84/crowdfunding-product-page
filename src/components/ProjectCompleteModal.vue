@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import PrimaryButton from './common/PrimaryButton.vue'
-
 const { open = false } = defineProps<{
 	open: boolean
 }>()

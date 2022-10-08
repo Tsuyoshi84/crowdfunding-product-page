@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import { Project } from '@/models/project'
 import { formatNumber } from '@/ui/format'
-import ProjectProgress from '@/components/ProjectProgress.vue'
 
 interface Props {
 	project: Project

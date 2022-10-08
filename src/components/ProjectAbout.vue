@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { Project, ProjectReward as Reward } from '@/models/project'
-import ProjectReward from '@/components/ProjectReward.vue'
 
 interface Props {
 	project: Project

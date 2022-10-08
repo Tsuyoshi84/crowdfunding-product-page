@@ -1,10 +1,5 @@
 <script lang="ts" setup>
-import ProjectSummary from './ProjectSummary.vue'
-import ProjectStatus from './ProjectStatus.vue'
-import ProjectAbout from './ProjectAbout.vue'
 import { useProjectStore } from '@/stores/project'
-import ProjectModal from './ProjectModal.vue'
-import ProjectCompleteModal from './ProjectCompleteModal.vue'
 import { ProjectReward } from '@/models/project'
 
 const store = useProjectStore()
