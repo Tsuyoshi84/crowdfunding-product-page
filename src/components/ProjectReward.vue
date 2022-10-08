@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { ProjectReward } from '@/models/project'
-import PrimaryButton from '@/components/common/PrimaryButton.vue'
 
 interface Props {
 	reward: ProjectReward

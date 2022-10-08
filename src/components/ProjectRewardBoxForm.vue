@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import PrimaryButton from '@/components/common/PrimaryButton.vue'
-
 interface Props {
 	modelValue: number
 	minPledge: number

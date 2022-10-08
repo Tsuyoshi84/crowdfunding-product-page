@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import ProjectRewardBox from '@/components/ProjectRewardBox.vue'
 import { Project, ProjectReward } from '@/models/project'
-import { watch } from 'vue'
 
 interface Props {
 	project: Project

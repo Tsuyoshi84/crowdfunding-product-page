@@ -1,5 +1,3 @@
-import { ref, computed } from 'vue'
-import { acceptHMRUpdate, defineStore } from 'pinia'
 import { Project } from '@/models/project'
 import { getProject } from '@/services/project-service'
 

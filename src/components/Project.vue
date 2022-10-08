@@ -1,12 +1,5 @@
 <script lang="ts" setup>
-import ProjectSummary from './ProjectSummary.vue'
-import ProjectStatus from './ProjectStatus.vue'
-import ProjectAbout from './ProjectAbout.vue'
 import { useProjectStore } from '@/stores/project'
-import { storeToRefs } from 'pinia'
-import ProjectModal from './ProjectModal.vue'
-import { onMounted } from 'vue'
-import ProjectCompleteModal from './ProjectCompleteModal.vue'
 import { ProjectReward } from '@/models/project'
 
 const store = useProjectStore()
