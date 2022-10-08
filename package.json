@@ -46,6 +46,7 @@
 		"stylelint-prettier": "^2.0.0",
 		"stylelint-use-logical-spec": "^4.1.0",
 		"typescript": "4.8.2",
+		"unplugin-auto-import": "^0.11.2",
 		"vite": "3.0.9",
 		"vue-template-compiler": "^2.7.10",
 		"vue-tsc": "^0.40.13"

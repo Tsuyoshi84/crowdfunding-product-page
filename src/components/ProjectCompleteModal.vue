@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { watch, onMounted } from 'vue'
 import PrimaryButton from './common/PrimaryButton.vue'
 
 const { open = false } = defineProps<{
