@@ -19,5 +19,14 @@
   "stylelint.autoFixOnSave": true,
   "files.associations": {
     "*.css": "postcss",
-  }
+  },
+  "cSpell.words": [
+    "cssnano",
+    "mastercraft",
+    "pinia",
+    "postcss",
+    "stylelint",
+    "typecheck",
+    "unplugin"
+  ]
 }
