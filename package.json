@@ -22,7 +22,7 @@
 		"vue": "^3.2.45"
 	},
 	"devDependencies": {
-		"@cypress/vite-dev-server": "^3.4.0",
+		"@cypress/vite-dev-server": "^4.0.1",
 		"@cypress/vue": "^4.2.2",
 		"@types/node": "^18.11.9",
 		"@typescript-eslint/parser": "^5.44.0",
