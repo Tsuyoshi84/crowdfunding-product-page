@@ -28,19 +28,16 @@ jobs:
     if: ${{ !github.event.pull_request.draft }}
     steps:
       - uses: actions/checkout@v2
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 7.x.x
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16.x'
-          cache: 'pnpm'
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm lint
-      - run: pnpm lint-css
-      - run: pnpm format:check
-      - run: pnpm build
+          node-version: '18.x'
+          cache: 'npm'
+      - run: npm install --frozen-lockfile
+      - run: npm run lint
+      - run: npm run lint-css
+      - run: npm run format:check
+      - run: npm run build
 
   cypress-test:
     name: Cypress Test
@@ -48,17 +45,14 @@ jobs:
     if: ${{ !github.event.pull_request.draft }}
     steps:
       - uses: actions/checkout@v2
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 7.x.x
-      - run: pnpm install --frozen-lockfile
+      - run: npm install --frozen-lockfile
 
       - name: Cypress integration tests
         uses: cypress-io/github-action@v4
         with:
           install: false
-          build: pnpm build
-          start: pnpm serve
+          build: npm run build
+          start: npm run serve
           wait-on: 'http://localhost:5173'
           browser: chrome
           group: 'UI - Chrome'
