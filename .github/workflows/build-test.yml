@@ -33,7 +33,7 @@ jobs:
         with:
           node-version: '18.x'
           cache: 'npm'
-      - run: npm install --frozen-lockfile
+      - run: npm ci
       - run: npm run lint
       - run: npm run lint-css
       - run: npm run format:check
@@ -45,7 +45,7 @@ jobs:
     if: ${{ !github.event.pull_request.draft }}
     steps:
       - uses: actions/checkout@v2
-      - run: npm install --frozen-lockfile
+      - run: npm ci
 
       - name: Cypress integration tests
         uses: cypress-io/github-action@v4
