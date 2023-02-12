@@ -20,12 +20,13 @@
 		"resolveJsonModule": true,
 		"esModuleInterop": true,
 		"lib": ["esnext", "dom"],
-		"types": ["vite/client", "node", "cypress"],
+		"types": ["vite/client", "node", "cypress", "cypress.d.ts"],
 		"paths": {
 			"@/*": ["src/*"]
 		}
 	},
 	"include": [
+		"**/*.ts",
 		"src/**/*.ts",
 		"src/**/*.d.ts",
 		"src/**/*.tsx",

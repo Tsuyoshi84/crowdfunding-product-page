@@ -42,7 +42,7 @@ describe('<ProjectCompleteModal />', () => {
 	context('when open is false', () => {
 		it('should not show dialog', () => {
 			cy.mount(ProjectCompleteModal, { props })
-				.then((wrapper) => {
+				.then(({ wrapper }) => {
 					wrapper.setProps({ open: false })
 				})
 				.get('dialog')
