@@ -18,7 +18,7 @@
 		"cy:ct": "cypress open --component"
 	},
 	"dependencies": {
-		"pinia": "^2.0.27",
+		"pinia": "^2.0.32",
 		"vue": "^3.2.45"
 	},
 	"devDependencies": {
