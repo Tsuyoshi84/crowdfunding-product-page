@@ -53,7 +53,7 @@ jobs:
           install: false
           build: npm run build
           start: npm run serve
-          wait-on: 'http://localhost:5173'
+          wait-on: 'http://[::1]:5173'
           browser: chrome
           group: 'UI - Chrome'
           record: true
