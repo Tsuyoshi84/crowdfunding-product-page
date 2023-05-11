@@ -48,12 +48,12 @@ jobs:
       - run: npm ci
 
       - name: Cypress integration tests
-        uses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@v5
         with:
           install: false
           build: npm run build
           start: npm run serve
-          wait-on: 'http://localhost:5173'
+          wait-on: 'http://[::1]:5173'
           browser: chrome
           group: 'UI - Chrome'
           record: true
