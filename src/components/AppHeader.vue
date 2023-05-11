@@ -113,8 +113,9 @@ const buttonLabel = $computed(() => {
 
 		& li {
 			padding: 0;
-			padding: var(--spacing-6) var(--spacing-3);
 			list-style: none;
+			padding-block: var(--spacing-6);
+			padding-inline: var(--spacing-3);
 
 			& > a {
 				padding: 1rem;
