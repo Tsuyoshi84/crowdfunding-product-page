@@ -3,9 +3,13 @@ name: Push Tag
 on:
   workflow_dispatch:
     inputs:
-      branch:
-        description: 'Branch name'
+      env:
+        description: 'Environment'
         required: true
+        type: choice
+        options:
+          - dev
+          - staging
 
 jobs:
   add-tag:
@@ -20,8 +24,9 @@ jobs:
 
       - name: Add git tag
         run: |
-          tag_name=$(date +'%Y%m%d%H%M%S')
+          tag_name=$(${{github.event.inputs.env}} +'%Y%m%d-%H%M')
           git tag $tag_name
+          echo Tag name: $tag_name
 
       - name: Push the tag to the origin
         run: |
