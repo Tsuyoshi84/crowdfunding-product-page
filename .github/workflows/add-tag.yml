@@ -1,0 +1,29 @@
+name: Example workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch name'
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Switch to a specific branch
+        run: |
+          git checkout <branch_name>
+
+      - name: Add git tag
+        run: |
+          tag_name=$(date +'%Y%m%d%H%M%S')
+          git tag $tag_name
+
+      - name: Push the tag to the origin
+        run: |
+          git push origin $tag_name
