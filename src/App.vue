@@ -1,7 +1,4 @@
-<script lang="ts" setup>
-import Project from './components/Project.vue'
-import AppHeader from './components/AppHeader.vue'
-</script>
+<script lang="ts" setup></script>
 
 <template>
 	<AppHeader />
