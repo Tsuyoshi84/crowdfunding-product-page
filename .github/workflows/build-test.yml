@@ -33,6 +33,12 @@ jobs:
         with:
           node-version: '20.x'
           cache: 'npm'
+      - name: Add label
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_URL: ${{github.event.pull_request.html_url}}
+        run: gh pr edit "$PR_URL" --add-label "update"
       - run: npm ci
       - run: npm run lint
       - run: npm run lint-css
