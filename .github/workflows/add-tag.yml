@@ -24,7 +24,7 @@ jobs:
 
       - name: Add git tag
         run: |
-          tag_name=$(${{github.event.inputs.env}} +'%Y%m%d-%H%M')
+          tag_name=${{github.event.inputs.env}}-$('%Y%m%d-%H%M')
           git tag $tag_name
           echo Tag name: $tag_name
 
