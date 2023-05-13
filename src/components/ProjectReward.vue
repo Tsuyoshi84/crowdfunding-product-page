@@ -7,7 +7,7 @@ interface Props {
 const { reward } = defineProps<Props>()
 
 const emit = defineEmits<{
-	(e: 'clickSelect'): void
+	clickSelect: []
 }>()
 
 const isOutOfStock = $computed<boolean>(() => reward.stock === 0)

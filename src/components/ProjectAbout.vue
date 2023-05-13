@@ -7,7 +7,7 @@ interface Props {
 defineProps<Props>()
 
 const emit = defineEmits<{
-	(e: 'selectReward', detail: { reward: Reward }): void
+	selectReward: [detail: { reward: Reward }]
 }>()
 </script>
 
