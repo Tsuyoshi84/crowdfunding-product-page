@@ -20,10 +20,15 @@ jobs:
 
       - name: Add git tag
         run: |
-          tag="dev-$(date +%Y%m%d-%H%M)"
+          tag="dev-$(date +%Y%m%d-%H%M%S)"
           git tag $tag
           echo Tag name: $tag
 
-      - name: Push the tag to the origin
-        run: |
-          git push origin $tag
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          tags: true
+
+      # - name: Push the tag to the origin
+      #   run: |
+      #     git push origin $tag
