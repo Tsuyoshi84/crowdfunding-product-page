@@ -16,3 +16,14 @@ updates:
     assignees:
       - 'Tsuyoshi84'
     open-pull-requests-limit: 30
+
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'daily'
+    commit-message:
+      prefix: 'github-actions'
+    versioning-strategy: 'increase'
+    assignees:
+      - 'Tsuyoshi84'
+    open-pull-requests-limit: 30
