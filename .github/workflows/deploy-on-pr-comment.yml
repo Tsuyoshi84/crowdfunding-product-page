@@ -7,20 +7,17 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: contains(github.event.comment.body, 'deploy-this-pr')
+    if: contains(github.event.comment.body, 'deploy-this-pr') && github.event_name == 'pull_request_review_comment'
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
-      # - name: Configure git
-      #   run: |
-      #     git config --global user.name "GitHub Actions"
-      #     git config --global user.email ""
+        with:
+          ref: ${{ github.head_ref }}
 
       - name: Add git tag
         run: |
-          tag="dev-$(date +%Y%m%d-%H%M%S)"
+          TZ=UTC+9 tag="dev-$(date +%Y%m%d-%H%M%S)"
           git tag $tag
           echo Tag name: $tag
 
