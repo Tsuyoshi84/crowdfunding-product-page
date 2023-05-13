@@ -10,10 +10,20 @@ jobs:
     if: ${{ github.event.issue.pull_request }} && contains(github.event.comment.body, 'deploy-this-pr')
 
     steps:
+      - name: Check PR
+        uses: xt0rted/pull-request-comment-branch@v2
+        id: comment-branch
+
       - name: Checkout code
         uses: actions/checkout@v3
+        if: success()
         with:
-          ref: ${{ github.head_ref }}
+          ref: ${{ steps.comment-branch.outputs.head_ref }}
+
+      - name: Set timezone
+        uses: szenius/set-timezone@v1.2
+        with:
+          timezoneLinux: 'Asia/Tokyo'
 
       - name: Add git tag
         run: |
