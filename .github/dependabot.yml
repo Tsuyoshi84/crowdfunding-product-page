@@ -23,7 +23,6 @@ updates:
       interval: 'daily'
     commit-message:
       prefix: 'github-actions'
-    versioning-strategy: 'increase'
     assignees:
       - 'Tsuyoshi84'
     open-pull-requests-limit: 30
