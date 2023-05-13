@@ -4,11 +4,11 @@ import iconHamburger from '@/assets/images/icon-hamburger.svg'
 
 const isMenuOpen = ref(false)
 
-const menuIconSrc = $computed(() => {
+const menuIconSrc = computed(() => {
 	return isMenuOpen ? iconCloseMenu : iconHamburger
 })
 
-const buttonLabel = $computed(() => {
+const buttonLabel = computed(() => {
 	return isMenuOpen ? 'Close menu' : 'Open menu'
 })
 </script>

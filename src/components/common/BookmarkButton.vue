@@ -5,7 +5,7 @@ interface Props {
 
 const { bookmarked = false } = defineProps<Props>()
 
-const label = $computed<'Bookmarked' | 'Bookmark'>(() => {
+const label = computed(() => {
 	return bookmarked ? 'Bookmarked' : 'Bookmark'
 })
 </script>
