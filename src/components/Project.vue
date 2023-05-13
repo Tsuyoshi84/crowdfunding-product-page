@@ -10,19 +10,19 @@ onMounted(async () => {
 	await fetchProject()
 })
 
-let selectedReward = $ref<ProjectReward | null>(null)
+let selectedReward = ref<ProjectReward>()
 
-let isProjectModalOpen = $ref(false)
-let isCompleteModalOpen = $ref(false)
+let isProjectModalOpen = ref(false)
+let isCompleteModalOpen = ref(false)
 
-function openModal(reward: ProjectReward | null = null): void {
-	selectedReward = reward
-	isProjectModalOpen = true
+function openModal(reward: ProjectReward | undefined = undefined): void {
+	selectedReward.value = reward
+	isProjectModalOpen.value = true
 }
 
 function showCompleteModal(): void {
-	isProjectModalOpen = false
-	isCompleteModalOpen = true
+	isProjectModalOpen.value = false
+	isCompleteModalOpen.value = true
 }
 
 async function bookmarkToggled(): Promise<void> {
