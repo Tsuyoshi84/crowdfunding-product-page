@@ -9,7 +9,7 @@ on:
         type: choice
         options:
           - dev
-          - staging
+          - stg
 
 jobs:
   add-tag:
@@ -18,16 +18,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # - name: Switch to a specific branch
-      #   run: |
-      #     git checkout <branch_name>
-
       - name: Add git tag
         run: |
-          tag_name="${{ github.event.inputs.env }}-$(date +%Y%m%d-%H%M)"
-          git tag $tag_name
-          echo Tag name: $tag_name
+          tag="${{ github.event.inputs.env }}-$(date +%Y%m%d-%H%M%S)"
+          git tag $tag
+          echo Tag name: $tag
 
-      - name: Push the tag to the origin
-        run: |
-          git push origin $tag_name
+      - name: Push tag
+        uses: ad-m/github-push-action@master
+        with:
+          tags: true

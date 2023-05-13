@@ -13,22 +13,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Configure git
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email ""
+      # - name: Configure git
+      #   run: |
+      #     git config --global user.name "GitHub Actions"
+      #     git config --global user.email ""
 
       - name: Add git tag
         run: |
           tag="dev-$(date +%Y%m%d-%H%M%S)"
+          tag="dev-$(date +%Y%m%d-%H%M%S)"
           git tag $tag
           echo Tag name: $tag
 
-      - name: Push changes
+      - name: Push tag
         uses: ad-m/github-push-action@master
         with:
           tags: true
-
-      # - name: Push the tag to the origin
-      #   run: |
-      #     git push origin $tag
