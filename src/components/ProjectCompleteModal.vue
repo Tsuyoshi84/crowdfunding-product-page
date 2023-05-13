@@ -7,14 +7,14 @@ defineEmits<{
 	'update:open': [boolean]
 }>()
 
-const dialog = $ref<null | HTMLDialogElement>(null)
+const dialog = ref<HTMLDialogElement>()
 
 function show(): void {
-	dialog?.showModal()
+	dialog.value?.showModal()
 }
 
 function close(): void {
-	dialog?.close()
+	dialog.value?.close()
 }
 
 watch(
