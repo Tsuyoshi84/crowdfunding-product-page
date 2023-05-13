@@ -7,8 +7,8 @@ interface Props {
 const { project } = defineProps<Props>()
 
 const emit = defineEmits<{
-	(e: 'toggleBookmark'): void
-	(e: 'clickBackProject'): void
+	toggleBookmark: []
+	clickBackProject: []
 }>()
 </script>
 

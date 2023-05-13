@@ -4,7 +4,7 @@ const { open = false } = defineProps<{
 }>()
 
 defineEmits<{
-	(e: 'update:open', open: boolean): void
+	'update:open': [boolean]
 }>()
 
 const dialog = $ref<null | HTMLDialogElement>(null)

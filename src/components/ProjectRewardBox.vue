@@ -9,8 +9,8 @@ interface Props {
 const { reward = null, isSelected = false } = defineProps<Props>()
 
 const emit = defineEmits<{
-	(e: 'select'): void
-	(e: 'submit'): void
+	select: []
+	submit: []
 }>()
 
 const isOutOfStock = $computed<boolean>(() => {

@@ -6,8 +6,8 @@ interface Props {
 const { modelValue, minPledge = 0 } = defineProps<Props>()
 
 const emit = defineEmits<{
-	(e: 'update:modelValue', value: number): void
-	(e: 'submit'): void
+	'update:modelValue': [number]
+	submit: []
 }>()
 
 const canSubmit = $computed<boolean>(() => modelValue >= minPledge)

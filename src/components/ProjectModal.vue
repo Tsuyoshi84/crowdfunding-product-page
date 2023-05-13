@@ -10,9 +10,9 @@ interface Props {
 const { reward = null, open = false } = defineProps<Props>()
 
 const emit = defineEmits<{
-	(e: 'submit'): void
-	(e: 'update:reward', reward: ProjectReward | null): void
-	(e: 'update:open', open: boolean): void
+	submit: []
+	'update:reward': [ProjectReward | null]
+	'update:open': [boolean]
 }>()
 
 let noRewardSelected = $ref(false)
