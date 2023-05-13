@@ -1,7 +1,7 @@
 name: Deploy on PR Comment
 
 on:
-  issue_comment:
+  pull_request_comment:
     types: [created]
 
 jobs:
@@ -20,7 +20,6 @@ jobs:
 
       - name: Add git tag
         run: |
-          tag="dev-$(date +%Y%m%d-%H%M%S)"
           tag="dev-$(date +%Y%m%d-%H%M%S)"
           git tag $tag
           echo Tag name: $tag
