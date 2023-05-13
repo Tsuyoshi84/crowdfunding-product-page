@@ -15,15 +15,15 @@ const emit = defineEmits<{
 	'update:open': [boolean]
 }>()
 
-let noRewardSelected = $ref(false)
+let noRewardSelected = ref(false)
 
-const dialog = $ref<null | HTMLDialogElement>(null)
+const dialog = ref<HTMLDialogElement>()
 function show(): void {
-	dialog?.showModal()
+	dialog.value?.showModal()
 }
 function close(): void {
-	noRewardSelected = false
-	dialog?.close()
+	noRewardSelected.value = false
+	dialog.value?.close()
 	emit('update:open', false)
 }
 
@@ -33,7 +33,7 @@ watch(
 )
 
 function selectReward(reward: ProjectReward | null): void {
-	noRewardSelected = reward === null
+	noRewardSelected.value = reward === null
 
 	emit('update:reward', reward)
 }

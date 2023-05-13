@@ -2,7 +2,7 @@
 import iconCloseMenu from '@/assets/images/icon-close-menu.svg'
 import iconHamburger from '@/assets/images/icon-hamburger.svg'
 
-const isMenuOpen = $ref(false)
+const isMenuOpen = ref(false)
 
 const menuIconSrc = $computed(() => {
 	return isMenuOpen ? iconCloseMenu : iconHamburger

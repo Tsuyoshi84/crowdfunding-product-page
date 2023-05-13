@@ -35,7 +35,7 @@ function nameClicked() {
 	emit('select')
 }
 
-const inputPledge = $ref<number>(minPledge)
+const inputPledge = ref<number>(minPledge)
 </script>
 
 <template>
