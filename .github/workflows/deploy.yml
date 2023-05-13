@@ -16,7 +16,7 @@ jobs:
       - name: Configure git
         run: |
           git config --global user.name "GitHub Actions"
-          git config --global user.email "
+          git config --global user.email ""
 
       - name: Add git tag
         run: |
