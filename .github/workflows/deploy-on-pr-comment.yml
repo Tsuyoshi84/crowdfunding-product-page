@@ -35,3 +35,4 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           tags: true
+          branch: ${{ steps.comment-branch.outputs.head_ref }}
