@@ -1,0 +1,14 @@
+name: deploy-front-dev
+on:
+  push:
+    tags:
+      - test-*
+
+jobs:
+  check-tag:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    env:
+      VITE_RELEASE: ${{ github.ref || github.sha }}
+    steps:
+      - run: echo $VITE_RELEASE
