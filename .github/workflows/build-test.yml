@@ -29,7 +29,10 @@ jobs:
     name: Build and Test
     runs-on: ubuntu-latest
     if: ${{ !github.event.pull_request.draft }}
+    env:
+      VITE_RELEASE: ${{ github.ref || github.sha }}
     steps:
+      - run: echo $VITE_RELEASE
       - uses: actions/checkout@v3
       - name: Use Node.js
         uses: actions/setup-node@v3
