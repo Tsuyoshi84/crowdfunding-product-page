@@ -13,16 +13,16 @@ const emit = defineEmits<{
 	submit: []
 }>()
 
-const isOutOfStock = $computed<boolean>(() => {
+const isOutOfStock = computed<boolean>(() => {
 	if (reward === null) return false
 
 	return reward.stock === 0
 })
-const isNoReward = $computed<boolean>(() => reward === null)
-const name = $computed<string>(() => reward?.name ?? 'Pledge with no reward')
-const minPledge = $computed<number>(() => reward?.pledge ?? 0)
-const stock = $computed<number>(() => reward?.stock ?? 0)
-const detail = $computed<string>(() => {
+const isNoReward = computed<boolean>(() => reward === null)
+const name = computed<string>(() => reward?.name ?? 'Pledge with no reward')
+const minPledge = computed<number>(() => reward?.pledge ?? 0)
+const stock = computed<number>(() => reward?.stock ?? 0)
+const detail = computed<string>(() => {
 	return (
 		reward?.detail ??
 		'Choose to support us without a reward if you simple believe in our project. As a backer, you will be signed up to receive product updates via email'
@@ -35,7 +35,7 @@ function nameClicked() {
 	emit('select')
 }
 
-const inputPledge = ref<number>(minPledge)
+const inputPledge = ref<number>(minPledge.value)
 </script>
 
 <template>

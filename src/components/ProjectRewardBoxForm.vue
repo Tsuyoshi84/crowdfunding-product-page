@@ -10,7 +10,7 @@ const emit = defineEmits<{
 	submit: []
 }>()
 
-const canSubmit = $computed<boolean>(() => modelValue >= minPledge)
+const canSubmit = computed<boolean>(() => modelValue >= minPledge)
 
 function onChanged(e: Event): void {
 	if (typeof (e.currentTarget as any).value !== 'string') return
