@@ -30,7 +30,7 @@ const detail = computed<string>(() => {
 })
 
 function nameClicked() {
-	if (isOutOfStock) return
+	if (isOutOfStock.value) return
 
 	emit('select')
 }
