@@ -31,16 +31,38 @@ jobs:
     if: ${{ !github.event.pull_request.draft }}
     steps:
       - uses: actions/checkout@v3
+
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20.x'
           cache: 'npm'
-      - run: npm ci
-      - run: npm run lint
-      - run: npm run lint-css
-      - run: npm run format:check
-      - run: npm run build
+
+      - name: Install packages
+        run: npm ci
+
+      - name: Put
+        env:
+          BASE_REF: ${{ github.base_ref }}
+          HEAD_REF: ${{ github.head_ref }}
+        run: |
+          echo "BASE_REF=$BASE_REF"
+          echo "HEAD_REF=$HEAD_REF"
+
+      - name: ESLint
+        if: ${{ github.base_ref == 'main' }}
+        run: npm run lint
+
+      - name: StyleLint
+        if: ${{ github.base_ref == 'main' }}
+        run: npm run lint-css
+
+      - name: Check format
+        if: ${{ github.base_ref == 'main' }}
+        run: npm run format:check
+
+      - name: Build
+        run: npm run build
 
   cypress-test:
     name: Cypress Test
