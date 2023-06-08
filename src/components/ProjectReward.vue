@@ -12,7 +12,7 @@ const emit = defineEmits<{
 
 const isOutOfStock = computed<boolean>(() => reward.stock === 0)
 const buttonLabel = computed<string>(() =>
-	isOutOfStock ? 'Out of Stock' : 'Select Reward',
+	isOutOfStock.value ? 'Out of Stock' : 'Select Reward',
 )
 </script>
 
