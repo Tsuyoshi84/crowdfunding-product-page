@@ -40,24 +40,16 @@ jobs:
       - name: Install packages
         run: npm ci
 
-      - name: Put
-        env:
-          BASE_REF: ${{ github.base_ref }}
-          HEAD_REF: ${{ github.head_ref }}
-        run: |
-          echo "BASE_REF=$BASE_REF"
-          echo "HEAD_REF=$HEAD_REF"
-
       - name: ESLint
-        if: ${{ github.base_ref == 'main' }}
+        if: github.base_ref == 'main'
         run: npm run lint
 
       - name: StyleLint
-        if: ${{ github.base_ref == 'main' }}
+        if: github.base_ref == 'main'
         run: npm run lint-css
 
       - name: Check format
-        if: ${{ github.base_ref == 'main' }}
+        if: github.base_ref == 'main'
         run: npm run format:check
 
       - name: Build
