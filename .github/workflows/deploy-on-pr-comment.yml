@@ -8,7 +8,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     # Check if the event is triggered by a PR comment and the comment contains 'deploy-this-pr'
-    if: ${{ github.event.issue.pull_request }} && contains(github.event.comment.body, 'deploy-this-pr')
+    if: ${{ github.event.issue.pull_request && contains(github.event.comment.body, 'deploy-this-pr') }}
 
     steps:
       - name: Retrieve the git ref of the PR
