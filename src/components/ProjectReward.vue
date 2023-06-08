@@ -10,6 +10,7 @@ const emit = defineEmits<{
 	clickSelect: []
 }>()
 
+// Hello
 const isOutOfStock = computed<boolean>(() => reward.stock === 0)
 const buttonLabel = computed<string>(() =>
 	isOutOfStock.value ? 'Out of Stock' : 'Select Reward',
