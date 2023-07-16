@@ -1,23 +1,22 @@
 <script setup lang="ts">
 interface Props {
-	modelValue: number
 	minPledge: number
 }
-const { modelValue, minPledge = 0 } = defineProps<Props>()
+const { minPledge = 0 } = defineProps<Props>()
 
 const emit = defineEmits<{
-	'update:modelValue': [number]
 	submit: []
 }>()
 
-const canSubmit = computed<boolean>(() => modelValue >= minPledge)
+const modelValue = defineModel<number>({ required: true })
+
+const canSubmit = computed<boolean>(() => modelValue.value >= minPledge)
 
 function onChanged(e: Event): void {
 	if (typeof (e.currentTarget as any).value !== 'string') return
 
 	const value = parseInt((e.currentTarget as any).value)
-
-	emit('update:modelValue', value)
+	modelValue.value = value
 }
 </script>
 
