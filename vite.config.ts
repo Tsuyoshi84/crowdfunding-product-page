@@ -12,7 +12,7 @@ export default defineConfig({
 		],
 	},
 	plugins: [
-		vue({ reactivityTransform: true }),
+		vue({ reactivityTransform: true, script: { defineModel: true } }),
 
 		// https://github.com/antfu/unplugin-auto-import
 		AutoImport({
