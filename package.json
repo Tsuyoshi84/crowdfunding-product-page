@@ -46,7 +46,7 @@
 		"postinstall-postinstall": "^2.1.0",
 		"prettier": "^3.0.0",
 		"simple-pre-commit": "^1.2.1",
-		"stylelint": "^15.10.1",
+		"stylelint": "^15.10.2",
 		"stylelint-config-idiomatic-order": "^9.0.0",
 		"stylelint-config-recommended-vue": "^1.5.0",
 		"stylelint-config-standard": "^34.0.0",
