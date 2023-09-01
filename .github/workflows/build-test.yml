@@ -64,7 +64,7 @@ jobs:
       - run: npm ci
 
       - name: Cypress integration tests
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v6
         with:
           install: false
           build: npm run build
@@ -90,7 +90,7 @@ jobs:
           path: cypress/screenshots
 
       - name: Cypress component tests
-        uses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@v6
         with:
           install: false
           component: true
