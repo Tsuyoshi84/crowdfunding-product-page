@@ -42,7 +42,7 @@
 		"eslint-plugin-vue": "^9.17.0",
 		"local-cypress": "^1.2.6",
 		"postcss-html": "^1.5.0",
-		"postcss-nesting": "^12.0.0",
+		"postcss-nesting": "^12.0.1",
 		"postinstall-postinstall": "^2.1.0",
 		"prettier": "^3.0.3",
 		"simple-pre-commit": "^1.2.1",
