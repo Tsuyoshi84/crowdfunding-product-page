@@ -39,7 +39,7 @@
 		"cypress": "^13.1.0",
 		"eslint": "^8.48.0",
 		"eslint-config-prettier": "^9.0.0",
-		"eslint-plugin-vue": "^9.16.1",
+		"eslint-plugin-vue": "^9.17.0",
 		"local-cypress": "^1.2.6",
 		"postcss-html": "^1.5.0",
 		"postcss-nesting": "^12.0.0",
