@@ -17,15 +17,19 @@ updates:
       - 'Tsuyoshi84'
     open-pull-requests-limit: 30
     allow:
-      - dependency-name: 'stylelint*'
       - dependency-name: 'eslint*'
+      - dependency-name: 'stylelint*'
       - dependency-name: 'prettier'
+      - dependency-name: '@cypress*'
     groups:
       lint-formatter:
         patterns:
-          - 'stylelint*'
           - 'eslint*'
+          - 'stylelint*'
           - 'prettier'
+      cypress:
+        patterns:
+          - '@cypress*'
 
   - package-ecosystem: 'github-actions'
     directory: '/'
