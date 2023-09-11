@@ -8,7 +8,7 @@ updates:
   - package-ecosystem: 'npm' # See documentation for possible values
     directory: '/' # Location of package manifests
     schedule:
-      interval: 'monthly'
+      interval: 'daily'
     commit-message:
       # Prefix all commit messages with "npm"
       prefix: 'npm'
@@ -16,6 +16,16 @@ updates:
     assignees:
       - 'Tsuyoshi84'
     open-pull-requests-limit: 30
+    allow:
+      - dependency-name: 'eslint*'
+      - dependency-name: 'stylelint*'
+      - dependency-name: 'prettier'
+    groups:
+      lint-formatter:
+        patterns:
+          - 'eslint*'
+          - 'stylelint*'
+          - 'prettier'
 
   - package-ecosystem: 'github-actions'
     directory: '/'
