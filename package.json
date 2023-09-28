@@ -2,6 +2,11 @@
 	"name": "crowdfunding-product-page",
 	"version": "0.0.0",
 	"license": "UNLICENSED",
+	"engines": {
+		"pnpm": "7",
+		"yarn": "please-use-pnpm",
+		"node": "^18.0.0"
+	},
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
