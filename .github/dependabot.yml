@@ -10,8 +10,8 @@ updates:
     schedule:
       interval: 'monthly'
     commit-message:
-      # Prefix all commit messages with "npm"
-      prefix: 'npm'
+      # Prefix all commit messages with "pnpm"
+      prefix: 'pnpm'
     versioning-strategy: 'increase'
     assignees:
       - 'Tsuyoshi84'
