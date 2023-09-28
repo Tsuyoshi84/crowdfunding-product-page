@@ -17,14 +17,6 @@
 		"cy": "cypress open",
 		"cy:ct": "cypress open --component"
 	},
-	"lint-staged": {
-		"*.{ts,vue}": [
-			"eslint --fix",
-			"prettier --write"
-		],
-		"*.{css,vue}": "stylelint --ignore-path .gitignore --fix"
-	},
-	"simple-pre-commit": "npx lint-staged",
 	"dependencies": {
 		"pinia": "^2.1.6",
 		"vue": "^3.3.4"
@@ -45,7 +37,6 @@
 		"postcss-nesting": "^12.0.1",
 		"postinstall-postinstall": "^2.1.0",
 		"prettier": "^3.0.3",
-		"simple-pre-commit": "^1.2.1",
 		"stylelint": "^15.10.3",
 		"stylelint-config-idiomatic-order": "^9.0.0",
 		"stylelint-config-recommended-vue": "^1.5.0",
