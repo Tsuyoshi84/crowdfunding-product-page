@@ -29,7 +29,7 @@
 	"devDependencies": {
 		"@cypress/vite-dev-server": "^5.0.6",
 		"@cypress/vue": "^6.0.0",
-		"@types/node": "^20.6.0",
+		"@types/node": "^20.8.6",
 		"@typescript-eslint/parser": "^6.7.5",
 		"@vitejs/plugin-vue": "^4.3.4",
 		"cssnano": "^6.0.1",
