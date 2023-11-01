@@ -18,7 +18,7 @@ devDependencies:
     version: 5.0.6
   '@cypress/vue':
     specifier: ^6.0.0
-    version: 6.0.0(cypress@13.3.1)(vue@3.3.7)
+    version: 6.0.0(cypress@13.4.0)(vue@3.3.7)
   '@types/node':
     specifier: ^20.8.6
     version: 20.8.6
@@ -32,8 +32,8 @@ devDependencies:
     specifier: ^6.0.1
     version: 6.0.1(postcss@8.4.31)
   cypress:
-    specifier: ^13.3.1
-    version: 13.3.1
+    specifier: ^13.4.0
+    version: 13.4.0
   eslint:
     specifier: ^8.51.0
     version: 8.51.0
@@ -225,7 +225,7 @@ packages:
       - supports-color
     dev: true
 
-  /@cypress/vue@6.0.0(cypress@13.3.1)(vue@3.3.7):
+  /@cypress/vue@6.0.0(cypress@13.4.0)(vue@3.3.7):
     resolution: {integrity: sha512-KMfRw8y/kXn/RJqaDdFnYnW7YLk47313UE3Yip+sLDjILJ2kA0WEiEa6MYKe58v8TNRtwcRpUH5xAYVNs1N6/A==}
     engines: {node: '>=8'}
     peerDependencies:
@@ -236,7 +236,7 @@ packages:
       '@cypress/webpack-dev-server':
         optional: true
     dependencies:
-      cypress: 13.3.1
+      cypress: 13.4.0
       vue: 3.3.7(typescript@5.2.2)
     dev: true
 
@@ -1322,8 +1322,8 @@ packages:
   /csstype@3.1.2:
     resolution: {integrity: sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==}
 
-  /cypress@13.3.1:
-    resolution: {integrity: sha512-g4mJLZxYN+UAF2LMy3Znd4LBnUmS59Vynd81VES59RdW48Yt+QtR2cush3melOoVNz0PPbADpWr8DcUx6mif8Q==}
+  /cypress@13.4.0:
+    resolution: {integrity: sha512-KeWNC9xSHG/ewZURVbaQsBQg2mOKw4XhjJZFKjWbEjgZCdxpPXLpJnfq5Jns1Gvnjp6AlnIfpZfWFlDgVKXdWQ==}
     engines: {node: ^16.0.0 || ^18.0.0 || >=20.0.0}
     hasBin: true
     requiresBuild: true
