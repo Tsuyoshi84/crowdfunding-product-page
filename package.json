@@ -50,7 +50,7 @@
 		"stylelint-prettier": "^4.0.2",
 		"stylelint-use-logical-spec": "^5.0.0",
 		"typescript": "^5.2.2",
-		"unplugin-auto-import": "^0.16.7",
+		"unplugin-auto-import": "^0.17.1",
 		"unplugin-vue-components": "^0.25.2",
 		"vite": "^4.5.0",
 		"vue-template-compiler": "^2.7.15",
