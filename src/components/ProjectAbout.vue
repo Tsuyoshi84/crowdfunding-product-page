@@ -14,7 +14,7 @@ const emit = defineEmits<{
 <template>
 	<section class="container">
 		<h2 class="about" data-test="about">About this project</h2>
-		       <p class="detail" data-test="detail">{{ project.detail }}</p>
+		<p class="detail" data-test="detail">{{ project.detail }}</p>
 		<div class="reward-wrapper">
 			<ProjectReward
 				v-for="reward in project.rewards"
