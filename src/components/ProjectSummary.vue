@@ -43,38 +43,38 @@ const emit = defineEmits<{
 <style scoped lang="postcss">
 .container {
 	display: flex;
-	flex-direction: column;
-	align-items: center;
+	inline-size: 100%;
+	padding-inline: var(--spacing-8);
+	padding-block: 0 var(--spacing-12);
 	border: 1px solid var(--color-border-light);
 	border-radius: var(--spacing-2);
+	flex-direction: column;
+	align-items: center;
 	background-color: var(--color-background);
-	inline-size: 100%;
-	padding-block: 0 var(--spacing-12);
-	padding-inline: var(--spacing-8);
 
 	& .logo {
 		--size: 3.5rem;
 
-		block-size: var(--size);
 		inline-size: var(--size);
+		block-size: var(--size);
 		margin-block-start: calc(var(--size) * -0.5);
 	}
 
 	& .name {
+		margin-block-end: var(--spacing-1);
+		padding-inline: var(--spacing-8);
+		padding-block: 0;
 		font-size: var(--font-size-large);
 		font-weight: var(--font-weight-bold);
-		margin-block-end: var(--spacing-1);
-		padding-block: 0;
-		padding-inline: var(--spacing-8);
 		text-align: center;
 	}
 
 	& .description {
-		color: var(--color-text-subtle);
+		margin-block-end: var(--spacing-3);
 		font-size: var(--font-size-small);
 		line-height: var(--spacing-6);
-		margin-block-end: var(--spacing-3);
 		text-align: center;
+		color: var(--color-text-subtle);
 	}
 
 	& .button-container {
@@ -85,21 +85,21 @@ const emit = defineEmits<{
 
 @media (width >= 62em) {
 	.container {
-		padding-block: 0 var(--spacing-12);
 		padding-inline: var(--spacing-12);
+		padding-block: 0 var(--spacing-12);
 
 		& .name {
 			font-size: var(--font-size-xxxlarge);
 		}
 
 		& .description {
-			font-size: var(--font-size-medium);
 			margin-block-end: var(--spacing-8);
+			font-size: var(--font-size-medium);
 		}
 
 		& .button-container {
-			justify-content: space-between;
 			inline-size: 100%;
+			justify-content: space-between;
 		}
 	}
 }

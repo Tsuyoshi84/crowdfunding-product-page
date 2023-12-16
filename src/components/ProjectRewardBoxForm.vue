@@ -54,8 +54,8 @@ form {
 }
 
 label {
-	color: var(--color-text-subtle);
 	text-align: center;
+	color: var(--color-text-subtle);
 }
 
 .wrapper {
@@ -65,22 +65,22 @@ label {
 
 	& .input-wrapper {
 		display: flex;
-		flex-direction: row;
-		align-items: center;
 		padding: var(--spacing-2);
 		border: 1px solid var(--color-border);
 		border-radius: var(--font-size-xlarge);
-		color: var(--color-text-subtle);
+		flex-direction: row;
+		align-items: center;
 		gap: var(--spacing-2);
+		color: var(--color-text-subtle);
 
 		& input {
+			inline-size: 100%;
 			border: none;
 			border-radius: var(--border-radius);
-			color: var(--color-text-main);
 			font-size: var(--font-size-medium);
 			font-weight: var(--font-weight-bold);
-			inline-size: 100%;
 			text-align: end;
+			color: var(--color-text-main);
 
 			&:focus {
 				outline: none;

@@ -32,32 +32,32 @@ const label = computed<'Bookmarked' | 'Bookmark'>(() => {
 <style lang="postcss" scoped>
 .bookmark-button {
 	display: flex;
-	align-items: center;
 	padding: 0;
 	border-radius: 2rem;
-	background-color: var(--color-disabled-light-3);
+	align-items: center;
 	gap: 1rem;
+	background-color: var(--color-disabled-light-3);
 
 	& .icon {
-		block-size: var(--spacing-14);
 		inline-size: var(--spacing-14);
+		block-size: var(--spacing-14);
 
 		& circle {
-			fill: var(--color-disabled-dark);
 			transition: fill 0.2s ease-in-out;
+			fill: var(--color-disabled-dark);
 		}
 
 		& path {
-			fill: var(--color-disabled-light-2);
 			transition: fill 0.2s ease-in-out;
+			fill: var(--color-disabled-light-2);
 		}
 	}
 
 	& .label {
 		display: none;
-		color: var(--color-disabled);
 		font-size: var(--font-size-medium);
 		font-weight: var(--font-weight-bold);
+		color: var(--color-disabled);
 		transition: color 0.2s ease-in-out;
 
 		@media (width >= 62em) {
@@ -98,8 +98,8 @@ const label = computed<'Bookmarked' | 'Bookmark'>(() => {
 
 @media (width >= 62em) {
 	.bookmark-button {
-		padding-block: 0;
 		padding-inline: 0 var(--spacing-6);
+		padding-block: 0;
 	}
 }
 </style>

@@ -15,21 +15,21 @@ const { on = false } = defineProps<Props>()
 <style scoped lang="postcss">
 .outer-circle {
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	inline-size: 100%;
+	min-inline-size: 20px;
+	block-size: 100%;
+	min-block-size: 20px;
+	aspect-ratio: 1;
 	border: 1px solid var(--color-border);
 	border-radius: 50%;
-	aspect-ratio: 1;
-	block-size: 100%;
-	inline-size: 100%;
-	min-block-size: 20px;
-	min-inline-size: 20px;
+	align-items: center;
+	justify-content: center;
 
 	& .inner-circle {
+		inline-size: 80%;
+		block-size: 80%;
 		border-radius: 50%;
 		background-color: transparent;
-		block-size: 80%;
-		inline-size: 80%;
 		transition: all 0.2s;
 	}
 }
