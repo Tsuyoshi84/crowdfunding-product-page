@@ -21,9 +21,6 @@ on:
       - '.vscode/**'
 
 jobs:
-  edit-pr:
-    name: Edit PR
-    uses: ./.github/workflows/edit-pr.yml
   build-test:
     name: Build and Test
     runs-on: ubuntu-latest
