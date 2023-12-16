@@ -50,12 +50,12 @@ const buttonLabel = computed(() => {
 .backdrop-shadow.open {
 	position: fixed;
 	z-index: var(--z-index-backdrop-shadow);
+	inset: 0;
 	background-image: linear-gradient(
 		to bottom,
 		rgb(0 0 0 / 50%),
 		rgb(0 0 0 / 20%)
 	);
-	inset: 0;
 }
 
 .header {
@@ -67,19 +67,19 @@ const buttonLabel = computed(() => {
 
 	z-index: var(--z-index-menu);
 	display: flex;
+	block-size: 19rem;
+	padding: var(--spacing-6);
+	border-block-end: 1px solid #eaeaea;
 	flex-direction: row;
 	align-items: flex-start;
 	justify-content: space-between;
-	padding: var(--spacing-6);
 	background-image: var(--gradient),
 		url('@/assets/images/image-hero-mobile.jpg');
 	background-size: cover;
-	block-size: 19rem;
-	border-block-end: 1px solid #eaeaea;
 
 	& > .logo {
-		margin-block: var(--spacing-6) 0;
 		margin-inline: var(--spacing-6) 0;
+		margin-block: var(--spacing-6) 0;
 		object-fit: contain;
 	}
 
@@ -91,37 +91,37 @@ const buttonLabel = computed(() => {
 .menu-button {
 	padding: 0;
 	border: none;
-	cursor: pointer;
 	outline: none;
+	cursor: pointer;
 }
 
 .nav {
 	position: fixed;
 	z-index: var(--z-index-menu);
-	inline-size: 100%;
 	inset-block-start: var(--spacing-16);
+	inline-size: 100%;
 
 	&.close {
 		display: none;
 	}
 
 	& ul {
+		inline-size: calc(100% - var(--spacing-6) * 2);
 		padding: 0;
 		border-radius: var(--spacing-2);
 		background-color: var(--color-background);
-		inline-size: calc(100% - var(--spacing-6) * 2);
 
 		& li {
 			padding: 0;
-			list-style: none;
-			padding-block: var(--spacing-6);
 			padding-inline: var(--spacing-3);
+			padding-block: var(--spacing-6);
+			list-style: none;
 
 			& > a {
 				padding: 1rem;
-				color: var(--color-text);
 				font-size: var(--font-size-large);
 				text-decoration: none;
+				color: var(--color-text);
 			}
 
 			&:not(:last-child) {
@@ -133,11 +133,11 @@ const buttonLabel = computed(() => {
 
 @media (width >= 62em) {
 	.header {
+		block-size: 25rem;
+		padding-inline: var(--spacing-36);
+		padding-block: var(--spacing-12);
 		background-image: var(--gradient),
 			url('@/assets/images/image-hero-desktop.jpg');
-		block-size: 25rem;
-		padding-block: var(--spacing-12);
-		padding-inline: var(--spacing-36);
 	}
 
 	.menu-button {
@@ -154,19 +154,19 @@ const buttonLabel = computed(() => {
 
 		& ul {
 			display: flex;
-			padding: 0;
-			margin: 0;
-			background-color: initial;
-			gap: var(--spacing-8);
 			inline-size: initial;
+			margin: 0;
+			padding: 0;
+			gap: var(--spacing-8);
+			background-color: initial;
 
 			& li {
 				padding: 0;
 
 				& > a {
 					padding: 0;
-					color: var(--color-text-inversed);
 					font-size: var(--font-size-small);
+					color: var(--color-text-inversed);
 
 					&:hover {
 						cursor: pointer;

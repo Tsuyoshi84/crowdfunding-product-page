@@ -88,11 +88,11 @@ const inputPledge = ref<number>(minPledge.value)
 
 	& .basic-info {
 		display: flex;
+		margin-block-end: var(--spacing-6);
 		flex-direction: row;
 		align-items: center;
 		justify-content: flex-start;
 		gap: var(--spacing-4);
-		margin-block-end: var(--spacing-6);
 
 		& .name-wrapper {
 			display: flex;
@@ -102,23 +102,23 @@ const inputPledge = ref<number>(minPledge.value)
 		}
 
 		& .mark-wrapper {
-			block-size: var(--font-size-large);
 			inline-size: var(--font-size-large);
+			block-size: var(--font-size-large);
 			opacity: 0;
 			transition: opacity 0.2s;
 		}
 
 		& .name {
+			margin-block-end: var(--spacing-2);
 			font-size: var(--font-size-small);
 			font-weight: var(--font-weight-bold);
-			margin-block-end: var(--spacing-2);
 			transition: color 0.2s;
 		}
 
 		& .pledge {
-			color: var(--color-text-primary);
 			font-size: var(--font-size-small);
 			font-weight: var(--font-weight-bold);
+			color: var(--color-text-primary);
 		}
 
 		&:hover {
@@ -135,28 +135,28 @@ const inputPledge = ref<number>(minPledge.value)
 	}
 
 	& .detail {
-		color: var(--color-text-subtle);
+		margin-block-end: var(--spacing-8);
 		font-size: var(--font-size-small);
 		line-height: 1.5rem;
-		margin-block-end: var(--spacing-8);
+		color: var(--color-text-subtle);
 	}
 
 	& .stock-info {
 		display: flex;
+		margin-block-end: var(--spacing-4);
 		flex-direction: column;
 		align-items: flex-start;
 		justify-content: space-between;
 		gap: var(--spacing-6);
-		margin-block-end: var(--spacing-4);
 
 		& .left {
 			color: var(--color-text-subtle);
 
 			& > .number {
-				color: var(--color-text-main);
+				margin-inline-end: var(--spacing-2);
 				font-size: var(--font-size-large);
 				font-weight: var(--font-weight-bold);
-				margin-inline-end: var(--spacing-2);
+				color: var(--color-text-main);
 			}
 		}
 	}

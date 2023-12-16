@@ -58,18 +58,18 @@ defineExpose({
 <style scoped lang="postcss">
 dialog {
 	z-index: var(--z-index-modal);
+	inline-size: calc(100vw - var(--spacing-12));
+	max-inline-size: 28rem;
 	padding: var(--spacing-6);
 	border: none;
 	border-radius: var(--spacing-2);
-	inline-size: calc(100vw - var(--spacing-12));
-	max-inline-size: 28rem;
 
 	&[open] {
 		display: block;
 		display: flex;
+		padding: var(--spacing-8);
 		flex-direction: column;
 		align-items: center;
-		padding: var(--spacing-8);
 		gap: var(--spacing-4);
 
 		&::backdrop {
@@ -90,10 +90,10 @@ dialog {
 }
 
 .message {
-	color: var(--color-text-subtle);
 	font-size: var(--font-size-small);
 	line-height: 1.5rem;
 	text-align: center;
+	color: var(--color-text-subtle);
 }
 
 .button-label {

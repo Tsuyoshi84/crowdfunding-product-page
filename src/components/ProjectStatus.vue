@@ -37,13 +37,13 @@ const { project } = defineProps<Props>()
 <style scoped lang="postcss">
 .container {
 	display: flex;
-	flex-direction: column;
+	inline-size: 100%;
 	padding: var(--spacing-12);
 	border: 1px solid var(--color-border-light);
 	border-radius: var(--spacing-2);
-	background-color: var(--color-background);
+	flex-direction: column;
 	gap: var(--spacing-4);
-	inline-size: 100%;
+	background-color: var(--color-background);
 
 	& .info-container {
 		display: flex;
@@ -55,10 +55,10 @@ const { project } = defineProps<Props>()
 
 	& .sub-info-container {
 		display: flex;
+		inline-size: 100%;
 		flex-direction: column;
 		justify-content: center;
 		gap: 0.5rem;
-		inline-size: 100%;
 	}
 
 	& .main {
@@ -71,21 +71,21 @@ const { project } = defineProps<Props>()
 	& .sub {
 		display: flex;
 		justify-content: center;
-		color: var(--color-text-subtle);
 		font-size: var(--font-size-small);
 		font-weight: var(--font-weight-light);
 		letter-spacing: 0.05rem;
+		color: var(--color-text-subtle);
 	}
 
 	& .border {
-		background-color: var(--color-border);
-		block-size: 1px;
 		inline-size: 5rem;
+		block-size: 1px;
+		background-color: var(--color-border);
 	}
 
 	& .progress-container {
-		block-size: var(--spacing-4);
 		inline-size: 100%;
+		block-size: var(--spacing-4);
 		margin-block-start: var(--spacing-4);
 	}
 }
@@ -93,9 +93,9 @@ const { project } = defineProps<Props>()
 @media (width >= 62em) {
 	.container {
 		& .info-container {
+			inline-size: 100%;
 			flex-direction: row;
 			justify-content: space-between;
-			inline-size: 100%;
 		}
 
 		& .sub-info-container {
@@ -103,8 +103,8 @@ const { project } = defineProps<Props>()
 		}
 
 		& .border {
-			block-size: 4rem;
 			inline-size: 1px;
+			block-size: 4rem;
 			transform: translateX(calc(var(--spacing-4) * -1));
 		}
 	}

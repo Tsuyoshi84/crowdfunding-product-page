@@ -107,10 +107,10 @@ dialog {
 }
 
 .explanation {
-	color: var(--color-text-subtle);
+	margin-block-end: var(--spacing-6);
 	font-size: var(--font-size-small);
 	line-height: var(--spacing-6);
-	margin-block-end: var(--spacing-6);
+	color: var(--color-text-subtle);
 }
 
 .rewards-container {
