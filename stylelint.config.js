@@ -3,7 +3,7 @@ module.exports = {
 		'stylelint-config-standard',
 		'stylelint-config-recommended-vue',
 		'stylelint-prettier/recommended',
-		'stylelint-config-idiomatic-order',
+		'stylelint-config-pretty-order',
 	],
 	plugins: ['stylelint-use-logical-spec'],
 	rules: {
