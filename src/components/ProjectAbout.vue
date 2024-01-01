@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Project, ProjectReward as Reward } from '@/models/project'
+import type { Project, ProjectReward as Reward } from '@/models/project'
 
 type Props = {
 	project: Project

@@ -1,4 +1,4 @@
-import { Project } from '@/models/project'
+import type { Project } from '@/models/project'
 import { getProject } from '@/services/project-service'
 
 export const useProjectStore = defineStore('project', () => {

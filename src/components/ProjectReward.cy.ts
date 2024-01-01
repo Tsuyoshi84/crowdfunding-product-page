@@ -1,4 +1,4 @@
-import { ProjectReward as Reward } from '@/models/project'
+import type { ProjectReward as Reward } from '@/models/project'
 import ProjectReward from './ProjectReward.vue'
 
 const reward: Reward = {
