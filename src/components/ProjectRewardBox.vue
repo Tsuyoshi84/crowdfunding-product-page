@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ProjectReward } from '@/models/project'
 
-interface Props {
+type Props = {
 	reward?: ProjectReward | null
 	isSelected: boolean
 }

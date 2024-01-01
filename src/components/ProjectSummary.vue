@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { Project } from '@/models/project'
 
-interface Props {
+type Props = {
 	project: Project
 }
 const { project } = defineProps<Props>()

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { Project, ProjectReward as Reward } from '@/models/project'
 
-interface Props {
+type Props = {
 	project: Project
 }
 defineProps<Props>()
