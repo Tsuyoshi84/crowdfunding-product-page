@@ -6,7 +6,6 @@ const props = withDefaults(defineProps<Props>(), {
 	open: false,
 })
 
-
 defineEmits<{
 	'update:open': [boolean]
 }>()

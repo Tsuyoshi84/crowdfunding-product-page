@@ -7,7 +7,6 @@ interface Props {
 	open: boolean
 }
 
-
 const props = withDefaults(defineProps<Props>(), {
 	reward: null,
 	open: false,
