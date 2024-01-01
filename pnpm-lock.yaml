@@ -14,8 +14,8 @@ dependencies:
 
 devDependencies:
   '@cypress/vite-dev-server':
-    specifier: ^5.0.6
-    version: 5.0.6
+    specifier: ^5.0.7
+    version: 5.0.7
   '@cypress/vue':
     specifier: ^6.0.0
     version: 6.0.0(cypress@13.6.0)(vue@3.3.9)
@@ -223,8 +223,8 @@ packages:
       uuid: 8.3.2
     dev: true
 
-  /@cypress/vite-dev-server@5.0.6:
-    resolution: {integrity: sha512-vqa6ImiMPnANJD1qQLytiLKi0oSZ2z+ZbYCybtGUmgZng/ITfZfsrNr7xd8Z8lUJboEXucK2eA3mPMdQvj05YQ==}
+  /@cypress/vite-dev-server@5.0.7:
+    resolution: {integrity: sha512-OeVsEvDtoWV/CnvnUEjWny7tsuw84DF78tvnibOWNTOuZzav62U3A07QKK2JDuGAoXQlVTiDWzcCObKIEcOGGg==}
     dependencies:
       debug: 4.3.4(supports-color@8.1.1)
       find-up: 6.3.0
