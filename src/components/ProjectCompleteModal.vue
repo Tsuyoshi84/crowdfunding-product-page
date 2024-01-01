@@ -1,7 +1,11 @@
 <script setup lang="ts">
-const { open = false } = defineProps<{
+type Props = {
 	open: boolean
-}>()
+}
+const props = withDefaults(defineProps<Props>(), {
+	open: false,
+})
+
 
 defineEmits<{
 	'update:open': [boolean]
@@ -18,12 +22,12 @@ function close(): void {
 }
 
 watch(
-	() => open,
+	() => props.open,
 	(open) => (open ? show() : close()),
 )
 
 onMounted(() => {
-	open ? show() : close()
+	props.open ? show() : close()
 })
 
 defineExpose({

@@ -7,7 +7,11 @@ interface Props {
 	open: boolean
 }
 
-const { reward = null, open = false } = defineProps<Props>()
+
+const props = withDefaults(defineProps<Props>(), {
+	reward: null,
+	open: false,
+})
 
 const emit = defineEmits<{
 	submit: []
@@ -28,7 +32,7 @@ function close(): void {
 }
 
 watch(
-	() => open,
+	() => props.open,
 	(open) => (open ? show() : close()),
 )
 
@@ -44,7 +48,7 @@ defineExpose({
 })
 
 function isSelected({ id }: ProjectReward): boolean {
-	return id === reward?.id
+	return id === props.reward?.id
 }
 </script>
 
