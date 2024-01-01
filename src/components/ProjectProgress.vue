@@ -4,7 +4,7 @@ import { Project } from '@/models/project'
 type Props = {
 	project: Project
 }
-const { project } = defineProps<Props>()
+defineProps<Props>()
 </script>
 
 <template>

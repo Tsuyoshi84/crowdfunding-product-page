@@ -5,7 +5,7 @@ import { formatNumber } from '@/ui/format'
 type Props = {
 	project: Project
 }
-const { project } = defineProps<Props>()
+defineProps<Props>()
 </script>
 
 <template>

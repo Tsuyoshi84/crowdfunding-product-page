@@ -2,7 +2,9 @@
 type Props = {
 	minPledge: number
 }
-const { minPledge = 0 } = defineProps<Props>()
+const props = withDefaults(defineProps<Props>(), {
+	minPledge: 0,
+})
 
 const emit = defineEmits<{
 	submit: []
@@ -10,7 +12,7 @@ const emit = defineEmits<{
 
 const modelValue = defineModel<number>({ required: true })
 
-const canSubmit = computed<boolean>(() => modelValue.value >= minPledge)
+const canSubmit = computed<boolean>(() => modelValue.value >= props.minPledge)
 
 function onChanged(e: Event): void {
 	if (typeof (e.currentTarget as any).value !== 'string') return

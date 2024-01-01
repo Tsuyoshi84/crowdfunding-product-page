@@ -2,8 +2,9 @@
 type Props = {
 	on: boolean
 }
-
-const { on = false } = defineProps<Props>()
+withDefaults(defineProps<Props>(), {
+	on: false,
+})
 </script>
 
 <template>
