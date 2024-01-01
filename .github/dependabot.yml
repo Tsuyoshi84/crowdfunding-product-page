@@ -24,7 +24,7 @@ updates:
           - '*prettier*'
       cypress:
         patterns:
-          - '@cypress*'
+          - '*cypress*'
       vue:
         patterns:
           - '*vue*'
