@@ -25,14 +25,14 @@ updates:
       cypress:
         patterns:
           - '*cypress*'
-      vue:
-        patterns:
-          - '*vue*'
-          - 'pinia'
       vite:
         patterns:
           - '*vite*'
           - 'unplugin*'
+      vue:
+        patterns:
+          - '*vue*'
+          - 'pinia'
 
   - package-ecosystem: 'github-actions'
     directory: '/'
