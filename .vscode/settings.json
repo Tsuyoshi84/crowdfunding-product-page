@@ -27,7 +27,8 @@
 		"postcss",
 		"stylelint",
 		"typecheck",
-		"unplugin"
+		"unplugin",
+		"vite"
 	],
 	"files.autoSave": "onFocusChange",
 	"editor.codeActionsOnSave": {
