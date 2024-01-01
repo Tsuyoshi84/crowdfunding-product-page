@@ -8,7 +8,6 @@ withDefaults(defineProps<Props>(), {
 	disabled: false,
 	type: 'button',
 })
-
 </script>
 
 <template>
