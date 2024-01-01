@@ -2,7 +2,7 @@
 import { Project } from '@/models/project'
 import { formatNumber } from '@/ui/format'
 
-interface Props {
+type Props = {
 	project: Project
 }
 const { project } = defineProps<Props>()

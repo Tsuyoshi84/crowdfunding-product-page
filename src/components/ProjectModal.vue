@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Project, ProjectReward } from '@/models/project'
 
-interface Props {
+type Props = {
 	project: Project
 	reward: ProjectReward | null
 	open: boolean

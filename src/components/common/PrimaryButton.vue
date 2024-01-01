@@ -1,9 +1,14 @@
 <script setup lang="ts">
-interface Props {
+type Props = {
 	disabled?: boolean
 	type?: 'button' | 'submit'
 }
-const { disabled = false, type = 'button' } = defineProps<Props>()
+
+withDefaults(defineProps<Props>(), {
+	disabled: false,
+	type: 'button',
+})
+
 </script>
 
 <template>

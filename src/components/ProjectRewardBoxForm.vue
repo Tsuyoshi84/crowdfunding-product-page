@@ -1,5 +1,5 @@
 <script setup lang="ts">
-interface Props {
+type Props = {
 	minPledge: number
 }
 const { minPledge = 0 } = defineProps<Props>()
