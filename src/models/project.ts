@@ -1,4 +1,4 @@
-export interface Project {
+export type Project = {
 	id: number
 	name: string
 	description: string
@@ -11,7 +11,7 @@ export interface Project {
 	rewards: ProjectReward[]
 }
 
-export interface ProjectReward {
+export type ProjectReward = {
 	id: number
 	name: string
 	detail: string

@@ -4,13 +4,13 @@ import { ProjectReward } from '@/models/project'
 type Props = {
 	reward: ProjectReward
 }
-const { reward } = defineProps<Props>()
+const props = defineProps<Props>()
 
 const emit = defineEmits<{
 	clickSelect: []
 }>()
 
-const isOutOfStock = computed<boolean>(() => reward.stock === 0)
+const isOutOfStock = computed<boolean>(() => props.reward.stock === 0)
 const buttonLabel = computed<string>(() =>
 	isOutOfStock.value ? 'Out of Stock' : 'Select Reward',
 )

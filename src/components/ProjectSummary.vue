@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import { Project } from '@/models/project'
+import type { Project } from '@/models/project'
 
 type Props = {
 	project: Project
 }
-const { project } = defineProps<Props>()
+defineProps<Props>()
 
 const emit = defineEmits<{
 	toggleBookmark: []
