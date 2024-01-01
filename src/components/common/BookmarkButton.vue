@@ -3,10 +3,13 @@ interface Props {
 	bookmarked?: boolean
 }
 
-const { bookmarked = false } = defineProps<Props>()
+const props = withDefaults(defineProps<Props>(), {
+	bookmarked: false,
+})
+
 
 const label = computed<'Bookmarked' | 'Bookmark'>(() => {
-	return bookmarked ? 'Bookmarked' : 'Bookmark'
+	return props.bookmarked ? 'Bookmarked' : 'Bookmark'
 })
 </script>
 
