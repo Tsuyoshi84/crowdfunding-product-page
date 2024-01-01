@@ -7,7 +7,6 @@ const props = withDefaults(defineProps<Props>(), {
 	bookmarked: false,
 })
 
-
 const label = computed<'Bookmarked' | 'Bookmark'>(() => {
 	return props.bookmarked ? 'Bookmarked' : 'Bookmark'
 })
