@@ -1,4 +1,4 @@
-import { Project } from '@/models/project'
+import type { Project } from '@/models/project'
 
 describe('Back project', () => {
 	let project: Project

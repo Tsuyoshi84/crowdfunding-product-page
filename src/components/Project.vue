@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useProjectStore } from '@/stores/project'
-import { ProjectReward } from '@/models/project'
+import type { ProjectReward } from '@/models/project'
 
 const store = useProjectStore()
 const { fetchProject, toggleBookmarked } = store

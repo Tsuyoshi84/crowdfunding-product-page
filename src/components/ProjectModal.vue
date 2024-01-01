@@ -1,21 +1,19 @@
 <script setup lang="ts">
-import { Project, ProjectReward } from '@/models/project'
+import type { Project, ProjectReward } from '@/models/project'
 
 type Props = {
 	project: Project
-	reward: ProjectReward | null
-	open: boolean
 }
+defineProps<Props>()
 
-const props = withDefaults(defineProps<Props>(), {
-	reward: null,
-	open: false,
+const open = defineModel<boolean>('open', { required: true, default: false })
+const reward = defineModel<ProjectReward | null>('reward', {
+	required: true,
+	default: null,
 })
 
 const emit = defineEmits<{
 	submit: []
-	'update:reward': [ProjectReward | null]
-	'update:open': [boolean]
 }>()
 
 let noRewardSelected = ref(false)
@@ -27,18 +25,14 @@ function show(): void {
 function close(): void {
 	noRewardSelected.value = false
 	dialog.value?.close()
-	emit('update:open', false)
+	open.value = false
 }
 
-watch(
-	() => props.open,
-	(open) => (open ? show() : close()),
-)
+watch(open, (open) => (open ? show() : close()))
 
-function selectReward(reward: ProjectReward | null): void {
-	noRewardSelected.value = reward === null
-
-	emit('update:reward', reward)
+function selectReward(selectedReward: ProjectReward | null): void {
+	noRewardSelected.value = selectedReward === null
+	reward.value = selectedReward
 }
 
 defineExpose({
@@ -47,7 +41,7 @@ defineExpose({
 })
 
 function isSelected({ id }: ProjectReward): boolean {
-	return id === props.reward?.id
+	return id === reward.value?.id
 }
 </script>
 

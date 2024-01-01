@@ -1,4 +1,4 @@
-import { Project } from '@/models/project'
+import type { Project } from '@/models/project'
 
 describe('Open project page', () => {
 	let project: Project

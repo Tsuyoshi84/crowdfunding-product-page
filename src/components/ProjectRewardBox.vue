@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ProjectReward } from '@/models/project'
+import type { ProjectReward } from '@/models/project'
 
 type Props = {
 	reward?: ProjectReward | null

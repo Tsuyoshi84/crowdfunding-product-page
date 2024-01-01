@@ -1,4 +1,4 @@
-import { Project } from '@/models/project'
+import type { Project } from '@/models/project'
 import ProjectAbout from './ProjectAbout.vue'
 
 describe('<ProjectAbout>', () => {

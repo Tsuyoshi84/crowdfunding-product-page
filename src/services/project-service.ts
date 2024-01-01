@@ -1,4 +1,4 @@
-import { Project } from '@/models/project'
+import type { Project } from '@/models/project'
 
 export async function getProject(): Promise<Project> {
 	return {
