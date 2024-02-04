@@ -24,14 +24,14 @@
 	},
 	"dependencies": {
 		"pinia": "^2.1.7",
-		"vue": "^3.4.3"
+		"vue": "^3.4.15"
 	},
 	"devDependencies": {
 		"@cypress/vite-dev-server": "^5.0.7",
 		"@cypress/vue": "^6.0.0",
 		"@types/node": "^20.11.16",
 		"@typescript-eslint/parser": "^6.20.0",
-		"@vitejs/plugin-vue": "^5.0.2",
+		"@vitejs/plugin-vue": "^5.0.3",
 		"cssnano": "^6.0.3",
 		"cypress": "^13.6.4",
 		"eslint": "^8.56.0",
