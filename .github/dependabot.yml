@@ -22,6 +22,7 @@ updates:
           - '*eslint*'
           - '*stylelint*'
           - '*prettier*'
+          - 'postcss-html'
       cypress:
         patterns:
           - '*cypress*'
