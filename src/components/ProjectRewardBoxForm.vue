@@ -15,9 +15,9 @@ const modelValue = defineModel<number>({ required: true })
 const canSubmit = computed<boolean>(() => modelValue.value >= props.minPledge)
 
 function onChanged(e: Event): void {
-	if (typeof (e.currentTarget as any).value !== 'string') return
+	if (typeof (e.currentTarget as HTMLInputElement).value !== 'string') return
 
-	const value = parseInt((e.currentTarget as any).value)
+	const value = Number.parseInt((e.currentTarget as HTMLInputElement).value)
 	modelValue.value = value
 }
 </script>
@@ -38,10 +38,7 @@ function onChanged(e: Event): void {
 					@input="onChanged"
 				/>
 			</div>
-			<PrimaryButton
-				type="submit"
-				:disabled="!canSubmit"
-				data-test="submit-button"
+			<PrimaryButton type="submit" :disabled="!canSubmit" data-test="submit-button"
 				>Continue</PrimaryButton
 			>
 		</div>

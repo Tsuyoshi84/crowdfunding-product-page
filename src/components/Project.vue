@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { useProjectStore } from '@/stores/project'
 import type { ProjectReward } from '@/models/project'
+import { useProjectStore } from '@/stores/project'
 
 const store = useProjectStore()
 const { fetchProject, toggleBookmarked } = store
@@ -10,10 +10,10 @@ onMounted(async () => {
 	await fetchProject()
 })
 
-let selectedReward = ref<ProjectReward>()
+const selectedReward = ref<ProjectReward>()
 
-let isProjectModalOpen = ref(false)
-let isCompleteModalOpen = ref(false)
+const isProjectModalOpen = ref(false)
+const isCompleteModalOpen = ref(false)
 
 function openModal(reward: ProjectReward | undefined = undefined): void {
 	selectedReward.value = reward
@@ -39,10 +39,7 @@ async function bookmarkToggled(): Promise<void> {
 				@toggle-bookmark="bookmarkToggled"
 			/>
 			<ProjectStatus :project="project" />
-			<ProjectAbout
-				:project="project"
-				@select-reward="({ reward }) => openModal(reward)"
-			/>
+			<ProjectAbout :project="project" @select-reward="({ reward }) => openModal(reward)" />
 		</template>
 	</article>
 	<ProjectModal
