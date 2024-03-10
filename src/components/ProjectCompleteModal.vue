@@ -50,10 +50,7 @@ defineExpose({
 			Monitor Riser worldwide.You will get an email once our campaign is
 			completed.
 		</p>
-		<PrimaryButton @click="$emit('update:open', false)">
-			<span class="button-label" data-test="complete-modal-close-button"
-				>Got it!</span
-			>
+		<PrimaryButton @click="$emit('update:open', false)"> <span class="button-label" data-test="complete-modal-close-button" >Got it!</span >
 		</PrimaryButton>
 	</dialog>
 </template>

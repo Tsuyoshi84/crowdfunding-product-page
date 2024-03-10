@@ -16,7 +16,7 @@
 		"lint:fix": "eslint './**/*.{ts,js,vue}' --fix",
 		"lint-css": "stylelint '**/*.vue' '**/*.css' --ignore-path .gitignore",
 		"lint-css:fix": "stylelint '**/*.vue' '**/*.css' --ignore-path .gitignore --fix",
-		"format": "prettier --write './**/*.{ts,js,vue,css}'",
+		"format": "biome format --write src",
 		"format:check": "prettier --check './**/*.{ts,js,vue,css}'",
 		"typecheck": "vue-tsc --noEmit --skipLibCheck",
 		"cy": "cypress open",
@@ -27,6 +27,7 @@
 		"vue": "^3.4.21"
 	},
 	"devDependencies": {
+		"@biomejs/biome": "1.6.0",
 		"@cypress/vite-dev-server": "^5.0.7",
 		"@cypress/vue": "^6.0.0",
 		"@types/node": "^20.11.24",

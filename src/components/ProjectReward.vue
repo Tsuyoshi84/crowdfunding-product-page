@@ -11,9 +11,7 @@ const emit = defineEmits<{
 }>()
 
 const isOutOfStock = computed<boolean>(() => props.reward.stock === 0)
-const buttonLabel = computed<string>(() =>
-	isOutOfStock.value ? 'Out of Stock' : 'Select Reward',
-)
+const buttonLabel = computed<string>(() => (isOutOfStock.value ? 'Out of Stock' : 'Select Reward'))
 </script>
 
 <template>
@@ -24,9 +22,7 @@ const buttonLabel = computed<string>(() =>
 	>
 		<div class="basic-info">
 			<div class="name" data-test="name">{{ reward.name }}</div>
-			<div class="pledge" data-test="pledge">
-				Pledge ${{ reward.pledge }} or more
-			</div>
+			<div class="pledge" data-test="pledge">Pledge ${{ reward.pledge }} or more</div>
 		</div>
 		<div class="detail" data-test="detail">{{ reward.detail }}</div>
 		<div class="stock-info">

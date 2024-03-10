@@ -23,9 +23,7 @@ describe('<PrimaryButton>', () => {
 	})
 
 	it('should have button type as default', () => {
-		cy.mount(PrimaryButton, { slots })
-			.get('button')
-			.should('have.attr', 'type', 'button')
+		cy.mount(PrimaryButton, { slots }).get('button').should('have.attr', 'type', 'button')
 	})
 
 	it('should have specified type', () => {

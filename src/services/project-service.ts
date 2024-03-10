@@ -4,8 +4,7 @@ export async function getProject(): Promise<Project> {
 	return {
 		id: 1,
 		name: 'Mastercraft Bamboo Monitor Riser',
-		description:
-			'A beautiful & handcrafted monitor stand to reduce neck and eye strain.',
+		description: 'A beautiful & handcrafted monitor stand to reduce neck and eye strain.',
 		detail:
 			'The Mastercraft Mamboo Monitor Riser is a sturdy and stylish platform that elevates your screen to a more comfortable viewing height. Placing your monitor at eye level has the potential to improve your posture and make you more comfortable while at work, helping you stay focused on the task at hand.\n\nFeaturing artisan craftsmanship, the simplicity of design creates extra desk space below your computer to allow notepads, pens, and USB sticks to be stored under the stand.',
 		bookmarked: false,
