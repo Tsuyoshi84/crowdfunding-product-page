@@ -48,6 +48,10 @@ jobs:
         if: github.base_ref == 'main'
         run: pnpm lint:fix
 
+      - name: Biome Lint
+        if: github.base_ref == 'main'
+        run: pnpm lint:biome
+
       - name: StyleLint
         if: github.base_ref == 'main'
         run: pnpm lint-css:fix

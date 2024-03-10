@@ -7,7 +7,7 @@ type Props = {
 defineProps<Props>()
 
 const open = defineModel<boolean>('open', { required: true, default: false })
-const reward = defineModel<ProjectReward | null>('reward', {
+const reward = defineModel<ProjectReward | undefined>('reward', {
 	required: true,
 	default: null,
 })
@@ -16,7 +16,7 @@ const emit = defineEmits<{
 	submit: []
 }>()
 
-let noRewardSelected = ref(false)
+const noRewardSelected = ref(false)
 
 const dialog = ref<HTMLDialogElement>()
 function show(): void {
@@ -32,7 +32,7 @@ watch(open, (open) => (open ? show() : close()))
 
 function selectReward(selectedReward: ProjectReward | null): void {
 	noRewardSelected.value = selectedReward === null
-	reward.value = selectedReward
+	reward.value = selectedReward ?? undefined
 }
 
 defineExpose({
@@ -54,9 +54,7 @@ function isSelected({ id }: ProjectReward): boolean {
 			</button>
 		</header>
 		<article>
-			<p class="explanation">
-				Want to support us in bringing {{ project.name }} out in the world?
-			</p>
+			<p class="explanation">Want to support us in bringing {{ project.name }} out in the world?</p>
 			<div class="rewards-container">
 				<ProjectRewardBox
 					:is-selected="noRewardSelected"

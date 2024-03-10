@@ -13,6 +13,7 @@
 		"serve": "vite preview --port 5173",
 		"start": "vite --port 5173",
 		"lint": "eslint './**/*.{ts,js,vue}'",
+		"lint:biome": "biome check --apply ./src",
 		"lint:fix": "eslint './**/*.{ts,js,vue}' --fix",
 		"lint-css": "stylelint '**/*.vue' '**/*.css' --ignore-path .gitignore",
 		"lint-css:fix": "stylelint '**/*.vue' '**/*.css' --ignore-path .gitignore --fix",
