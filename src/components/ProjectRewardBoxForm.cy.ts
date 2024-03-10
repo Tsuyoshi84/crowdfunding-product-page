@@ -18,9 +18,7 @@ describe('<ProjectRewardBoxForm />', () => {
 
 	context('when input is empty', () => {
 		it('should disable button', () => {
-			cy.mount(ProjectRewardBoxForm)
-				.getBySel('submit-button')
-				.should('be.disabled')
+			cy.mount(ProjectRewardBoxForm).getBySel('submit-button').should('be.disabled')
 		})
 	})
 

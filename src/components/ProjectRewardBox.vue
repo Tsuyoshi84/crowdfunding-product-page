@@ -21,9 +21,7 @@ const isOutOfStock = computed<boolean>(() => {
 	return props.reward.stock === 0
 })
 const isNoReward = computed<boolean>(() => props.reward === null)
-const name = computed<string>(
-	() => props.reward?.name ?? 'Pledge with no reward',
-)
+const name = computed<string>(() => props.reward?.name ?? 'Pledge with no reward')
 const minPledge = computed<number>(() => props.reward?.pledge ?? 0)
 const stock = computed<number>(() => props.reward?.stock ?? 0)
 const detail = computed<string>(() => {

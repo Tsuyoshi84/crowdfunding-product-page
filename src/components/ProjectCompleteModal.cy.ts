@@ -18,10 +18,7 @@ describe('<ProjectCompleteModal />', () => {
 	it('should show button', () => {
 		cy.mount(ProjectCompleteModal, { props })
 
-		cy.get('button')
-			.should('be.visible')
-			.should('have.text', 'Got it!')
-			.should('have.focus')
+		cy.get('button').should('be.visible').should('have.text', 'Got it!').should('have.focus')
 	})
 
 	context('when click button', () => {
@@ -32,10 +29,7 @@ describe('<ProjectCompleteModal />', () => {
 				props: { ...props, ...{ 'onUpdate:open': updateOpenSpy } },
 			})
 
-			cy.get('button')
-				.click()
-				.get('@updateOpenSpy')
-				.should('have.been.calledOnce')
+			cy.get('button').click().get('@updateOpenSpy').should('have.been.calledOnce')
 		})
 	})
 

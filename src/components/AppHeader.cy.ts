@@ -45,10 +45,7 @@ describe('<AppHeader />', () => {
 		})
 
 		it('should have links', () => {
-			cy.get('nav')
-				.contains('About')
-				.should('be.visible')
-				.should('have.attr', 'href', '/about')
+			cy.get('nav').contains('About').should('be.visible').should('have.attr', 'href', '/about')
 			cy.get('nav')
 				.contains('Discover')
 				.should('be.visible')

@@ -16,7 +16,7 @@
 		"lint:fix": "eslint './**/*.{ts,js,vue}' --fix",
 		"lint-css": "stylelint '**/*.vue' '**/*.css' --ignore-path .gitignore",
 		"lint-css:fix": "stylelint '**/*.vue' '**/*.css' --ignore-path .gitignore --fix",
-		"format": "prettier --write './**/*.{ts,js,vue,css}'",
+		"format": "biome format --write src",
 		"format:check": "prettier --check './**/*.{ts,js,vue,css}'",
 		"typecheck": "vue-tsc --noEmit --skipLibCheck",
 		"cy": "cypress open",

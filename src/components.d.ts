@@ -6,20 +6,20 @@
 export {}
 
 declare module 'vue' {
-  export interface GlobalComponents {
-    AppHeader: typeof import('./components/AppHeader.vue')['default']
-    BookmarkButton: typeof import('./components/common/BookmarkButton.vue')['default']
-    PrimaryButton: typeof import('./components/common/PrimaryButton.vue')['default']
-    Project: typeof import('./components/Project.vue')['default']
-    ProjectAbout: typeof import('./components/ProjectAbout.vue')['default']
-    ProjectCompleteModal: typeof import('./components/ProjectCompleteModal.vue')['default']
-    ProjectModal: typeof import('./components/ProjectModal.vue')['default']
-    ProjectProgress: typeof import('./components/ProjectProgress.vue')['default']
-    ProjectReward: typeof import('./components/ProjectReward.vue')['default']
-    ProjectRewardBox: typeof import('./components/ProjectRewardBox.vue')['default']
-    ProjectRewardBoxForm: typeof import('./components/ProjectRewardBoxForm.vue')['default']
-    ProjectStatus: typeof import('./components/ProjectStatus.vue')['default']
-    ProjectSummary: typeof import('./components/ProjectSummary.vue')['default']
-    ToggleMark: typeof import('./components/common/ToggleMark.vue')['default']
-  }
+	export interface GlobalComponents {
+		AppHeader: typeof import('./components/AppHeader.vue')['default']
+		BookmarkButton: typeof import('./components/common/BookmarkButton.vue')['default']
+		PrimaryButton: typeof import('./components/common/PrimaryButton.vue')['default']
+		Project: typeof import('./components/Project.vue')['default']
+		ProjectAbout: typeof import('./components/ProjectAbout.vue')['default']
+		ProjectCompleteModal: typeof import('./components/ProjectCompleteModal.vue')['default']
+		ProjectModal: typeof import('./components/ProjectModal.vue')['default']
+		ProjectProgress: typeof import('./components/ProjectProgress.vue')['default']
+		ProjectReward: typeof import('./components/ProjectReward.vue')['default']
+		ProjectRewardBox: typeof import('./components/ProjectRewardBox.vue')['default']
+		ProjectRewardBoxForm: typeof import('./components/ProjectRewardBoxForm.vue')['default']
+		ProjectStatus: typeof import('./components/ProjectStatus.vue')['default']
+		ProjectSummary: typeof import('./components/ProjectSummary.vue')['default']
+		ToggleMark: typeof import('./components/common/ToggleMark.vue')['default']
+	}
 }
