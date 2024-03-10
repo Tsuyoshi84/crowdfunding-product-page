@@ -27,6 +27,7 @@
 		"vue": "^3.4.21"
 	},
 	"devDependencies": {
+		"@biomejs/biome": "1.6.0",
 		"@cypress/vite-dev-server": "^5.0.7",
 		"@cypress/vue": "^6.0.0",
 		"@types/node": "^20.11.24",
