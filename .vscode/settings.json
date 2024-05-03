@@ -29,6 +29,7 @@
 		"quickfix.biome": "explicit",
 		"source.organizeImports.biome": "explicit"
 	},
+	"eslint.experimental.useFlatConfig": true,
 	"files.associations": {
 		"*.css": "postcss"
 	},
