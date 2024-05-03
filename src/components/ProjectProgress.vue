@@ -17,7 +17,7 @@ defineProps<Props>()
 	></progress>
 </template>
 
-<style lang="postcss" scoped>
+<style scoped>
 .progress {
 	inline-size: 100%;
 	block-size: 100%;

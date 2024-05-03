@@ -74,7 +74,7 @@ function isSelected({ id }: ProjectReward): boolean {
 	</dialog>
 </template>
 
-<style scoped lang="postcss">
+<style scoped>
 dialog {
 	z-index: var(--z-index-modal);
 	padding: var(--spacing-6);

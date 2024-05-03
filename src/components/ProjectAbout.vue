@@ -26,7 +26,7 @@ const emit = defineEmits<{
 	</section>
 </template>
 
-<style lang="postcss" scoped>
+<style scoped>
 .container {
 	inline-size: 100%;
 	margin-block-end: var(--spacing-24);

@@ -11,17 +11,12 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-	<button
-		:type="type"
-		class="primary-button"
-		:disabled="disabled"
-		v-bind="$attrs"
-	>
+	<button :type="type" class="primary-button" :disabled="disabled" v-bind="$attrs">
 		<slot></slot>
 	</button>
 </template>
 
-<style lang="postcss" scoped>
+<style scoped>
 .primary-button {
 	min-block-size: var(--spacing-14);
 	padding-inline: var(--spacing-12);

@@ -13,7 +13,7 @@ withDefaults(defineProps<Props>(), {
 	</div>
 </template>
 
-<style scoped lang="postcss">
+<style scoped>
 .outer-circle {
 	display: flex;
 	inline-size: 100%;
