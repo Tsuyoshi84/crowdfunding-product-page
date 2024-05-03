@@ -2,10 +2,9 @@
 import type { Project } from '@/models/project'
 import { formatNumber } from '@/ui/format'
 
-type Props = {
+defineProps<{
 	project: Project
-}
-defineProps<Props>()
+}>()
 </script>
 
 <template>

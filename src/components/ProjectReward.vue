@@ -1,10 +1,9 @@
 <script lang="ts" setup>
 import type { ProjectReward } from '@/models/project'
 
-type Props = {
+const props = defineProps<{
 	reward: ProjectReward
-}
-const props = defineProps<Props>()
+}>()
 
 const emit = defineEmits<{
 	clickSelect: []

@@ -1,11 +1,12 @@
 <script setup lang="ts">
-type Props = {
-	bookmarked?: boolean
-}
-
-const props = withDefaults(defineProps<Props>(), {
-	bookmarked: false,
-})
+const props = withDefaults(
+	defineProps<{
+		bookmarked?: boolean
+	}>(),
+	{
+		bookmarked: false,
+	},
+)
 
 const label = computed<'Bookmarked' | 'Bookmark'>(() => {
 	return props.bookmarked ? 'Bookmarked' : 'Bookmark'

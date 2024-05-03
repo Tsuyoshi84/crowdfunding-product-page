@@ -1,14 +1,16 @@
 <script lang="ts" setup>
 import type { ProjectReward } from '@/models/project'
 
-type Props = {
-	reward?: ProjectReward | null
-	isSelected: boolean
-}
-const props = withDefaults(defineProps<Props>(), {
-	reward: null,
-	isSelected: false,
-})
+const props = withDefaults(
+	defineProps<{
+		reward?: ProjectReward | null
+		isSelected: boolean
+	}>(),
+	{
+		reward: null,
+		isSelected: false,
+	},
+)
 
 const emit = defineEmits<{
 	select: []

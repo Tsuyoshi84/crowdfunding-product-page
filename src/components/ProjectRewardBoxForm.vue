@@ -1,10 +1,12 @@
 <script setup lang="ts">
-type Props = {
-	minPledge: number
-}
-const props = withDefaults(defineProps<Props>(), {
-	minPledge: 0,
-})
+const props = withDefaults(
+	defineProps<{
+		minPledge: number
+	}>(),
+	{
+		minPledge: 0,
+	},
+)
 
 const emit = defineEmits<{
 	submit: []

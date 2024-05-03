@@ -1,10 +1,12 @@
 <script setup lang="ts">
-type Props = {
-	on: boolean
-}
-withDefaults(defineProps<Props>(), {
-	on: false,
-})
+withDefaults(
+	defineProps<{
+		on: boolean
+	}>(),
+	{
+		on: false,
+	},
+)
 </script>
 
 <template>

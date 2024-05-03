@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import type { Project, ProjectReward } from '@/models/project'
 
-type Props = {
+defineProps<{
 	project: Project
-}
-defineProps<Props>()
+}>()
 
 const open = defineModel<boolean>('open', { required: true, default: false })
 const reward = defineModel<ProjectReward | undefined>('reward', {

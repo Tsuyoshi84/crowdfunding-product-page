@@ -1,10 +1,9 @@
 <script lang="ts" setup>
 import type { Project } from '@/models/project'
 
-type Props = {
+defineProps<{
 	project: Project
-}
-defineProps<Props>()
+}>()
 
 const emit = defineEmits<{
 	toggleBookmark: []

@@ -1,10 +1,12 @@
 <script setup lang="ts">
-type Props = {
-	open: boolean
-}
-const props = withDefaults(defineProps<Props>(), {
-	open: false,
-})
+const props = withDefaults(
+	defineProps<{
+		open: boolean
+	}>(),
+	{
+		open: false,
+	},
+)
 
 defineEmits<{
 	'update:open': [boolean]
