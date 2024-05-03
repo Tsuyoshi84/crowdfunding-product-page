@@ -1,7 +1,7 @@
 import BookmarkButton from './BookmarkButton.vue'
 
 describe('<BookmarkButton>', () => {
-	context('iphone-x viewport', () => {
+	describe('iphone-x viewport', () => {
 		beforeEach(() => {
 			cy.viewport('iphone-x')
 		})
@@ -21,7 +21,7 @@ describe('<BookmarkButton>', () => {
 		})
 	})
 
-	context('macbook-13 viewport', () => {
+	describe('macbook-13 viewport', () => {
 		beforeEach(() => {
 			cy.viewport('macbook-13')
 		})

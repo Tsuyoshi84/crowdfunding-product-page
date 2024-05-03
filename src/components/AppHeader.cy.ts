@@ -1,7 +1,7 @@
 import AppHeader from './AppHeader.vue'
 
 describe('<AppHeader />', () => {
-	context('iphone-x viewport', () => {
+	describe('iphone-x viewport', () => {
 		beforeEach(() => {
 			cy.viewport('iphone-x')
 			cy.mount(AppHeader)
@@ -15,7 +15,7 @@ describe('<AppHeader />', () => {
 			cy.getBySel('menu-button').should('be.visible')
 		})
 
-		context('when menu button is clicked', () => {
+		describe('when menu button is clicked', () => {
 			beforeEach(() => {
 				cy.getBySel('menu-button').click()
 			})
@@ -26,7 +26,7 @@ describe('<AppHeader />', () => {
 				cy.get('nav').contains('Get Started').should('be.visible')
 			})
 
-			context('when menu button is clicked again', () => {
+			describe('when menu button is clicked again', () => {
 				beforeEach(() => {
 					cy.getBySel('menu-button').click()
 				})
@@ -38,7 +38,7 @@ describe('<AppHeader />', () => {
 		})
 	})
 
-	context('macbook-13 viewport', () => {
+	describe('macbook-13 viewport', () => {
 		beforeEach(() => {
 			cy.viewport('macbook-13')
 			cy.mount(AppHeader)
