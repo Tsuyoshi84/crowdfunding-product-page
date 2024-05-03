@@ -37,25 +37,19 @@ defineExpose({
 
 <template>
 	<dialog ref="dialog" data-test="complete-modal">
-		<img
-			class="icon-check"
-			src="@/assets/images/icon-check.svg"
-			width="60"
-			height="60"
-			alt=""
-		/>
+		<img class="icon-check" src="@/assets/images/icon-check.svg" width="60" height="60" alt="" />
 		<div class="title">Thanks for your support!</div>
 		<p class="message">
-			Your pledge brings us one step closer to sharing mastercraft Bamboo
-			Monitor Riser worldwide.You will get an email once our campaign is
-			completed.
+			Your pledge brings us one step closer to sharing mastercraft Bamboo Monitor Riser
+			worldwide.You will get an email once our campaign is completed.
 		</p>
-		<PrimaryButton @click="$emit('update:open', false)"> <span class="button-label" data-test="complete-modal-close-button" >Got it!</span >
+		<PrimaryButton @click="$emit('update:open', false)">
+			<span class="button-label" data-test="complete-modal-close-button">Got it!</span>
 		</PrimaryButton>
 	</dialog>
 </template>
 
-<style scoped lang="postcss">
+<style scoped>
 dialog {
 	z-index: var(--z-index-modal);
 	inline-size: calc(100vw - var(--spacing-12));

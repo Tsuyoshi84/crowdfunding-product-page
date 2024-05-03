@@ -14,21 +14,13 @@ const emit = defineEmits<{
 
 <template>
 	<section class="container">
-		<img
-			class="logo"
-			src="@/assets/images/logo-mastercraft.svg"
-			width="50"
-			height="50"
-			alt=""
-		/>
+		<img class="logo" src="@/assets/images/logo-mastercraft.svg" width="50" height="50" alt="" />
 		<h1 data-test="project-name" class="name">{{ project.name }}</h1>
 		<p data-test="project-description" class="description">
 			{{ project.description }}
 		</p>
 		<div class="button-container">
-			<PrimaryButton
-				data-test="back-project-button"
-				@click="emit('clickBackProject')"
+			<PrimaryButton data-test="back-project-button" @click="emit('clickBackProject')"
 				>Back this project</PrimaryButton
 			>
 			<BookmarkButton
@@ -40,7 +32,7 @@ const emit = defineEmits<{
 	</section>
 </template>
 
-<style scoped lang="postcss">
+<style scoped>
 .container {
 	display: flex;
 	inline-size: 100%;

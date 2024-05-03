@@ -31,7 +31,7 @@ const label = computed<'Bookmarked' | 'Bookmark'>(() => {
 	</button>
 </template>
 
-<style lang="postcss" scoped>
+<style scoped>
 .bookmark-button {
 	display: flex;
 	padding: 0;

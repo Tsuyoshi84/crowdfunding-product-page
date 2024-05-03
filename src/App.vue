@@ -7,7 +7,7 @@
 	</main>
 </template>
 
-<style lang="postcss">
+<style>
 main {
 	background-color: var(--color-base-background);
 }

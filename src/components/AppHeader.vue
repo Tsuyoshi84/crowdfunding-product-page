@@ -46,7 +46,7 @@ const buttonLabel = computed(() => {
 	</header>
 </template>
 
-<style scoped lang="postcss">
+<style scoped>
 .backdrop-shadow.open {
 	position: fixed;
 	z-index: var(--z-index-backdrop-shadow);

@@ -13,9 +13,7 @@ defineProps<Props>()
 		<div class="info-container">
 			<div class="sub-info-container">
 				<div class="main">${{ formatNumber(project.currentAmount) }}</div>
-				<div class="sub">
-					of ${{ formatNumber(project.targetAmount) }} backed
-				</div>
+				<div class="sub">of ${{ formatNumber(project.targetAmount) }} backed</div>
 			</div>
 			<div class="border"></div>
 			<div class="sub-info-container">
@@ -34,7 +32,7 @@ defineProps<Props>()
 	</section>
 </template>
 
-<style scoped lang="postcss">
+<style scoped>
 .container {
 	display: flex;
 	inline-size: 100%;

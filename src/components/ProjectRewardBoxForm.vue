@@ -45,7 +45,7 @@ function onChanged(e: Event): void {
 	</form>
 </template>
 
-<style scoped lang="postcss">
+<style scoped>
 form {
 	display: flex;
 	flex-direction: column;

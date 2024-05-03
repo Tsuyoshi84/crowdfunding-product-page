@@ -52,7 +52,7 @@ async function bookmarkToggled(): Promise<void> {
 	<ProjectCompleteModal v-model:open="isCompleteModalOpen" />
 </template>
 
-<style lang="postcss" scoped>
+<style scoped>
 .article {
 	display: flex;
 	margin-inline: var(--spacing-6);

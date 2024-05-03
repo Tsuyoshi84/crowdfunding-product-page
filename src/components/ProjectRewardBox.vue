@@ -57,9 +57,7 @@ const inputPledge = ref<number>(minPledge.value)
 			<div class="name-wrapper">
 				<div class="name">{{ name }}</div>
 				<div class="pledge">
-					<template v-if="!isNoReward"
-						>Pledge ${{ minPledge }} or more</template
-					>
+					<template v-if="!isNoReward">Pledge ${{ minPledge }} or more</template>
 				</div>
 			</div>
 		</div>
@@ -81,7 +79,7 @@ const inputPledge = ref<number>(minPledge.value)
 	</section>
 </template>
 
-<style lang="postcss" scoped>
+<style scoped>
 .container {
 	padding: var(--spacing-6);
 	border: 1px solid var(--color-border);

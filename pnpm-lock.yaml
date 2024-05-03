@@ -52,9 +52,6 @@ devDependencies:
   postcss-html:
     specifier: ^1.6.0
     version: 1.6.0
-  postcss-nesting:
-    specifier: ^12.0.2
-    version: 12.0.2(postcss@8.4.38)
   postinstall-postinstall:
     specifier: ^2.1.0
     version: 2.1.0
@@ -3215,17 +3212,6 @@ packages:
     dependencies:
       postcss: 8.4.38
       postcss-selector-parser: 6.0.16
-    dev: true
-
-  /postcss-nesting@12.0.2(postcss@8.4.38):
-    resolution: {integrity: sha512-63PpJHSeNs93S3ZUIyi+7kKx4JqOIEJ6QYtG3x+0qA4J03+4n0iwsyA1GAHyWxsHYljQS4/4ZK1o2sMi70b5wQ==}
-    engines: {node: ^14 || ^16 || >=18}
-    peerDependencies:
-      postcss: ^8.4
-    dependencies:
-      '@csstools/selector-specificity': 3.0.1(postcss-selector-parser@6.0.15)
-      postcss: 8.4.38
-      postcss-selector-parser: 6.0.15
     dev: true
 
   /postcss-normalize-charset@7.0.0(postcss@8.4.38):

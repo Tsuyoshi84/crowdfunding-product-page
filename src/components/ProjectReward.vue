@@ -40,7 +40,7 @@ const buttonLabel = computed<string>(() => (isOutOfStock.value ? 'Out of Stock' 
 	</section>
 </template>
 
-<style lang="postcss" scoped>
+<style scoped>
 .reward-container {
 	padding: var(--spacing-6);
 	border: 1px solid var(--color-border);
