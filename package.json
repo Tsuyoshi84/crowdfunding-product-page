@@ -31,7 +31,7 @@
 		"@biomejs/biome": "1.7.2",
 		"@cypress/vite-dev-server": "^5.0.7",
 		"@cypress/vue": "^6.0.0",
-		"@types/node": "^20.12.8",
+		"@types/node": "^20.13.0",
 		"@typescript-eslint/parser": "^7.8.0",
 		"@vitejs/plugin-vue": "^5.0.4",
 		"cssnano": "^7.0.1",
