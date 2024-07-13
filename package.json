@@ -3,7 +3,7 @@
 	"version": "0.0.0",
 	"license": "UNLICENSED",
 	"engines": {
-		"pnpm": "8",
+		"pnpm": "9",
 		"yarn": "please-use-pnpm",
 		"node": "^20.0.0"
 	},
