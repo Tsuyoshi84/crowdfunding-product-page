@@ -2,9 +2,9 @@
 	"name": "crowdfunding-product-page",
 	"version": "0.0.0",
 	"Tsuyoshi84/st-mini license": "UNLICENSED",
-	"packageManager": "pnpm@9.5.0",
+	"packageManager": "pnpm@9.4.0",
 	"engines": {
-		"pnpm": "9.5.0",
+		"pnpm": "9.4.0",
 		"yarn": "please-use-pnpm",
 		"node": "^20.0.0"
 	},
