@@ -8,8 +8,6 @@ concurrency:
   cancel-in-progress: true
 
 on:
-  push:
-    branches: [main]
   pull_request:
     types:
       - opened
@@ -22,7 +20,6 @@ on:
 
 jobs:
   build-test:
-    name: Build and Test
     runs-on: ubuntu-latest
     permissions:
       # Give the default GITHUB_TOKEN write permission to commit and push the changed files back to the repository.
