@@ -64,7 +64,6 @@ jobs:
         run: pnpm run build
 
   cypress-test:
-    name: Cypress Test
     runs-on: ubuntu-latest
     if: ${{ !github.event.pull_request.draft }}
     steps:
