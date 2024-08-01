@@ -19,11 +19,11 @@ importers:
         specifier: 1.8.3
         version: 1.8.3
       '@cypress/vite-dev-server':
-        specifier: ^5.0.7
-        version: 5.0.7
+        specifier: ^5.1.1
+        version: 5.1.1
       '@cypress/vue':
-        specifier: ^6.0.0
-        version: 6.0.0(cypress@13.13.2)(vue@3.4.35(typescript@5.5.4))
+        specifier: ^6.0.1
+        version: 6.0.1(cypress@13.13.2)(vue@3.4.35(typescript@5.5.4))
       '@types/node':
         specifier: ^22.0.2
         version: 22.0.2
@@ -222,11 +222,11 @@ packages:
     resolution: {integrity: sha512-TWivJlJi8ZDx2wGOw1dbLuHJKUYX7bWySw377nlnGOW3hP9/MUKIsEdXT/YngWxVdgNCHRBmFlBipE+5/2ZZlQ==}
     engines: {node: '>= 6'}
 
-  '@cypress/vite-dev-server@5.0.7':
-    resolution: {integrity: sha512-OeVsEvDtoWV/CnvnUEjWny7tsuw84DF78tvnibOWNTOuZzav62U3A07QKK2JDuGAoXQlVTiDWzcCObKIEcOGGg==}
+  '@cypress/vite-dev-server@5.1.1':
+    resolution: {integrity: sha512-US2ZA1XcbJFdWx/nnOTtwvSD35MAk2cYbIWIXgrHpIo1J1XJDFAv9uivQ0dHx0TVE8QbMubzGhAICDSI97TtCg==}
 
-  '@cypress/vue@6.0.0':
-    resolution: {integrity: sha512-KMfRw8y/kXn/RJqaDdFnYnW7YLk47313UE3Yip+sLDjILJ2kA0WEiEa6MYKe58v8TNRtwcRpUH5xAYVNs1N6/A==}
+  '@cypress/vue@6.0.1':
+    resolution: {integrity: sha512-pXzy6ZsYzWORHqSeXticZgZn9st22Rv1WSeWLYSrilz1+Zxe1qcdn9812qYY1v23nlikgOktvQYbMFQhv0FZSA==}
     engines: {node: '>=8'}
     peerDependencies:
       '@cypress/webpack-dev-server': '*'
@@ -2463,8 +2463,8 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
-  yocto-queue@1.0.0:
-    resolution: {integrity: sha512-9bnSc/HEW2uRy67wc+T8UwauLuPJVn28jb+GtJY16iiKWyvmYJRXVT4UamsAEGQfPohgr2q4Tq0sQbQlxTfi1g==}
+  yocto-queue@1.1.1:
+    resolution: {integrity: sha512-b4JR1PFR10y1mKjhHY9LaGo6tmrgjit7hxVIeAmyMw3jegXR4dhYqLaQF5zMXZxY7tLpMyJeLjr1C4rLmkVe8g==}
     engines: {node: '>=12.20'}
 
 snapshots:
@@ -2575,16 +2575,16 @@ snapshots:
       tunnel-agent: 0.6.0
       uuid: 8.3.2
 
-  '@cypress/vite-dev-server@5.0.7':
+  '@cypress/vite-dev-server@5.1.1':
     dependencies:
-      debug: 4.3.4
+      debug: 4.3.6(supports-color@8.1.1)
       find-up: 6.3.0
       node-html-parser: 5.3.3
-      semver: 7.5.4
+      semver: 7.6.3
     transitivePeerDependencies:
       - supports-color
 
-  '@cypress/vue@6.0.0(cypress@13.13.2)(vue@3.4.35(typescript@5.5.4))':
+  '@cypress/vue@6.0.1(cypress@13.13.2)(vue@3.4.35(typescript@5.5.4))':
     dependencies:
       cypress: 13.13.2
       vue: 3.4.35(typescript@5.5.4)
@@ -4021,7 +4021,7 @@ snapshots:
 
   p-limit@4.0.0:
     dependencies:
-      yocto-queue: 1.0.0
+      yocto-queue: 1.1.1
 
   p-locate@5.0.0:
     dependencies:
@@ -4832,4 +4832,4 @@ snapshots:
 
   yocto-queue@0.1.0: {}
 
-  yocto-queue@1.0.0: {}
+  yocto-queue@1.1.1: {}
