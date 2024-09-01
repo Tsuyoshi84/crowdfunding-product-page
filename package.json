@@ -25,8 +25,8 @@
 		"cy:ct": "cypress open --component"
 	},
 	"dependencies": {
-		"pinia": "^2.2.0",
-		"vue": "^3.4.35"
+		"pinia": "^2.2.2",
+		"vue": "^3.4.38"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.8.3",
@@ -56,6 +56,6 @@
 		"unplugin-vue-components": "^0.27.4",
 		"vite": "^5.4.2",
 		"vue-template-compiler": "^2.7.16",
-		"vue-tsc": "^2.0.29"
+		"vue-tsc": "^2.1.4"
 	}
 }
