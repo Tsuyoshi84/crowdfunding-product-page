@@ -67,7 +67,7 @@ async function bookmarkToggled(): Promise<void> {
 @media (width >= 62em) {
 	.article {
 		max-inline-size: 45rem;
-		margin-inline: auto auto;
+		margin-inline: auto;
 	}
 }
 </style>
