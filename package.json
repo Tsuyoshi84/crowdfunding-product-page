@@ -2,7 +2,7 @@
 	"name": "crowdfunding-product-page",
 	"version": "0.0.0",
 	"Tsuyoshi84/st-mini license": "UNLICENSED",
-	"packageManager": "pnpm@9.4.0",
+	"packageManager": "pnpm@9.9.0",
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
