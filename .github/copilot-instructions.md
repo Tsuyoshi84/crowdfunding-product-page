@@ -11,7 +11,6 @@
 - Prioritize functional and declarative programming patterns; avoid using classes.
 - Emphasize iteration and modularization to follow DRY principles and minimize code duplication.
 - Write JSDoc comments for all exported functions, variables, and types for better readability and understanding.
-- Write JSDoc and comments in Japanese.
 - In JSDoc, `@return` annotation can be omitted since it's self-explanatory in most cases.
 
 ## HTML
