@@ -10,8 +10,7 @@ updates:
     schedule:
       interval: 'monthly'
     commit-message:
-      # Prefix all commit messages with "pnpm"
-      prefix: 'pnpm'
+      prefix: 'chore'
     versioning-strategy: 'increase'
     assignees:
       - 'Tsuyoshi84'
@@ -40,7 +39,7 @@ updates:
     schedule:
       interval: 'monthly'
     commit-message:
-      prefix: 'github-actions'
+      prefix: 'chore'
     assignees:
       - 'Tsuyoshi84'
     open-pull-requests-limit: 30
