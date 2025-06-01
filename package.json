@@ -20,7 +20,7 @@
 	},
 	"dependencies": {
 		"pinia": "^3.0.2",
-		"vue": "^3.5.10"
+		"vue": "^3.5.16"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
