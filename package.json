@@ -8,12 +8,10 @@
 		"serve": "vite preview --port 5173",
 		"start": "vite --port 5173",
 		"lint": "eslint './**/*.{ts,js,vue}'",
-		"lint:biome": "biome check --apply ./src",
 		"lint:fix": "eslint './**/*.{ts,js,vue}' --fix",
 		"lint-css": "stylelint '**/*.vue' '**/*.css' --ignore-path .gitignore",
 		"lint-css:fix": "stylelint '**/*.vue' '**/*.css' --ignore-path .gitignore --fix",
-		"format": "biome format --write src",
-		"format:check": "prettier --check './**/*.{ts,js,vue,css}'",
+		"check": "biome check --write",
 		"typecheck": "vue-tsc --noEmit --skipLibCheck",
 		"cy": "cypress open",
 		"cy:ct": "cypress open --component"
@@ -23,7 +21,7 @@
 		"vue": "^3.5.10"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.9.4",
+		"@biomejs/biome": "2.1.2",
 		"@cypress/vite-dev-server": "^6.0.3",
 		"@cypress/vue": "^6.0.2",
 		"@types/node": "^22.15.3",

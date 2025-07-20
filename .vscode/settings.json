@@ -26,9 +26,12 @@
 		"vite"
 	],
 	"editor.codeActionsOnSave": {
-		"quickfix.biome": "explicit",
+		"source.fixAll.biome": "never",
+		"source.fixAll.eslint": "explicit",
+		"source.organizeImports": "never",
 		"source.organizeImports.biome": "explicit"
 	},
+
 	"eslint.experimental.useFlatConfig": true,
 	"files.associations": {
 		"*.css": "postcss"
