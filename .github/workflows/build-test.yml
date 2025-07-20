@@ -43,17 +43,13 @@ jobs:
         if: github.base_ref == 'main'
         run: pnpm lint:fix
 
-      - name: Biome Lint
+      - name: Biome Check
         if: github.base_ref == 'main'
-        run: pnpm lint:biome
+        run: pnpm check
 
       - name: StyleLint
         if: github.base_ref == 'main'
         run: pnpm lint-css:fix
-
-      - name: Check format
-        if: github.base_ref == 'main'
-        run: pnpm format
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v6

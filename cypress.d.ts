@@ -1,7 +1,4 @@
-import { mount } from 'cypress/vue'
-
-type MountParams = Parameters<typeof mount>
-type OptionsParam = MountParams[1]
+import type { mount } from 'cypress/vue'
 
 declare global {
 	namespace Cypress {
