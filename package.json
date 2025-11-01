@@ -27,7 +27,7 @@
 		"@types/node": "^24.6.1",
 		"@typescript-eslint/parser": "^8.33.0",
 		"@vitejs/plugin-vue": "^6.0.0",
-		"cssnano": "^7.0.6",
+		"cssnano": "^7.1.2",
 		"cypress": "^15.5.0",
 		"eslint": "^9.25.1",
 		"eslint-config-prettier": "^10.1.2",
