@@ -25,7 +25,7 @@
 		"@cypress/vite-dev-server": "^7.0.1",
 		"@cypress/vue": "^6.0.2",
 		"@types/node": "^24.6.1",
-		"@typescript-eslint/parser": "^8.33.0",
+		"@typescript-eslint/parser": "^8.51.0",
 		"@vitejs/plugin-vue": "^6.0.0",
 		"cssnano": "^7.0.6",
 		"cypress": "^15.5.0",
