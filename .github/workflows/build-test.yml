@@ -69,7 +69,7 @@ jobs:
       - run: pnpm cypress install
 
       - name: Cypress integration tests
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7
         with:
           install: false
           build: pnpm run build
@@ -95,7 +95,7 @@ jobs:
           path: cypress/screenshots
 
       - name: Cypress component tests
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7
         with:
           install: false
           component: true
